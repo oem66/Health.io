@@ -1,0 +1,995 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF7F278CD7600033E8DF /* HealthStatsView.swift */; };
+		171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF81278CE8250033E8DF /* HealthViewModel.swift */; };
+		171CEF85278E0C480033E8DF /* Covid19Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF84278E0C480033E8DF /* Covid19Stats.swift */; };
+		171CEF87278E2C580033E8DF /* Covid19ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF86278E2C580033E8DF /* Covid19ViewModel.swift */; };
+		171CEF89278E2DD80033E8DF /* Covid19Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF88278E2DD80033E8DF /* Covid19Service.swift */; };
+		171CEF8D278E3C8F0033E8DF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171CEF8C278E3C8F0033E8DF /* HealthKit.framework */; };
+		172CA2CD277F165C00E5AD92 /* Health_ioApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2CC277F165C00E5AD92 /* Health_ioApp.swift */; };
+		172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2CE277F165C00E5AD92 /* ContentView.swift */; };
+		172CA2D1277F166100E5AD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CA2D0277F166100E5AD92 /* Assets.xcassets */; };
+		172CA2D4277F166100E5AD92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CA2D3277F166100E5AD92 /* Preview Assets.xcassets */; };
+		172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2D5277F166100E5AD92 /* Persistence.swift */; };
+		172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2D7277F166100E5AD92 /* Health_io.xcdatamodeld */; };
+		172CA2E3277F166100E5AD92 /* Health_ioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2E2277F166100E5AD92 /* Health_ioTests.swift */; };
+		172CA2ED277F166100E5AD92 /* Health_ioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2EC277F166100E5AD92 /* Health_ioUITests.swift */; };
+		172CA2EF277F166100E5AD92 /* Health_ioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2EE277F166100E5AD92 /* Health_ioUITestsLaunchTests.swift */; };
+		172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3062780AA5500E5AD92 /* KeychainItemAccessibility.swift */; };
+		172CA3092780AA9300E5AD92 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3082780AA9300E5AD92 /* KeychainWrapper.swift */; };
+		172CA30D278750BA00E5AD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172CA30F278750BA00E5AD92 /* Localizable.strings */; };
+		172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3112787517700E5AD92 /* OnboardingView.swift */; };
+		172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3132787A04600E5AD92 /* APIEndpoints.swift */; };
+		174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF01F278F951C00AA9643 /* URL+Extension.swift */; };
+		174FF0272791DC0000AA9643 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF0262791DC0000AA9643 /* Registration.swift */; };
+		174FF0292791DC1D00AA9643 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF0282791DC1D00AA9643 /* Login.swift */; };
+		174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF02B2791DFCA00AA9643 /* OnboardingModel.swift */; };
+		174FF02F2791E0A800AA9643 /* OnboardingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF02E2791E0A800AA9643 /* OnboardingConstants.swift */; };
+		174FF03127923EED00AA9643 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03027923EED00AA9643 /* AuthenticationView.swift */; };
+		174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03427938CF600AA9643 /* AuthenticationConstants.swift */; };
+		174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03627938E0800AA9643 /* AuthenticationModel.swift */; };
+		1779B9C92798A42D00EA8470 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9C82798A42D00EA8470 /* FirebaseAnalytics */; };
+		1779B9CB2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9CA2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta */; };
+		1779B9CD2798A42D00EA8470 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9CC2798A42D00EA8470 /* FirebaseAuth */; };
+		1779B9CF2798A42D00EA8470 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9CE2798A42D00EA8470 /* FirebaseCrashlytics */; };
+		1779B9D12798A42D00EA8470 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9D02798A42D00EA8470 /* FirebaseDatabase */; };
+		1779B9D32798A42D00EA8470 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9D22798A42D00EA8470 /* FirebaseFirestore */; };
+		1779B9D52798A76E00EA8470 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */; };
+		1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */; };
+		1779B9DB2798B23800EA8470 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9DA2798B23800EA8470 /* GoogleSignIn */; };
+		1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9DC2798B4D400EA8470 /* View+Extension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		172CA2DF277F166100E5AD92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 172CA2C1277F165C00E5AD92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 172CA2C8277F165C00E5AD92;
+			remoteInfo = Health.io;
+		};
+		172CA2E9277F166100E5AD92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 172CA2C1277F165C00E5AD92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 172CA2C8277F165C00E5AD92;
+			remoteInfo = Health.io;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		171CEF7F278CD7600033E8DF /* HealthStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatsView.swift; sourceTree = "<group>"; };
+		171CEF81278CE8250033E8DF /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		171CEF83278CF2BB0033E8DF /* Health-io-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Health-io-Info.plist"; sourceTree = SOURCE_ROOT; };
+		171CEF84278E0C480033E8DF /* Covid19Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19Stats.swift; sourceTree = "<group>"; };
+		171CEF86278E2C580033E8DF /* Covid19ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19ViewModel.swift; sourceTree = "<group>"; };
+		171CEF88278E2DD80033E8DF /* Covid19Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Covid19Service.swift; sourceTree = "<group>"; };
+		171CEF8A278E3C8F0033E8DF /* Health.io.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Health.io.entitlements; sourceTree = "<group>"; };
+		171CEF8C278E3C8F0033E8DF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		172CA2C9277F165C00E5AD92 /* Health.io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Health.io.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		172CA2CC277F165C00E5AD92 /* Health_ioApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_ioApp.swift; sourceTree = "<group>"; };
+		172CA2CE277F165C00E5AD92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		172CA2D0277F166100E5AD92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		172CA2D3277F166100E5AD92 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		172CA2D5277F166100E5AD92 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		172CA2D8277F166100E5AD92 /* Health_io.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Health_io.xcdatamodel; sourceTree = "<group>"; };
+		172CA2DE277F166100E5AD92 /* Health.ioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Health.ioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		172CA2E2277F166100E5AD92 /* Health_ioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_ioTests.swift; sourceTree = "<group>"; };
+		172CA2E8277F166100E5AD92 /* Health.ioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Health.ioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		172CA2EC277F166100E5AD92 /* Health_ioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_ioUITests.swift; sourceTree = "<group>"; };
+		172CA2EE277F166100E5AD92 /* Health_ioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health_ioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		172CA3062780AA5500E5AD92 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
+		172CA3082780AA9300E5AD92 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		172CA30E278750BA00E5AD92 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		172CA310278750BC00E5AD92 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		172CA3112787517700E5AD92 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		172CA3132787A04600E5AD92 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		174FF01F278F951C00AA9643 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		174FF0262791DC0000AA9643 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		174FF0282791DC1D00AA9643 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		174FF02B2791DFCA00AA9643 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		174FF02E2791E0A800AA9643 /* OnboardingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConstants.swift; sourceTree = "<group>"; };
+		174FF03027923EED00AA9643 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		174FF03427938CF600AA9643 /* AuthenticationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationConstants.swift; sourceTree = "<group>"; };
+		174FF03627938E0800AA9643 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		1779B9DC2798B4D400EA8470 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		172CA2C6277F165C00E5AD92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1779B9D12798A42D00EA8470 /* FirebaseDatabase in Frameworks */,
+				1779B9DB2798B23800EA8470 /* GoogleSignIn in Frameworks */,
+				1779B9CB2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta in Frameworks */,
+				1779B9C92798A42D00EA8470 /* FirebaseAnalytics in Frameworks */,
+				1779B9CF2798A42D00EA8470 /* FirebaseCrashlytics in Frameworks */,
+				171CEF8D278E3C8F0033E8DF /* HealthKit.framework in Frameworks */,
+				1779B9CD2798A42D00EA8470 /* FirebaseAuth in Frameworks */,
+				1779B9D32798A42D00EA8470 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172CA2DB277F166100E5AD92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172CA2E5277F166100E5AD92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		171CEF8B278E3C8F0033E8DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF8C278E3C8F0033E8DF /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		172CA2C0277F165C00E5AD92 = {
+			isa = PBXGroup;
+			children = (
+				172CA2CB277F165C00E5AD92 /* Health.io */,
+				172CA2E1277F166100E5AD92 /* Health.ioTests */,
+				172CA2EB277F166100E5AD92 /* Health.ioUITests */,
+				172CA2CA277F165C00E5AD92 /* Products */,
+				171CEF8B278E3C8F0033E8DF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		172CA2CA277F165C00E5AD92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				172CA2C9277F165C00E5AD92 /* Health.io.app */,
+				172CA2DE277F166100E5AD92 /* Health.ioTests.xctest */,
+				172CA2E8277F166100E5AD92 /* Health.ioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		172CA2CB277F165C00E5AD92 /* Health.io */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF8A278E3C8F0033E8DF /* Health.io.entitlements */,
+				171CEF83278CF2BB0033E8DF /* Health-io-Info.plist */,
+				1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */,
+				172CA30A27874EE400E5AD92 /* Localization */,
+				172CA3002780A89900E5AD92 /* Helpers */,
+				172CA2FB2780A86D00E5AD92 /* Model */,
+				172CA2FC2780A87300E5AD92 /* View Model */,
+				172CA2FD2780A87A00E5AD92 /* View */,
+				172CA2FE2780A87F00E5AD92 /* Service */,
+				172CA2CC277F165C00E5AD92 /* Health_ioApp.swift */,
+				172CA2D7277F166100E5AD92 /* Health_io.xcdatamodeld */,
+				172CA2D2277F166100E5AD92 /* Preview Content */,
+			);
+			path = Health.io;
+			sourceTree = "<group>";
+		};
+		172CA2D2277F166100E5AD92 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				172CA2D3277F166100E5AD92 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		172CA2E1277F166100E5AD92 /* Health.ioTests */ = {
+			isa = PBXGroup;
+			children = (
+				172CA2E2277F166100E5AD92 /* Health_ioTests.swift */,
+			);
+			path = Health.ioTests;
+			sourceTree = "<group>";
+		};
+		172CA2EB277F166100E5AD92 /* Health.ioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				172CA2EC277F166100E5AD92 /* Health_ioUITests.swift */,
+				172CA2EE277F166100E5AD92 /* Health_ioUITestsLaunchTests.swift */,
+			);
+			path = Health.ioUITests;
+			sourceTree = "<group>";
+		};
+		172CA2FB2780A86D00E5AD92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF84278E0C480033E8DF /* Covid19Stats.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		172CA2FC2780A87300E5AD92 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF81278CE8250033E8DF /* HealthViewModel.swift */,
+				171CEF86278E2C580033E8DF /* Covid19ViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		172CA2FD2780A87A00E5AD92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				174FF0212791DA3B00AA9643 /* Onboarding */,
+				174FF0232791DAD100AA9643 /* Authentication */,
+				172CA2CE277F165C00E5AD92 /* ContentView.swift */,
+				171CEF7F278CD7600033E8DF /* HealthStatsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		172CA2FE2780A87F00E5AD92 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				172CA2FF2780A88700E5AD92 /* Networking */,
+				172CA3032780A8B700E5AD92 /* Keychain */,
+				172CA3052780A94B00E5AD92 /* Health Kit */,
+				172CA3022780A8AE00E5AD92 /* User Defaults */,
+				172CA3012780A8A000E5AD92 /* Core Data */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		172CA2FF2780A88700E5AD92 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				172CA3132787A04600E5AD92 /* APIEndpoints.swift */,
+				171CEF88278E2DD80033E8DF /* Covid19Service.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		172CA3002780A89900E5AD92 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				174FF01E278F950600AA9643 /* Extensions */,
+				172CA3042780A8D500E5AD92 /* Content */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		172CA3012780A8A000E5AD92 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				172CA2D5277F166100E5AD92 /* Persistence.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		172CA3022780A8AE00E5AD92 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "User Defaults";
+			sourceTree = "<group>";
+		};
+		172CA3032780A8B700E5AD92 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				172CA3062780AA5500E5AD92 /* KeychainItemAccessibility.swift */,
+				172CA3082780AA9300E5AD92 /* KeychainWrapper.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		172CA3042780A8D500E5AD92 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				172CA2D0277F166100E5AD92 /* Assets.xcassets */,
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		172CA3052780A94B00E5AD92 /* Health Kit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Health Kit";
+			sourceTree = "<group>";
+		};
+		172CA30A27874EE400E5AD92 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				172CA30F278750BA00E5AD92 /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		174FF01E278F950600AA9643 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				174FF01F278F951C00AA9643 /* URL+Extension.swift */,
+				1779B9DC2798B4D400EA8470 /* View+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		174FF0212791DA3B00AA9643 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				174FF02D2791E07A00AA9643 /* Constants */,
+				174FF02A2791DFB000AA9643 /* Model */,
+				172CA3112787517700E5AD92 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		174FF0232791DAD100AA9643 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				1779B9D62798ADCE00EA8470 /* View Model */,
+				174FF03327938CDD00AA9643 /* Constrants */,
+				174FF03227938CD700AA9643 /* Model */,
+				174FF03027923EED00AA9643 /* AuthenticationView.swift */,
+				174FF0242791DADC00AA9643 /* Registration */,
+				174FF0252791DAE400AA9643 /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		174FF0242791DADC00AA9643 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				174FF0262791DC0000AA9643 /* Registration.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		174FF0252791DAE400AA9643 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				174FF0282791DC1D00AA9643 /* Login.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		174FF02A2791DFB000AA9643 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				174FF02B2791DFCA00AA9643 /* OnboardingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		174FF02D2791E07A00AA9643 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				174FF02E2791E0A800AA9643 /* OnboardingConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		174FF03227938CD700AA9643 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				174FF03627938E0800AA9643 /* AuthenticationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		174FF03327938CDD00AA9643 /* Constrants */ = {
+			isa = PBXGroup;
+			children = (
+				174FF03427938CF600AA9643 /* AuthenticationConstants.swift */,
+			);
+			path = Constrants;
+			sourceTree = "<group>";
+		};
+		1779B9D62798ADCE00EA8470 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		172CA2C8277F165C00E5AD92 /* Health.io */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172CA2F2277F166100E5AD92 /* Build configuration list for PBXNativeTarget "Health.io" */;
+			buildPhases = (
+				172CA2C5277F165C00E5AD92 /* Sources */,
+				172CA2C6277F165C00E5AD92 /* Frameworks */,
+				172CA2C7277F165C00E5AD92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Health.io;
+			packageProductDependencies = (
+				1779B9C82798A42D00EA8470 /* FirebaseAnalytics */,
+				1779B9CA2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta */,
+				1779B9CC2798A42D00EA8470 /* FirebaseAuth */,
+				1779B9CE2798A42D00EA8470 /* FirebaseCrashlytics */,
+				1779B9D02798A42D00EA8470 /* FirebaseDatabase */,
+				1779B9D22798A42D00EA8470 /* FirebaseFirestore */,
+				1779B9DA2798B23800EA8470 /* GoogleSignIn */,
+			);
+			productName = Health.io;
+			productReference = 172CA2C9277F165C00E5AD92 /* Health.io.app */;
+			productType = "com.apple.product-type.application";
+		};
+		172CA2DD277F166100E5AD92 /* Health.ioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172CA2F5277F166100E5AD92 /* Build configuration list for PBXNativeTarget "Health.ioTests" */;
+			buildPhases = (
+				172CA2DA277F166100E5AD92 /* Sources */,
+				172CA2DB277F166100E5AD92 /* Frameworks */,
+				172CA2DC277F166100E5AD92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				172CA2E0277F166100E5AD92 /* PBXTargetDependency */,
+			);
+			name = Health.ioTests;
+			productName = Health.ioTests;
+			productReference = 172CA2DE277F166100E5AD92 /* Health.ioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		172CA2E7277F166100E5AD92 /* Health.ioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 172CA2F8277F166100E5AD92 /* Build configuration list for PBXNativeTarget "Health.ioUITests" */;
+			buildPhases = (
+				172CA2E4277F166100E5AD92 /* Sources */,
+				172CA2E5277F166100E5AD92 /* Frameworks */,
+				172CA2E6277F166100E5AD92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				172CA2EA277F166100E5AD92 /* PBXTargetDependency */,
+			);
+			name = Health.ioUITests;
+			productName = Health.ioUITests;
+			productReference = 172CA2E8277F166100E5AD92 /* Health.ioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		172CA2C1277F165C00E5AD92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					172CA2C8277F165C00E5AD92 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					172CA2DD277F166100E5AD92 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 172CA2C8277F165C00E5AD92;
+					};
+					172CA2E7277F166100E5AD92 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 172CA2C8277F165C00E5AD92;
+					};
+				};
+			};
+			buildConfigurationList = 172CA2C4277F165C00E5AD92 /* Build configuration list for PBXProject "Health.io" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				de,
+			);
+			mainGroup = 172CA2C0277F165C00E5AD92;
+			packageReferences = (
+				1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1779B9D92798B23800EA8470 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			productRefGroup = 172CA2CA277F165C00E5AD92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				172CA2C8277F165C00E5AD92 /* Health.io */,
+				172CA2DD277F166100E5AD92 /* Health.ioTests */,
+				172CA2E7277F166100E5AD92 /* Health.ioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		172CA2C7277F165C00E5AD92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172CA2D4277F166100E5AD92 /* Preview Assets.xcassets in Resources */,
+				172CA30D278750BA00E5AD92 /* Localizable.strings in Resources */,
+				1779B9D52798A76E00EA8470 /* GoogleService-Info.plist in Resources */,
+				172CA2D1277F166100E5AD92 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172CA2DC277F166100E5AD92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172CA2E6277F166100E5AD92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		172CA2C5277F165C00E5AD92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174FF02F2791E0A800AA9643 /* OnboardingConstants.swift in Sources */,
+				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
+				172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */,
+				172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */,
+				1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */,
+				172CA2CD277F165C00E5AD92 /* Health_ioApp.swift in Sources */,
+				172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */,
+				171CEF87278E2C580033E8DF /* Covid19ViewModel.swift in Sources */,
+				174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */,
+				171CEF89278E2DD80033E8DF /* Covid19Service.swift in Sources */,
+				172CA3092780AA9300E5AD92 /* KeychainWrapper.swift in Sources */,
+				171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */,
+				172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */,
+				174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */,
+				172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */,
+				174FF03127923EED00AA9643 /* AuthenticationView.swift in Sources */,
+				171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */,
+				171CEF85278E0C480033E8DF /* Covid19Stats.swift in Sources */,
+				174FF0272791DC0000AA9643 /* Registration.swift in Sources */,
+				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
+				174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */,
+				174FF0292791DC1D00AA9643 /* Login.swift in Sources */,
+				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172CA2DA277F166100E5AD92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172CA2E3277F166100E5AD92 /* Health_ioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		172CA2E4277F166100E5AD92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172CA2EF277F166100E5AD92 /* Health_ioUITestsLaunchTests.swift in Sources */,
+				172CA2ED277F166100E5AD92 /* Health_ioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		172CA2E0277F166100E5AD92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 172CA2C8277F165C00E5AD92 /* Health.io */;
+			targetProxy = 172CA2DF277F166100E5AD92 /* PBXContainerItemProxy */;
+		};
+		172CA2EA277F166100E5AD92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 172CA2C8277F165C00E5AD92 /* Health.io */;
+			targetProxy = 172CA2E9277F166100E5AD92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		172CA30F278750BA00E5AD92 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				172CA30E278750BA00E5AD92 /* en */,
+				172CA310278750BC00E5AD92 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		172CA2F0277F166100E5AD92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		172CA2F1277F166100E5AD92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		172CA2F3277F166100E5AD92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Health.io/Health.io.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Health.io/Preview Content\"";
+				DEVELOPMENT_TEAM = JB4H896VDB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Health-io-Info.plist";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Health.io want access to your health data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Health.io want access to your health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Health.io want access to your health data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.omer.Health-io";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		172CA2F4277F166100E5AD92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Health.io/Health.io.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Health.io/Preview Content\"";
+				DEVELOPMENT_TEAM = JB4H896VDB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Health-io-Info.plist";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Health.io want access to your health data";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Health.io want access to your health data";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Health.io want access to your health data";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.omer.Health-io";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		172CA2F6277F166100E5AD92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB4H896VDB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.omer.Health-ioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Health.io.app/Health.io";
+			};
+			name = Debug;
+		};
+		172CA2F7277F166100E5AD92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB4H896VDB;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.omer.Health-ioTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Health.io.app/Health.io";
+			};
+			name = Release;
+		};
+		172CA2F9277F166100E5AD92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB4H896VDB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.omer.Health-ioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Health.io;
+			};
+			name = Debug;
+		};
+		172CA2FA277F166100E5AD92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB4H896VDB;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.omer.Health-ioUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Health.io;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		172CA2C4277F165C00E5AD92 /* Build configuration list for PBXProject "Health.io" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172CA2F0277F166100E5AD92 /* Debug */,
+				172CA2F1277F166100E5AD92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		172CA2F2277F166100E5AD92 /* Build configuration list for PBXNativeTarget "Health.io" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172CA2F3277F166100E5AD92 /* Debug */,
+				172CA2F4277F166100E5AD92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		172CA2F5277F166100E5AD92 /* Build configuration list for PBXNativeTarget "Health.ioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172CA2F6277F166100E5AD92 /* Debug */,
+				172CA2F7277F166100E5AD92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		172CA2F8277F166100E5AD92 /* Build configuration list for PBXNativeTarget "Health.ioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				172CA2F9277F166100E5AD92 /* Debug */,
+				172CA2FA277F166100E5AD92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		1779B9D92798B23800EA8470 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1779B9C82798A42D00EA8470 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		1779B9CA2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAnalyticsSwift-Beta";
+		};
+		1779B9CC2798A42D00EA8470 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1779B9CE2798A42D00EA8470 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		1779B9D02798A42D00EA8470 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		1779B9D22798A42D00EA8470 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1779B9C72798A42D00EA8470 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		1779B9DA2798B23800EA8470 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1779B9D92798B23800EA8470 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		172CA2D7277F166100E5AD92 /* Health_io.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				172CA2D8277F166100E5AD92 /* Health_io.xcdatamodel */,
+			);
+			currentVersion = 172CA2D8277F166100E5AD92 /* Health_io.xcdatamodel */;
+			path = Health_io.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 172CA2C1277F165C00E5AD92 /* Project object */;
+}

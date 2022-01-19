@@ -1,0 +1,39 @@
+/* 
+  Localizable.strings
+  Health.io
+
+  Created by Omer Rahmanovic on 1/6/22.
+*/
+
+"Welcome" = "Willkommen";
+"Registration" = "Anmeldung";
+"Next" = "Nächste";
+"GetStarted" = "Loslegen";
+"AppleAuth" = "Weitermachen mit Apple";
+"GoogleAuth" = "Weitermachen mit Google";
+"FacebookAuth" = "Weitermachen mit Facebook";
+
+// MARK: - Onboarding
+"welcome" = "Willkommen";
+"registration" = "Anmeldung";
+"next" = "Nächste";
+"get_started" = "Loslegen";
+
+"ambulance_title" = "Neue Konzepte";
+"ambulance_description" = "Online-Krankenwagen auf Ihrem Handy. Wenn Sie sich unwohl fühlen oder jemanden kennen, der den Krankenwagen nicht auf Knopfdruck ruft!";
+
+"vaccine_title" = "Fortgeschrittene Immunisierung";
+"vaccine_description" = "Erhalten Sie mit der mobilen App Einblick in Ihre Impfung. Alle Informationen zu COVID-19-Impflingen und ihrer Legitimität.";
+
+"doctor_title" = "Innovative Programme";
+"doctor_description" = "Holen Sie sich rund um die Uhr medizinische Beratung mit unserem Service. Planen Sie einen Arzttermin und sprechen Sie 1 zu 1 über Ihre Gesundheitsprobleme.";
+
+"vitals_title" = "Personalisierte Gesundheitsversorgung";
+"vitals_description" = "Ihre Gesundheitsdaten werden von Experten überwacht. Alle Daten werden nur mit Ihrem persönlichen Arzt geteilt und Sie haben die Kontrolle über Ihre Daten!";
+
+// MARK: - Authentication
+"apple_auth" = "Weitermachen mit Apple";
+"google_auth" = "Weitermachen mit Google";
+"facebook_auth" = "Weitermachen mit Facebook";
+"sign_up_text" = "Noch nicht angemeldet?";
+"create_an_account" = "Ein Konto erstellen";

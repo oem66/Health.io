@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  Health.io
+
+  Created by Omer Rahmanovic on 1/6/22.
+*/
+
+// MARK: - Onboarding
+"welcome" = "Welcome";
+"registration" = "Registration";
+"next" = "Next";
+"get_started" = "Get Started";
+
+"ambulance_title" = "New Concepts";
+"ambulance_description" = "Online ambulance on you mobile phone. If you feel unwel or know someone who does not call the ambulance on one button press!";
+
+"vaccine_title" = "Advanced Immunization";
+"vaccine_description" = "Get insight into you vaccination using mobile app. All informations about COVID-19 vaccinees and it legitimacy.";
+
+"doctor_title" = "Innovative Programs";
+"doctor_description" = "Get 24/7 medical advisory using our service. Schedule doctor meet and talk 1 on 1 about your health issues.";
+
+"vitals_title" = "Personalised Healthcare";
+"vitals_description" = "Your health data is monitored by experts. All data is shared only with your personal doctor and you are in control of your data!";
+
+// MARK: - Authentication
+"apple_auth" = "Continue with Apple";
+"google_auth" = "Continue with Google";
+"facebook_auth" = "Continue with Facebook";
+"sign_up_text" = "Haven't signed up yet?";
+"create_an_account" = "Create an account";
