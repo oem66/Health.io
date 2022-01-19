@@ -49,4 +49,12 @@ final class AuthenticationViewModel: ObservableObject {
             }
         }
     }
+    
+    internal func FacebookSignIn() {
+        debugPrint("Facebook Sign in from View Model")
+    }
+    
+    internal func AppleSignIn() {
+        debugPrint("Apple Sign in from View Model")
+    }
 }
