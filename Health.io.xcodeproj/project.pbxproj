@@ -230,6 +230,7 @@
 		172CA2FD2780A87A00E5AD92 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				179F4D83279A0C560008A59C /* Home */,
 				174FF0212791DA3B00AA9643 /* Onboarding */,
 				174FF0232791DAD100AA9643 /* Authentication */,
 				172CA2CE277F165C00E5AD92 /* ContentView.swift */,
@@ -399,6 +400,37 @@
 			isa = PBXGroup;
 			children = (
 				1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		179F4D83279A0C560008A59C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				179F4D84279A0C630008A59C /* Model */,
+				179F4D85279A0C6D0008A59C /* View */,
+				179F4D86279A0C710008A59C /* View Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		179F4D84279A0C630008A59C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		179F4D85279A0C6D0008A59C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		179F4D86279A0C710008A59C /* View Model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = "View Model";
 			sourceTree = "<group>";
