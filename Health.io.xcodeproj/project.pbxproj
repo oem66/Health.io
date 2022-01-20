@@ -45,6 +45,8 @@
 		1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */; };
 		1779B9DB2798B23800EA8470 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9DA2798B23800EA8470 /* GoogleSignIn */; };
 		1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9DC2798B4D400EA8470 /* View+Extension.swift */; };
+		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
+		179F4D8A279A0D990008A59C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D89279A0D990008A59C /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		1779B9DC2798B4D400EA8470 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		179F4D89279A0D990008A59C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -424,6 +428,7 @@
 		179F4D85279A0C6D0008A59C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				179F4D87279A0D540008A59C /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,6 +436,7 @@
 		179F4D86279A0C710008A59C /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				179F4D89279A0D990008A59C /* HomeViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 				174FF02F2791E0A800AA9643 /* OnboardingConstants.swift in Sources */,
 				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
 				172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */,
+				179F4D8A279A0D990008A59C /* HomeViewModel.swift in Sources */,
 				172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */,
 				1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */,
 				172CA2CD277F165C00E5AD92 /* Health_ioApp.swift in Sources */,
@@ -602,6 +609,7 @@
 				174FF0272791DC0000AA9643 /* Registration.swift in Sources */,
 				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
 				174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */,
+				179F4D88279A0D540008A59C /* HomeView.swift in Sources */,
 				174FF0292791DC1D00AA9643 /* Login.swift in Sources */,
 				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
 			);
