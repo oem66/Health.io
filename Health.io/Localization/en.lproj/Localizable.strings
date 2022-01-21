@@ -28,4 +28,4 @@
 "google_auth" = "Continue with Google";
 "facebook_auth" = "Continue with Facebook";
 "sign_up_text" = "Haven't signed up yet?";
-"create_an_account" = "Create an account";
+"create_an_account" = "Continue as Guest";
