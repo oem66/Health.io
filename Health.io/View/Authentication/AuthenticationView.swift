@@ -12,20 +12,22 @@ struct AuthenticationView: View {
     var authModel = AuthenticationModel(image: AuthenticationConstants.shared.authPhoto, title: AuthenticationConstants.shared.title, description: AuthenticationConstants.shared.description)
     
     var body: some View {
-        ZStack {
-            Color(.white)
-            VStack {
-                Spacer()
-                AuthenticationContentView(model: authModel)
-                    .padding(.bottom, 30)
-                AuthenticationMiddleView()
-                    .padding()
-                Spacer()
-                BottomAuthenticationView()
-                    .padding(.bottom, 40)
+        NavigationView{
+            ZStack {
+                Color(.white)
+                VStack {
+                    Spacer()
+                    AuthenticationContentView(model: authModel)
+                        .padding(.bottom, 30)
+                    AuthenticationMiddleView()
+                        .padding()
+                    Spacer()
+                    BottomAuthenticationView()
+                        .padding(.bottom, 40)
+                }
             }
+            .edgesIgnoringSafeArea(.all)
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -120,9 +122,8 @@ struct BottomAuthenticationView: View {
                 .foregroundColor(.black)
                 .font(.custom("Avenir-Medium", size: 15))
                 .fontWeight(.medium)
-            Button {
-                debugPrint("Create an account tapped!")
-            } label: {
+            
+            NavigationLink(destination: HomeView()) {
                 Text("create_an_account")
                     .font(.custom("Avenir-Medium", size: 15))
                     .fontWeight(.medium)

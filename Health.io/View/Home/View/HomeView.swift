@@ -9,7 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("Home View")
-            .padding()
+        ZStack {
+            Color(uiColor: .green)
+            Text("Home View")
+                .padding()
+        }
+        .edgesIgnoringSafeArea(.all)
+        .navigationBarBackButtonHidden(true)
     }
 }
