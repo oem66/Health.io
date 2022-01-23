@@ -20,10 +20,20 @@ struct HomeView: View {
     }
 }
 
+// MARK: Health Highlights View to show 3 main health previews
+struct HealthHighlightsView: View {
+    var body: some View {
+        Text("Health Hightlights View")
+            .foregroundColor(.black)
+            .padding()
+    }
+}
+
 // MARK: Use this View to show all available health data
 struct HealthCardView: View {
     var body: some View {
         Text("Health Card View")
+            .foregroundColor(.black)
             .padding()
     }
 }
