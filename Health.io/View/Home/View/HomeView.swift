@@ -13,8 +13,17 @@ struct HomeView: View {
             Color(uiColor: .green)
             Text("Home View")
                 .padding()
+            HealthCardView()
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)
+    }
+}
+
+// MARK: Use this View to show all available health data
+struct HealthCardView: View {
+    var body: some View {
+        Text("Health Card View")
+            .padding()
     }
 }
