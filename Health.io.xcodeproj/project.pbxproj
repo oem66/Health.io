@@ -27,6 +27,8 @@
 		172CA30D278750BA00E5AD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172CA30F278750BA00E5AD92 /* Localizable.strings */; };
 		172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3112787517700E5AD92 /* OnboardingView.swift */; };
 		172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3132787A04600E5AD92 /* APIEndpoints.swift */; };
+		174B910827A07514002C8D02 /* HealthHighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910727A07513002C8D02 /* HealthHighlightsView.swift */; };
+		174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910927A076ED002C8D02 /* HealthCardView.swift */; };
 		174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF01F278F951C00AA9643 /* URL+Extension.swift */; };
 		174FF0272791DC0000AA9643 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF0262791DC0000AA9643 /* Registration.swift */; };
 		174FF0292791DC1D00AA9643 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF0282791DC1D00AA9643 /* Login.swift */; };
@@ -93,6 +95,8 @@
 		172CA310278750BC00E5AD92 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		172CA3112787517700E5AD92 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		172CA3132787A04600E5AD92 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		174B910727A07513002C8D02 /* HealthHighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHighlightsView.swift; sourceTree = "<group>"; };
+		174B910927A076ED002C8D02 /* HealthCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCardView.swift; sourceTree = "<group>"; };
 		174FF01F278F951C00AA9643 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		174FF0262791DC0000AA9643 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		174FF0282791DC1D00AA9643 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -429,6 +433,8 @@
 			isa = PBXGroup;
 			children = (
 				179F4D87279A0D540008A59C /* HomeView.swift */,
+				174B910727A07513002C8D02 /* HealthHighlightsView.swift */,
+				174B910927A076ED002C8D02 /* HealthCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -606,12 +612,14 @@
 				174FF03127923EED00AA9643 /* AuthenticationView.swift in Sources */,
 				171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */,
 				171CEF85278E0C480033E8DF /* Covid19Stats.swift in Sources */,
+				174B910827A07514002C8D02 /* HealthHighlightsView.swift in Sources */,
 				174FF0272791DC0000AA9643 /* Registration.swift in Sources */,
 				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
 				174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */,
 				179F4D88279A0D540008A59C /* HomeView.swift in Sources */,
 				174FF0292791DC1D00AA9643 /* Login.swift in Sources */,
 				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
+				174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
