@@ -10,10 +10,18 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         ZStack {
-            Color(uiColor: .green)
-            Text("Home View")
-                .padding()
-            HealthCardView()
+            Color(red: 242/255, green: 246/255, blue: 254/255)
+            VStack(alignment: .center) {
+                Text("Home View")
+                    .padding(5)
+                
+                HealthHighlightsView()
+                    .padding(5)
+                
+                HealthCardView()
+                    .padding(5)
+                Spacer()
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)
