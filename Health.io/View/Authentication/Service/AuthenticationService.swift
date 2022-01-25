@@ -46,6 +46,6 @@ final class AuthenticationService: AuthenticationServiceProtocol {
     }
     
     func observeAuthChange() -> AnyPublisher<User?, Never> {
-        Publishers.AuthenticationPublishers().eraseToAnyPublisher()
+        Publishers.AuthenticationPublisher().eraseToAnyPublisher()
     }
 }
