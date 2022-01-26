@@ -10,6 +10,7 @@ import SwiftUI
 
 struct AuthenticationView: View {
     var authModel = AuthenticationModel(image: AuthenticationConstants.shared.authPhoto, title: AuthenticationConstants.shared.title, description: AuthenticationConstants.shared.description)
+    @StateObject private var authViewModel = AuthenticationViewModel()
     
     var body: some View {
         NavigationView{
@@ -19,7 +20,7 @@ struct AuthenticationView: View {
                     Spacer()
                     AuthenticationContentView(model: authModel)
                         .padding(.bottom, 30)
-                    AuthenticationMiddleView()
+                    AuthenticationMiddleView(viewModel: authViewModel)
                         .padding()
                     Spacer()
                     BottomAuthenticationView()
@@ -56,11 +57,12 @@ struct AuthenticationContentView: View {
 }
 
 struct AuthenticationMiddleView: View {
+    var viewModel: AuthenticationViewModel
     var body: some View {
         VStack(alignment: .center, spacing: 15) {
-            ButtonView(buttonTittle: "apple_auth", logo: "apple_logo", textColor: .white, color: .black, actionResponse: "Apple Sign In tapped!", borderColor: .black, authType: .Apple)
-            ButtonView(buttonTittle: "google_auth", logo: "google_logo", textColor: .gray, color: .white, actionResponse: "Google Sign In tapped!", borderColor: .gray, authType: .Google)
-            ButtonView(buttonTittle: "facebook_auth", logo: "facebook_logo", textColor: .blue, color: .white, actionResponse: "Continue with Facebook", borderColor: .blue, authType: .Facebook)
+            ButtonView(viewModel: viewModel, buttonTittle: "apple_auth", logo: "apple_logo", textColor: .white, color: .black, actionResponse: "Apple Sign In tapped!", borderColor: .black, authType: .Apple)
+            ButtonView(viewModel: viewModel, buttonTittle: "google_auth", logo: "google_logo", textColor: .gray, color: .white, actionResponse: "Google Sign In tapped!", borderColor: .gray, authType: .Google)
+            ButtonView(viewModel: viewModel, buttonTittle: "facebook_auth", logo: "facebook_logo", textColor: .blue, color: .white, actionResponse: "Continue with Facebook", borderColor: .blue, authType: .Facebook)
         }
     }
 }
@@ -68,7 +70,8 @@ struct AuthenticationMiddleView: View {
 enum AuthType { case Apple, Facebook, Google }
 
 struct ButtonView: View {
-    @StateObject private var authViewModel = AuthenticationViewModel()
+//    @StateObject private var authViewModel = AuthenticationViewModel()
+    var viewModel: AuthenticationViewModel
     
     var buttonTittle: String
     var logo: String
@@ -87,7 +90,7 @@ struct ButtonView: View {
             case .Facebook:
                 debugPrint("Sign in with Facebook from Switch")
             case .Google:
-                authViewModel.SignInWithGoogle()
+                viewModel.SignInWithGoogle()
             }
         } label: {
             ZStack {
@@ -124,6 +127,7 @@ struct BottomAuthenticationView: View {
                 .fontWeight(.medium)
             
             NavigationLink(destination: HomeView()) {
+                
                 Text("create_an_account")
                     .font(.custom("Avenir-Medium", size: 15))
                     .fontWeight(.medium)

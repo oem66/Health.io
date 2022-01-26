@@ -18,10 +18,10 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     @Published var state: SignInState = .signedOut
-//    private let authenticationService = AuthenticationServiceProtocol
+    private let authenticationService: AuthenticationServiceProtocol
     
     init(authenticationService: AuthenticationServiceProtocol = AuthenticationService()) {
-//        self.authenticationService = authenticationService
+        self.authenticationService = authenticationService
     }
     
     internal func SignInWithGoogle() {
@@ -54,9 +54,20 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     private func currentUserId() -> AnyPublisher<UserId, Error> {
-//        return authenticationService.currentUser().flatMap {
-//
-//        }
-        return Just("").setFailureType(to: Error.self).eraseToAnyPublisher()
+        return authenticationService.currentUser().flatMap { user -> AnyPublisher<UserId, Error> in
+            if let userId = user?.uid {
+                return Just(userId)
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher()
+            } else {
+//                return self.authenticationService
+//                    .signInAnnonymously()
+//                    .map { $0.uid }
+//                    .eraseToAnyPublisher()
+                return Just("")
+                    .setFailureType(to: Error.self)
+                    .eraseToAnyPublisher()
+            }
+        }.eraseToAnyPublisher()
     }
 }
