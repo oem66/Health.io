@@ -68,6 +68,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
                 if let error = error {
                     return promise(.failure(.auth(description: error.localizedDescription)))
                 } else if let user = result?.user {
+                    debugPrint("USER: \(user.uid)")
                     return promise(.success(user))
                 }
             }

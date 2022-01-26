@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    var authViewModel: AuthenticationViewModel
+    
     var body: some View {
         ZStack {
             Color(red: 242/255, green: 246/255, blue: 254/255)
@@ -22,6 +24,9 @@ struct HomeView: View {
                     .padding(5)
                 Spacer()
             }
+        }
+        .onAppear {
+            authViewModel.signInAnnonymously()
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)

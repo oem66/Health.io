@@ -19,6 +19,7 @@ class AuthenticationViewModel: ObservableObject {
     
     @Published var state: SignInState = .signedOut
     private let authenticationService: AuthenticationServiceProtocol
+    private var cancellables: AnyCancellable?
     
     init(authenticationService: AuthenticationServiceProtocol = AuthenticationService()) {
         self.authenticationService = authenticationService
@@ -43,6 +44,19 @@ class AuthenticationViewModel: ObservableObject {
                 debugPrint(user.displayName ?? "Success!")
             }
         }
+    }
+    
+    internal func signInAnnonymously() {
+        cancellables = authenticationService.signInAnnonymously().sink(receiveCompletion: { completion in
+//            switch completion {
+//            case .success:
+//                debugPrint("Success signInAnnonymously")
+//            case .failure(let error):
+//                debugPrint(error.localizedDescription)
+//            }
+        }, receiveValue: { user in
+            debugPrint("User signInAnnonymously: \(user)")
+        })
     }
     
     internal func FacebookSignIn() {

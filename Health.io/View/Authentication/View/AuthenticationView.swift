@@ -23,7 +23,7 @@ struct AuthenticationView: View {
                     AuthenticationMiddleView(viewModel: authViewModel)
                         .padding()
                     Spacer()
-                    BottomAuthenticationView()
+                    BottomAuthenticationView(viewModel: authViewModel)
                         .padding(.bottom, 40)
                 }
             }
@@ -119,6 +119,8 @@ struct ButtonView: View {
 }
 
 struct BottomAuthenticationView: View {
+    var viewModel: AuthenticationViewModel
+    
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             Text(LocalizedStringKey("sign_up_text"))
@@ -126,8 +128,7 @@ struct BottomAuthenticationView: View {
                 .font(.custom("Avenir-Medium", size: 15))
                 .fontWeight(.medium)
             
-            NavigationLink(destination: HomeView()) {
-                
+            NavigationLink(destination: HomeView(authViewModel: viewModel)) {
                 Text("create_an_account")
                     .font(.custom("Avenir-Medium", size: 15))
                     .fontWeight(.medium)
