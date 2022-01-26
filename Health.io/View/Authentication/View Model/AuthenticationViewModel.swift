@@ -48,14 +48,9 @@ class AuthenticationViewModel: ObservableObject {
     
     internal func signInAnnonymously() {
         cancellables = authenticationService.signInAnnonymously().sink(receiveCompletion: { completion in
-//            switch completion {
-//            case .success:
-//                debugPrint("Success signInAnnonymously")
-//            case .failure(let error):
-//                debugPrint(error.localizedDescription)
-//            }
+
         }, receiveValue: { user in
-            debugPrint("User signInAnnonymously: \(user)")
+            debugPrint("User signInAnnonymously: \(user.uid)")
         })
     }
     
