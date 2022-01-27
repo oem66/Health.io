@@ -26,7 +26,9 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            authViewModel?.signInAnnonymously()
+            if let auth = authViewModel?.signinAnnonymously {
+                if auth { authViewModel?.signInAnnonymously() }
+            }
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)

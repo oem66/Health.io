@@ -70,7 +70,6 @@ struct AuthenticationMiddleView: View {
 enum AuthType { case Apple, Facebook, Google }
 
 struct ButtonView: View {
-//    @StateObject private var authViewModel = AuthenticationViewModel()
     var viewModel: AuthenticationViewModel
     
     var buttonTittle: String
@@ -120,20 +119,25 @@ struct ButtonView: View {
 
 struct BottomAuthenticationView: View {
     var viewModel: AuthenticationViewModel
+    @State var annonymously = false
     
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
-            Text(LocalizedStringKey("sign_up_text"))
-                .foregroundColor(.black)
-                .font(.custom("Avenir-Medium", size: 15))
-                .fontWeight(.medium)
-            
-            NavigationLink(destination: HomeView(authViewModel: viewModel)) {
+        Button {
+            viewModel.signinAnnonymously = true
+            annonymously = viewModel.signinAnnonymously
+        } label: {
+            VStack {
+                Text(LocalizedStringKey("sign_up_text"))
+                    .foregroundColor(.black)
+                    .font(.custom("Avenir-Medium", size: 15))
+                    .fontWeight(.medium)
+                
                 Text("create_an_account")
                     .font(.custom("Avenir-Medium", size: 15))
                     .fontWeight(.medium)
                     .foregroundColor(Color(red: 24/255, green: 210/255, blue: 167/255))
             }
         }
+        NavigationLink(destination: HomeView(authViewModel: viewModel), isActive: $annonymously) { }
     }
 }
