@@ -18,6 +18,7 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     @Published var state: SignInState = .signedOut
+    @Published var googleAuthSuccessful = false
     private let authenticationService: AuthenticationServiceProtocol
     private var cancellables: AnyCancellable?
     
@@ -26,24 +27,34 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     internal func SignInWithGoogle() {
-        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
-        let config = GIDConfiguration(clientID: clientID)
-        guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
-        
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: presentingViewController) { [unowned self] user, error in
-            if let error = error { debugPrint(error.localizedDescription); return }
-            
-            guard let authentication = user?.authentication,
-                  let idToken = authentication.idToken
-            else { return }
-            
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
-            Auth.auth().signIn(with: credential) { result, error in
-                if let error = error { debugPrint(error.localizedDescription); return }
-                guard let user = result?.user else { return }
-                debugPrint(user.displayName ?? "Success!")
+//        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+//        let config = GIDConfiguration(clientID: clientID)
+//        guard let presentingViewController = (UIApplication.shared.connectedScenes.first as? UIWindowScene)?.windows.first?.rootViewController else {return}
+//
+//        GIDSignIn.sharedInstance.signIn(with: config, presenting: presentingViewController) { [unowned self] user, error in
+//            if let error = error { debugPrint(error.localizedDescription); return }
+//
+//            guard let authentication = user?.authentication,
+//                  let idToken = authentication.idToken
+//            else { return }
+//
+//            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
+//            Auth.auth().signIn(with: credential) { result, error in
+//                if let error = error { debugPrint(error.localizedDescription); return }
+//                guard let user = result?.user else { return }
+//                debugPrint(user.displayName ?? "Success!")
+//            }
+//        }
+        cancellables = authenticationService.signInWithGoogle().sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                self.googleAuthSuccessful = true
+            case.failure(let error):
+                debugPrint(error.localizedDescription)
             }
-        }
+        }, receiveValue: { user in
+            debugPrint("User signInAnnonymously: \(user.uid)")
+        })
     }
     
     internal func signInAnnonymously() {

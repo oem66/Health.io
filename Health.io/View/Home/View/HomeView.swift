@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    var authViewModel: AuthenticationViewModel
+    var authViewModel: AuthenticationViewModel?
     
     var body: some View {
         ZStack {
@@ -26,7 +26,7 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            authViewModel.signInAnnonymously()
+            authViewModel?.signInAnnonymously()
         }
         .edgesIgnoringSafeArea(.all)
         .navigationBarBackButtonHidden(true)

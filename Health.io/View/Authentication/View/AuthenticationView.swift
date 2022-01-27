@@ -13,7 +13,7 @@ struct AuthenticationView: View {
     @StateObject private var authViewModel = AuthenticationViewModel()
     
     var body: some View {
-        NavigationView{
+        NavigationView {
             ZStack {
                 Color(.white)
                 VStack {

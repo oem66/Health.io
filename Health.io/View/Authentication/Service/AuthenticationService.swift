@@ -9,6 +9,7 @@ import Combine
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import SwiftUI
 
 enum AuthenticationError: LocalizedError {
     case auth(description: String)
@@ -32,6 +33,7 @@ protocol AuthenticationServiceProtocol {
 }
 
 class AuthenticationService: AuthenticationServiceProtocol {
+    
     func currentUser() -> AnyPublisher<User?, Never> {
         Just(Auth.auth().currentUser).eraseToAnyPublisher()
     }
