@@ -119,12 +119,12 @@ struct ButtonView: View {
 
 struct BottomAuthenticationView: View {
     var viewModel: AuthenticationViewModel
-    @State var annonymously = false
+    @State var anonymously = false
     
     var body: some View {
         Button {
-            viewModel.signinAnnonymously = true
-            annonymously = viewModel.signinAnnonymously
+            viewModel.signinAnonymously = true
+            anonymously = viewModel.signinAnonymously
         } label: {
             VStack {
                 Text(LocalizedStringKey("sign_up_text"))
@@ -138,6 +138,6 @@ struct BottomAuthenticationView: View {
                     .foregroundColor(Color(red: 24/255, green: 210/255, blue: 167/255))
             }
         }
-        NavigationLink(destination: HomeView(authViewModel: viewModel), isActive: $annonymously) { }
+        NavigationLink(destination: HomeView(authViewModel: viewModel), isActive: $anonymously) { }
     }
 }

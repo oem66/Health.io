@@ -20,7 +20,7 @@ class AuthenticationViewModel: ObservableObject {
     
     @Published var state: SignInState = .signedOut
     @Published var googleAuthSuccessful = false
-    @Published var signinAnnonymously = false
+    @Published var signinAnonymously = false
     
     private let authenticationService: AuthenticationServiceProtocol
     private var cancellables: AnyCancellable?
@@ -42,8 +42,8 @@ class AuthenticationViewModel: ObservableObject {
         })
     }
     
-    internal func signInAnnonymously() {
-        cancellables = authenticationService.signInAnnonymously().sink(receiveCompletion: { completion in
+    internal func signInAnonymously() {
+        cancellables = authenticationService.signInAnonymously().sink(receiveCompletion: { completion in
 
         }, receiveValue: { user in
             debugPrint("User signInAnnonymously: \(user.uid)")

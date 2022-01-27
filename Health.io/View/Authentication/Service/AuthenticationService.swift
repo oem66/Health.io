@@ -28,7 +28,7 @@ enum AuthenticationError: LocalizedError {
 protocol AuthenticationServiceProtocol {
     func currentUser() -> AnyPublisher<User?, Never>
     func signInWithGoogle() -> AnyPublisher<User, AuthenticationError>
-    func signInAnnonymously() -> AnyPublisher<User, AuthenticationError>
+    func signInAnonymously() -> AnyPublisher<User, AuthenticationError>
     func observeAuthChange() -> AnyPublisher<User?, Never>
 }
 
@@ -64,7 +64,7 @@ class AuthenticationService: AuthenticationServiceProtocol {
         .eraseToAnyPublisher()
     }
     
-    func signInAnnonymously() -> AnyPublisher<User, AuthenticationError> {
+    func signInAnonymously() -> AnyPublisher<User, AuthenticationError> {
         return Future<User, AuthenticationError> { promise in
             Auth.auth().signInAnonymously { result, error in
                 if let error = error {

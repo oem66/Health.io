@@ -26,8 +26,8 @@ struct HomeView: View {
             }
         }
         .onAppear {
-            if let auth = authViewModel?.signinAnnonymously {
-                if auth { authViewModel?.signInAnnonymously() }
+            if let auth = authViewModel?.signinAnonymously {
+                if auth { authViewModel?.signInAnonymously() }
             }
         }
         .edgesIgnoringSafeArea(.all)
