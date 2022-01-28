@@ -19,7 +19,6 @@ class AuthenticationViewModel: ObservableObject {
     }
     
     @Published var state: SignInState = .signedOut
-    @Published var googleAuthSuccessful = false
     @Published var signinAnonymously = false
     
     private let authenticationService: AuthenticationServiceProtocol
@@ -29,16 +28,16 @@ class AuthenticationViewModel: ObservableObject {
         self.authenticationService = authenticationService
     }
     
-    internal func SignInWithGoogle() {
+    internal func SignInWithGoogle(authState: @escaping ()->()) {
         cancellables = authenticationService.signInWithGoogle().sink(receiveCompletion: { completion in
             switch completion {
             case .finished:
-                self.googleAuthSuccessful = true
+                authState()
             case.failure(let error):
                 debugPrint(error.localizedDescription)
             }
         }, receiveValue: { user in
-            debugPrint("User signInAnnonymously: \(user.uid)")
+            debugPrint("User Signed in with Google: \(user.uid)")
         })
     }
     

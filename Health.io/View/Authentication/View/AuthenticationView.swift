@@ -71,6 +71,7 @@ enum AuthType { case Apple, Facebook, Google }
 
 struct ButtonView: View {
     var viewModel: AuthenticationViewModel
+    @State private var forwardToHome = false
     
     var buttonTittle: String
     var logo: String
@@ -89,7 +90,9 @@ struct ButtonView: View {
             case .Facebook:
                 debugPrint("Sign in with Facebook from Switch")
             case .Google:
-                viewModel.SignInWithGoogle()
+                viewModel.SignInWithGoogle {
+                    forwardToHome = true
+                }
             }
         } label: {
             ZStack {
@@ -114,6 +117,7 @@ struct ButtonView: View {
                 .stroke(borderColor, lineWidth: 2)
         )
         .cornerRadius(10)
+        NavigationLink(destination: HomeView(authViewModel: viewModel), isActive: $forwardToHome) { }
     }
 }
 
