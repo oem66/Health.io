@@ -13,11 +13,11 @@ protocol AirQualityProtocol {
 }
 
 final class AirQualityService: AirQualityProtocol {
-    func getCurrentAirQuality() {
+    func getCurrentAirQuality() -> AnyPublisher<AirQuality, Error> {
         
     }
     
-    func getAirQualityForecast() {
+    func getAirQualityForecast() -> AnyPublisher<AirQuality, Error> {
         
     }
 }

@@ -28,6 +28,7 @@
 		172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3112787517700E5AD92 /* OnboardingView.swift */; };
 		172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3132787A04600E5AD92 /* APIEndpoints.swift */; };
 		17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17304E1927A9C30800F675E4 /* AirQualityService.swift */; };
+		17304E1D27A9CAD200F675E4 /* AirQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17304E1C27A9CAD200F675E4 /* AirQuality.swift */; };
 		174B910827A07514002C8D02 /* HealthHighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910727A07513002C8D02 /* HealthHighlightsView.swift */; };
 		174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910927A076ED002C8D02 /* HealthCardView.swift */; };
 		174B910E27A0AA8C002C8D02 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910D27A0AA8C002C8D02 /* AuthenticationService.swift */; };
@@ -97,6 +98,7 @@
 		172CA3112787517700E5AD92 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		172CA3132787A04600E5AD92 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		17304E1927A9C30800F675E4 /* AirQualityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityService.swift; sourceTree = "<group>"; };
+		17304E1C27A9CAD200F675E4 /* AirQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQuality.swift; sourceTree = "<group>"; };
 		174B910727A07513002C8D02 /* HealthHighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHighlightsView.swift; sourceTree = "<group>"; };
 		174B910927A076ED002C8D02 /* HealthCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCardView.swift; sourceTree = "<group>"; };
 		174B910D27A0AA8C002C8D02 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		17304E1B27A9CAA700F675E4 /* AirQuality */ = {
 			isa = PBXGroup;
 			children = (
+				17304E1C27A9CAD200F675E4 /* AirQuality.swift */,
 			);
 			path = AirQuality;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */,
 				171CEF89278E2DD80033E8DF /* Covid19Service.swift in Sources */,
 				174B910E27A0AA8C002C8D02 /* AuthenticationService.swift in Sources */,
+				17304E1D27A9CAD200F675E4 /* AirQuality.swift in Sources */,
 				172CA3092780AA9300E5AD92 /* KeychainWrapper.swift in Sources */,
 				171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */,
 				172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */,
