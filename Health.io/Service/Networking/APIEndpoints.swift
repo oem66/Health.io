@@ -7,6 +7,8 @@
 
 import Foundation
 
+enum HTTPMethods: String { case GET, POST, PUT, DELETE }
+
 final class APIEndpoints {
     static let shared = APIEndpoints()
     private init() { }

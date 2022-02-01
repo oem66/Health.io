@@ -27,6 +27,7 @@
 		172CA30D278750BA00E5AD92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 172CA30F278750BA00E5AD92 /* Localizable.strings */; };
 		172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3112787517700E5AD92 /* OnboardingView.swift */; };
 		172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3132787A04600E5AD92 /* APIEndpoints.swift */; };
+		17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17304E1927A9C30800F675E4 /* AirQualityService.swift */; };
 		174B910827A07514002C8D02 /* HealthHighlightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910727A07513002C8D02 /* HealthHighlightsView.swift */; };
 		174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910927A076ED002C8D02 /* HealthCardView.swift */; };
 		174B910E27A0AA8C002C8D02 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B910D27A0AA8C002C8D02 /* AuthenticationService.swift */; };
@@ -95,6 +96,7 @@
 		172CA310278750BC00E5AD92 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		172CA3112787517700E5AD92 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		172CA3132787A04600E5AD92 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		17304E1927A9C30800F675E4 /* AirQualityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityService.swift; sourceTree = "<group>"; };
 		174B910727A07513002C8D02 /* HealthHighlightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthHighlightsView.swift; sourceTree = "<group>"; };
 		174B910927A076ED002C8D02 /* HealthCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCardView.swift; sourceTree = "<group>"; };
 		174B910D27A0AA8C002C8D02 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		172CA2FB2780A86D00E5AD92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17304E1B27A9CAA700F675E4 /* AirQuality */,
 				171CEF84278E0C480033E8DF /* Covid19Stats.swift */,
 			);
 			path = Model;
@@ -262,6 +265,7 @@
 		172CA2FF2780A88700E5AD92 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				17304E1827A9C2EA00F675E4 /* Air Quality */,
 				172CA3132787A04600E5AD92 /* APIEndpoints.swift */,
 				171CEF88278E2DD80033E8DF /* Covid19Service.swift */,
 			);
@@ -322,6 +326,21 @@
 				172CA30F278750BA00E5AD92 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		17304E1827A9C2EA00F675E4 /* Air Quality */ = {
+			isa = PBXGroup;
+			children = (
+				17304E1927A9C30800F675E4 /* AirQualityService.swift */,
+			);
+			path = "Air Quality";
+			sourceTree = "<group>";
+		};
+		17304E1B27A9CAA700F675E4 /* AirQuality */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AirQuality;
 			sourceTree = "<group>";
 		};
 		174B910B27A0AA09002C8D02 /* View */ = {
@@ -597,6 +616,7 @@
 				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
 				172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */,
 				179F4D8A279A0D990008A59C /* HomeViewModel.swift in Sources */,
+				17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */,
 				172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */,
 				174B911027A0AE3A002C8D02 /* Publishers+Extension.swift in Sources */,
 				1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */,
