@@ -10,9 +10,11 @@ import Combine
 
 enum Method: String { case GET, POST, PUT }
 
-final class Covid19Service {
-    static let shared = Covid19Service()
-    private init() { }
+protocol Covid19Protocol {
+    func fetchCovid19Data() -> AnyPublisher<Covid19Stats, Error>
+}
+
+final class Covid19Service: Covid19Protocol {
     
     internal func fetchCovid19Data() -> AnyPublisher<Covid19Stats, Error> {
         var request = URLRequest(url: APIEndpoints.shared.covid19DataURL().url!)
