@@ -49,6 +49,7 @@
 		1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */; };
 		1779B9DB2798B23800EA8470 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9DA2798B23800EA8470 /* GoogleSignIn */; };
 		1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9DC2798B4D400EA8470 /* View+Extension.swift */; };
+		179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */; };
 		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
 		179F4D8A279A0D990008A59C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D89279A0D990008A59C /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		1779B9DC2798B4D400EA8470 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
 		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		179F4D89279A0D990008A59C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,8 +227,8 @@
 		172CA2FB2780A86D00E5AD92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				179BD7B527AAFD7100EA56BE /* Covid */,
 				17304E1B27A9CAA700F675E4 /* AirQuality */,
-				171CEF84278E0C480033E8DF /* Covid19Stats.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,8 +236,9 @@
 		172CA2FC2780A87300E5AD92 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				171CEF81278CE8250033E8DF /* HealthViewModel.swift */,
-				171CEF86278E2C580033E8DF /* Covid19ViewModel.swift */,
+				179BD7B327AAFD4000EA56BE /* Covid View Model */,
+				179BD7B227AAFD2E00EA56BE /* Health View Model */,
+				179BD7AF27AAFBD600EA56BE /* AirQuality View Model */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -267,9 +270,9 @@
 		172CA2FF2780A88700E5AD92 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				17304E1827A9C2EA00F675E4 /* Air Quality */,
 				172CA3132787A04600E5AD92 /* APIEndpoints.swift */,
-				171CEF88278E2DD80033E8DF /* Covid19Service.swift */,
+				179BD7B427AAFD5600EA56BE /* Covid */,
+				17304E1827A9C2EA00F675E4 /* Air Quality */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -432,6 +435,46 @@
 				1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		179BD7AF27AAFBD600EA56BE /* AirQuality View Model */ = {
+			isa = PBXGroup;
+			children = (
+				179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */,
+			);
+			path = "AirQuality View Model";
+			sourceTree = "<group>";
+		};
+		179BD7B227AAFD2E00EA56BE /* Health View Model */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF81278CE8250033E8DF /* HealthViewModel.swift */,
+			);
+			path = "Health View Model";
+			sourceTree = "<group>";
+		};
+		179BD7B327AAFD4000EA56BE /* Covid View Model */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF86278E2C580033E8DF /* Covid19ViewModel.swift */,
+			);
+			path = "Covid View Model";
+			sourceTree = "<group>";
+		};
+		179BD7B427AAFD5600EA56BE /* Covid */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF88278E2DD80033E8DF /* Covid19Service.swift */,
+			);
+			path = Covid;
+			sourceTree = "<group>";
+		};
+		179BD7B527AAFD7100EA56BE /* Covid */ = {
+			isa = PBXGroup;
+			children = (
+				171CEF84278E0C480033E8DF /* Covid19Stats.swift */,
+			);
+			path = Covid;
 			sourceTree = "<group>";
 		};
 		179F4D83279A0C560008A59C /* Home */ = {
@@ -642,6 +685,7 @@
 				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
 				174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */,
 				179F4D88279A0D540008A59C /* HomeView.swift in Sources */,
+				179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */,
 				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
 				174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */,
 			);

@@ -19,6 +19,34 @@ final class APIEndpoints {
     
     // MARK: - Unaplash API
     
+    // MARK: - Air Quality API
+    static var x_rapidapi_host: String { return "x-rapidapi-host" }
+    static var x_rapidapi_key: String { return "x-rapidapi-key" }
+    static var air_quality_host: String { return "air-quality.p.rapidapi.com" }
+    static var air_quality_key: String { return "05cf9849e3mshb1cb8d9ef31e419p190aa4jsnf27c3adf7663" }
+    static var https_scheme: String { return "https" }
+    
+    internal func aqiParams(lat: Decimal, lon: Decimal) -> [String:String] {
+        return [
+            "lat": "\(lat)",
+            "lon": "\(lon)"
+        ]
+    }
+    
+    let aqiHeaders = [
+        x_rapidapi_host: air_quality_host,
+        x_rapidapi_key: air_quality_key
+    ]
+    
+    internal func airQualityURL() -> URLComponents {
+        var components = URLComponents()
+        components.scheme = APIEndpoints.https_scheme
+        components.host = "air-quality.p.rapidapi.com"
+        components.path = "current/airquality"
+        components.setQueryItems(with: aqiParams(lat: 40.71427, lon: 73.00597))
+        return components
+    }
+    
     // MARK: - COVID 19
     //  https://covid-193.p.rapidapi.com/history?country=usa&day=2020-06-02
     internal func provideParameters(country: String, day: String) -> [String:String] {
@@ -29,13 +57,13 @@ final class APIEndpoints {
     }
     
     let covidHeaders = [
-        "x-rapidapi-host": "covid-193.p.rapidapi.com",
-        "x-rapidapi-key": "82372cb655mshab6177a9894b51ap1ded3ejsn70d4797d5e5f"
+        x_rapidapi_host: "covid-193.p.rapidapi.com",
+        x_rapidapi_key: "82372cb655mshab6177a9894b51ap1ded3ejsn70d4797d5e5f"
     ]
     
     internal func covid19DataURL() -> URLComponents {
         var components = URLComponents()
-        components.scheme = "https"
+        components.scheme = APIEndpoints.https_scheme
         components.host = "covid-193.p.rapidapi.com"
         components.path = "/history"
         components.setQueryItems(with: provideParameters(country: "usa", day: "2020-06-02"))
