@@ -8,11 +8,27 @@
 import Combine
 
 final class AirQualityViewModel: ObservableObject {
+    
     private var cancellable: AnyCancellable?
     private var service: AirQualityProtocol
+    @Published var airQualityData = AirQuality()
     
     init(service: AirQualityProtocol = AirQualityService()) {
         self.service = service
     }
     
+    internal func fetchAQIData(completion: @escaping ()->()) {
+        cancellable = service.getCurrentAirQuality().sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                debugPrint("Air Quality data successfully finished download!")
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+            }
+        }, receiveValue: { [weak self] aqiData in
+            guard let self = self else { return }
+            self.airQualityData = aqiData
+            completion()
+        })
+    }
 }

@@ -26,10 +26,10 @@ final class APIEndpoints {
     static var air_quality_key: String { return "05cf9849e3mshb1cb8d9ef31e419p190aa4jsnf27c3adf7663" }
     static var https_scheme: String { return "https" }
     
-    internal func aqiParams(lat: Decimal, lon: Decimal) -> [String:String] {
+    internal func aqiParams(lon: Double, lat: Double) -> [String:String] {
         return [
-            "lat": "\(lat)",
-            "lon": "\(lon)"
+            "lon": "\(lon)",
+            "lat": "\(lat)"
         ]
     }
     
@@ -42,8 +42,8 @@ final class APIEndpoints {
         var components = URLComponents()
         components.scheme = APIEndpoints.https_scheme
         components.host = "air-quality.p.rapidapi.com"
-        components.path = "current/airquality"
-        components.setQueryItems(with: aqiParams(lat: 40.71427, lon: 73.00597))
+        components.path = "/current/airquality"
+        components.setQueryItems(with: aqiParams(lon: -73.00597, lat: 40.71427))
         return components
     }
     

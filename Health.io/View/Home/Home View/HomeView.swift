@@ -17,6 +17,9 @@ struct HomeView: View {
                 Text("Home View")
                     .padding(5)
                 
+                AirQualityView()
+                    .padding(5)
+                
                 HealthHighlightsView()
                     .padding(5)
                 

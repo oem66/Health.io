@@ -8,26 +8,26 @@
 import Foundation
 
 struct AirQuality: Decodable {
-    var data: [AirQualityData]
-    var city_name: String
-    var lon: Decimal
-    var timezone: String
-    var lat: Decimal
-    var country_code: String
-    var state_code: String
+    var data: [AirQualityData]?
+    var city_name: String?
+    var lon: Double?
+    var timezone: String?
+    var lat: Double?
+    var country_code: String?
+    var state_code: String?
 }
 
 struct AirQualityData: Decodable {
-    var mold_level: Int
-    var aqi: Int
-    var pm10: Decimal
-    var co: Decimal
-    var o3: Int
-    var predominant_pollen_type: String
-    var so2: Int
-    var pollen_level_tree: Int
-    var pollen_level_weed: Int
-    var no2: Decimal
-    var pm25: Decimal
-    var pollen_level_grass: Int
+    var mold_level: Double?
+    var aqi: Double?
+    var pm10: Double?
+    var co: Double?
+    var o3: Double?
+    var predominant_pollen_type: String?
+    var so2: Double?
+    var pollen_level_tree: Double?
+    var pollen_level_weed: Double?
+    var no2: Double?
+    var pm25: Double?
+    var pollen_level_grass: Double?
 }
