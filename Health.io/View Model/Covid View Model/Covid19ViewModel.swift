@@ -9,16 +9,17 @@ import Foundation
 import Combine
 
 final class Covid19ViewModel: ObservableObject {
-    @Published var covid19Data = Covid19Stats()
-    private var covidSubscribers: AnyCancellable?
-    private let covid19Service: Covid19Protocol
     
-    init(covid19Service: Covid19Protocol = Covid19Service()) {
-        self.covid19Service = covid19Service
+    private var covidSubscribers: AnyCancellable?
+    private let service: Covid19Protocol
+    @Published var covid19Data = Covid19Stats()
+    
+    init(service: Covid19Protocol = Covid19Service()) {
+        self.service = service
     }
     
     internal func fetchCovid19Data(completion: @escaping ()->()) {
-        covidSubscribers = covid19Service.fetchCovid19Data().sink(receiveCompletion: { completion in
+        covidSubscribers = service.fetchCovid19Data().sink(receiveCompletion: { completion in
             switch completion {
             case .finished:
                 debugPrint("Request is successful.")
