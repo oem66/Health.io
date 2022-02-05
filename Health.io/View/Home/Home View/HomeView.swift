@@ -52,33 +52,8 @@ struct HomeView: View {
                     authViewModel.signInAnonymously()
                 }
             }
-            //            .edgesIgnoringSafeArea(.all)
             .navigationBarBackButtonHidden(true)
         }
         .edgesIgnoringSafeArea(.all)
-        //        ZStack {
-        //            Color(red: 242/255, green: 246/255, blue: 254/255)
-        //            VStack(alignment: .center) {
-        //                Text("Home View")
-        //                    .padding(5)
-        //
-        //                AirQualityView()
-        //                    .padding(5)
-        //
-        //                HealthHighlightsView()
-        //                    .padding(5)
-        //
-        //                HealthCardView()
-        //                    .padding(5)
-        //                Spacer()
-        //            }
-        //        }
-        //        .onAppear {
-        //            if authViewModel.signinAnonymously {
-        //                authViewModel.signInAnonymously()
-        //            }
-        //        }
-        //        .edgesIgnoringSafeArea(.all)
-        //        .navigationBarBackButtonHidden(true)
     }
 }
