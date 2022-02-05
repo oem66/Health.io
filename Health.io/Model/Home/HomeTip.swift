@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeTips: Hashable {
+struct HomeTip: Hashable {
     var image: String
     var title: String
     var description: String

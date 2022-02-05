@@ -51,6 +51,7 @@
 		1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9DC2798B4D400EA8470 /* View+Extension.swift */; };
 		179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */; };
 		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
+		17D5F20927ADBAC100921867 /* HomeTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5F20827ADBAC100921867 /* HomeTip.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +116,7 @@
 		1779B9DC2798B4D400EA8470 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
 		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		17D5F20827ADBAC100921867 /* HomeTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTip.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 		172CA2FB2780A86D00E5AD92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17D5F20727ADBAB200921867 /* Home */,
 				179BD7B527AAFD7100EA56BE /* Covid */,
 				17304E1B27A9CAA700F675E4 /* AirQuality */,
 			);
@@ -496,6 +499,14 @@
 			path = "Home View";
 			sourceTree = "<group>";
 		};
+		17D5F20727ADBAB200921867 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				17D5F20827ADBAC100921867 /* HomeTip.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		17DAC15927AC6FC900412CA3 /* Air Quality */ = {
 			isa = PBXGroup;
 			children = (
@@ -666,6 +677,7 @@
 				174B910E27A0AA8C002C8D02 /* AuthenticationService.swift in Sources */,
 				17304E1D27A9CAD200F675E4 /* AirQuality.swift in Sources */,
 				172CA3092780AA9300E5AD92 /* KeychainWrapper.swift in Sources */,
+				17D5F20927ADBAC100921867 /* HomeTip.swift in Sources */,
 				171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */,
 				172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */,
 				174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */,
