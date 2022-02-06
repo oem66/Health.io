@@ -18,67 +18,51 @@ struct HomeView: View {
     
     var body: some View {
         // Air Quality, Weather, Fitness tips, Diet Tips
-        ZStack {
-            Color.red
-            ScrollView(.vertical) {
-                VStack {
-                    ScrollView(.horizontal) {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(spacing: 10) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 10) {
                         ForEach(homeTips, id: \.self) { tip in
-                            NavigationLink(destination: Text(tip.title)) {
-                                VStack {
-                                    HStack {
-                                        Image(systemName: tip.image)
-                                            .padding()
-                                        Text(tip.title)
-                                            .foregroundColor(.black)
-                                            .padding()
-                                    }
-                                }
-                            }
+                            TipView(tip: tip)
                         }
                     }
                 }
-                
-                Text("Test")
-                    .foregroundColor(.black)
-                    .padding()
-                Text("Test")
-                    .foregroundColor(.black)
-                    .padding()
+                .padding(10)
             }
-            .navigationTitle("Welcome, Omer")
-            .onAppear {
-                if authViewModel.signinAnonymously {
-                    authViewModel.signInAnonymously()
-                }
-            }
-            //            .edgesIgnoringSafeArea(.all)
-            .navigationBarBackButtonHidden(true)
         }
-        .edgesIgnoringSafeArea(.all)
-        //        ZStack {
-        //            Color(red: 242/255, green: 246/255, blue: 254/255)
-        //            VStack(alignment: .center) {
-        //                Text("Home View")
-        //                    .padding(5)
-        //
-        //                AirQualityView()
-        //                    .padding(5)
-        //
-        //                HealthHighlightsView()
-        //                    .padding(5)
-        //
-        //                HealthCardView()
-        //                    .padding(5)
-        //                Spacer()
-        //            }
-        //        }
-        //        .onAppear {
-        //            if authViewModel.signinAnonymously {
-        //                authViewModel.signInAnonymously()
-        //            }
-        //        }
-        //        .edgesIgnoringSafeArea(.all)
-        //        .navigationBarBackButtonHidden(true)
+        .navigationTitle("Welcome Omer")
+        .navigationBarBackButtonHidden(true)
+    }
+}
+
+struct TipView: View {
+    var tip: HomeTip
+    
+    var body: some View {
+        ZStack {
+            Color.gray
+            VStack {
+                HStack(spacing: 10) {
+                    Image(systemName: tip.image)
+                        .resizable()
+                        .frame(width: 50, height: 50, alignment: .center)
+                    
+                    Text(tip.title)
+                        .minimumScaleFactor(0.7)
+                        .font(.custom("Avenir-Medium", size: 24))
+                        .foregroundColor(.black)
+                }
+                .padding(.bottom, 10)
+                
+                Text(tip.description)
+                    .font(.custom("Avenir-Medium", size: 17))
+                    .foregroundColor(.black)
+                    .lineLimit(5)
+                    .padding()
+            }
+            .frame(width: 220, height: 280, alignment: .center)
+            .padding(10)
+        }
+        .cornerRadius(12)
     }
 }
