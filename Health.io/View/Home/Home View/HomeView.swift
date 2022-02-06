@@ -40,27 +40,32 @@ struct TipView: View {
     
     var body: some View {
         ZStack {
-            Color.gray
+            Color(red: 24/255, green: 210/255, blue: 167/255)
             VStack {
                 HStack(spacing: 10) {
                     Image(systemName: tip.image)
                         .resizable()
                         .frame(width: 50, height: 50, alignment: .center)
+//                        .foregroundColor(Color(.white))
                     
                     Text(tip.title)
                         .minimumScaleFactor(0.7)
                         .font(.custom("Avenir-Medium", size: 24))
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
                 }
-                .padding(.bottom, 10)
+                .padding(20)
                 
                 Text(tip.description)
                     .font(.custom("Avenir-Medium", size: 17))
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .lineLimit(5)
                     .padding()
+                
+                Spacer()
             }
-            .frame(width: 220, height: 280, alignment: .center)
+            .frame(width: 190, height: 230, alignment: .center)
             .padding(10)
         }
         .cornerRadius(12)
