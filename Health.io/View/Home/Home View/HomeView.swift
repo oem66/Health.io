@@ -16,6 +16,28 @@ struct HomeView: View {
         HomeTip(image: "takeoutbag.and.cup.and.straw", title: "Diet", description: "Die plays key role in your general health and fitness level"),
     ]
     
+    var healthInsigts = [
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6)
+    ]
+    
     var body: some View {
         // Air Quality, Weather, Fitness tips, Diet Tips
         ScrollView(.vertical, showsIndicators: false) {
@@ -28,6 +50,32 @@ struct HomeView: View {
                     }
                 }
                 .padding(10)
+                
+                Text("Health Insights")
+                    .foregroundColor(.black)
+                    .font(.custom("Avenir-Medium", size: 22))
+                    .padding()
+                
+                ForEach(healthInsigts, id: \.self) { insight in
+                    HStack {
+                        Image(systemName: insight.image)
+                            .resizable()
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .padding(5)
+                        
+                        Text(insight.title)
+                            .foregroundColor(.gray)
+                            .font(.custom("Avenir-Medium", size: 17))
+                            .padding(5)
+                        
+                        Spacer()
+                        
+                        Text("\(insight.value)")
+                            .foregroundColor(.red)
+                            .font(.custom("Avenir-Medium", size: 17))
+                            .padding(.trailing, 5)
+                    }
+                }
             }
         }
         .navigationTitle("Welcome Omer")
@@ -46,7 +94,6 @@ struct TipView: View {
                     Image(systemName: tip.image)
                         .resizable()
                         .frame(width: 50, height: 50, alignment: .center)
-//                        .foregroundColor(Color(.white))
                     
                     Text(tip.title)
                         .minimumScaleFactor(0.7)
