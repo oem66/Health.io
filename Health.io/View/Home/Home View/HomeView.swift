@@ -9,34 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     var authViewModel = AuthenticationViewModel()
-    var homeTips = [
-        HomeTip(image: "lungs", title: "Air Quality", description: "Air Quality is important for your health"),
-        HomeTip(image: "cloud.sun.bolt", title: "Weather, London", description: "Get latest weather forecast for London Area"),
-        HomeTip(image: "pills", title: "Gym", description: "Get ripped as fuck as fast as possible"),
-        HomeTip(image: "takeoutbag.and.cup.and.straw", title: "Diet", description: "Die plays key role in your general health and fitness level"),
-    ]
-    
-    var healthInsigts = [
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75)
-    ]
+    var viewModel = HomeViewModel()
     
     var body: some View {
         // Air Quality, Weather, Fitness tips, Diet Tips
@@ -44,7 +17,7 @@ struct HomeView: View {
             VStack(spacing: 10) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
-                        ForEach(homeTips, id: \.self) { tip in
+                        ForEach(viewModel.homeTips, id: \.self) { tip in
                             TipView(tip: tip)
                         }
                     }
@@ -60,7 +33,7 @@ struct HomeView: View {
                     Spacer()
                 }
                 
-                ForEach(healthInsigts, id: \.self) { insight in
+                ForEach(viewModel.healthInsigts, id: \.self) { insight in
                     ZStack {
                         Color(red: 246/255, green: 248/255, blue: 250/255)
                         HStack {
