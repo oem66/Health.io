@@ -17,25 +17,25 @@ struct HomeView: View {
     ]
     
     var healthInsigts = [
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75.6)
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
+        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75)
     ]
     
     var body: some View {
@@ -54,8 +54,8 @@ struct HomeView: View {
                 HStack() {
                     Text("Health Insights")
                         .foregroundColor(.black)
-                        .font(.custom("Avenir-Medium", size: 27))
                         .padding()
+                        .font(.system(size: 27, weight: .bold, design: .default))
                     
                     Spacer()
                 }
@@ -66,7 +66,7 @@ struct HomeView: View {
                         HStack {
                             Image(systemName: insight.image)
                                 .resizable()
-                                .frame(width: 40, height: 40, alignment: .center)
+                                .frame(width: 30, height: 30, alignment: .center)
                                 .padding(5)
                             
                             Text(insight.title)
@@ -79,12 +79,18 @@ struct HomeView: View {
                             Text("\(insight.value)")
                                 .foregroundColor(.red)
                                 .font(.custom("Avenir-Medium", size: 17))
+                                .padding(.trailing, 1)
+                            
+                            Text("bpm")
+                                .foregroundColor(.black)
+                                .font(.custom("Avenir-Medium", size: 17))
                                 .padding(.trailing, 5)
                         }
                         .padding(8)
                     }
                     .cornerRadius(10)
-                    .padding([.leading, .trailing, .bottom], 10)
+                    .padding([.leading, .trailing], 10)
+                    .padding(.bottom, 4)
                 }
             }
         }

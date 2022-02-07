@@ -10,5 +10,5 @@ import Foundation
 struct HealthInsight: Hashable {
     var image: String
     var title: String
-    var value: Double
+    var value: Int
 }
