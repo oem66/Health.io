@@ -51,30 +51,40 @@ struct HomeView: View {
                 }
                 .padding(10)
                 
-                Text("Health Insights")
-                    .foregroundColor(.black)
-                    .font(.custom("Avenir-Medium", size: 22))
-                    .padding()
+                HStack() {
+                    Text("Health Insights")
+                        .foregroundColor(.black)
+                        .font(.custom("Avenir-Medium", size: 27))
+                        .padding()
+                    
+                    Spacer()
+                }
                 
                 ForEach(healthInsigts, id: \.self) { insight in
-                    HStack {
-                        Image(systemName: insight.image)
-                            .resizable()
-                            .frame(width: 40, height: 40, alignment: .center)
-                            .padding(5)
-                        
-                        Text(insight.title)
-                            .foregroundColor(.gray)
-                            .font(.custom("Avenir-Medium", size: 17))
-                            .padding(5)
-                        
-                        Spacer()
-                        
-                        Text("\(insight.value)")
-                            .foregroundColor(.red)
-                            .font(.custom("Avenir-Medium", size: 17))
-                            .padding(.trailing, 5)
+                    ZStack {
+                        Color(red: 246/255, green: 248/255, blue: 250/255)
+                        HStack {
+                            Image(systemName: insight.image)
+                                .resizable()
+                                .frame(width: 40, height: 40, alignment: .center)
+                                .padding(5)
+                            
+                            Text(insight.title)
+                                .foregroundColor(.gray)
+                                .font(.custom("Avenir-Medium", size: 17))
+                                .padding(5)
+                            
+                            Spacer()
+                            
+                            Text("\(insight.value)")
+                                .foregroundColor(.red)
+                                .font(.custom("Avenir-Medium", size: 17))
+                                .padding(.trailing, 5)
+                        }
+                        .padding(8)
                     }
+                    .cornerRadius(10)
+                    .padding([.leading, .trailing, .bottom], 10)
                 }
             }
         }
