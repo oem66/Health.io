@@ -11,6 +11,11 @@ struct HomeView: View {
     var authViewModel = AuthenticationViewModel()
     var viewModel = HomeViewModel()
     
+    init(authViewModel: AuthenticationViewModel) {
+        self.authViewModel = authViewModel
+        UITabBar.appearance().backgroundColor = UIColor.init(red: 245/255, green: 247/255, blue: 251/255, alpha: 0.97)
+    }
+    
     var body: some View {
         // Air Quality, Weather, Fitness tips, Diet Tips
         TabView {
@@ -34,11 +39,16 @@ struct HomeView: View {
                     Label("", systemImage: "heart.text.square")
                 }
         }
+        .onAppear {
+            
+        }
+        .accentColor(.black)
     }
 }
 
 struct HealthView: View {
-    private var viewModel = HomeViewModel()
+    var authViewModel = AuthenticationViewModel()
+    var viewModel = HomeViewModel()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {

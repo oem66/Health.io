@@ -53,6 +53,9 @@
 		1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790A52427B1D21A00BF755F /* HealthInsight.swift */; };
 		179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */; };
 		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
+		17D5409C27B4603A00DEA551 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409B27B4603A00DEA551 /* WorkoutView.swift */; };
+		17D5409E27B4607400DEA551 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409D27B4607400DEA551 /* DietView.swift */; };
+		17D540A027B460A400DEA551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409F27B460A400DEA551 /* ProfileView.swift */; };
 		17D5F20927ADBAC100921867 /* HomeTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5F20827ADBAC100921867 /* HomeTip.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +123,9 @@
 		1790A52427B1D21A00BF755F /* HealthInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsight.swift; sourceTree = "<group>"; };
 		179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
 		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		17D5409B27B4603A00DEA551 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		17D5409D27B4607400DEA551 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
+		17D5409F27B460A400DEA551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		17D5F20827ADBAC100921867 /* HomeTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTip.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -527,6 +533,7 @@
 		17D5409827B45B5800DEA551 /* Workout View */ = {
 			isa = PBXGroup;
 			children = (
+				17D5409B27B4603A00DEA551 /* WorkoutView.swift */,
 			);
 			path = "Workout View";
 			sourceTree = "<group>";
@@ -534,6 +541,7 @@
 		17D5409927B45B6900DEA551 /* Diet View */ = {
 			isa = PBXGroup;
 			children = (
+				17D5409D27B4607400DEA551 /* DietView.swift */,
 			);
 			path = "Diet View";
 			sourceTree = "<group>";
@@ -541,6 +549,7 @@
 		17D5409A27B45B7200DEA551 /* Profile View */ = {
 			isa = PBXGroup;
 			children = (
+				17D5409F27B460A400DEA551 /* ProfileView.swift */,
 			);
 			path = "Profile View";
 			sourceTree = "<group>";
@@ -707,6 +716,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D5409E27B4607400DEA551 /* DietView.swift in Sources */,
 				174FF02F2791E0A800AA9643 /* OnboardingConstants.swift in Sources */,
 				177FC53C27B1E1F700598425 /* HomeViewModel.swift in Sources */,
 				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
@@ -733,6 +743,8 @@
 				171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */,
 				171CEF85278E0C480033E8DF /* Covid19Stats.swift in Sources */,
 				174B910827A07514002C8D02 /* HealthHighlightsView.swift in Sources */,
+				17D5409C27B4603A00DEA551 /* WorkoutView.swift in Sources */,
+				17D540A027B460A400DEA551 /* ProfileView.swift in Sources */,
 				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
 				1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */,
 				174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */,
