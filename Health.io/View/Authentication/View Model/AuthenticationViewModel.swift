@@ -64,10 +64,6 @@ class AuthenticationViewModel: ObservableObject {
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher()
             } else {
-//                return self.authenticationService
-//                    .signInAnnonymously()
-//                    .map { $0.uid }
-//                    .eraseToAnyPublisher()
                 return Just("")
                     .setFailureType(to: Error.self)
                     .eraseToAnyPublisher()

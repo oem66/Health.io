@@ -35,7 +35,7 @@ struct HomeView: View {
                 
                 ForEach(viewModel.healthInsigts, id: \.self) { insight in
                     ZStack {
-                        Color(red: 246/255, green: 248/255, blue: 250/255)
+                        Color.white
                         HStack {
                             Image(systemName: insight.image)
                                 .resizable()
@@ -67,6 +67,7 @@ struct HomeView: View {
                 }
             }
         }
+        .background(Color(red: 245/255, green: 247/255, blue: 251/255))
         .navigationTitle("Welcome Omer")
         .navigationBarBackButtonHidden(true)
     }
@@ -77,7 +78,7 @@ struct TipView: View {
     
     var body: some View {
         ZStack {
-            Color(red: 24/255, green: 210/255, blue: 167/255)
+            Color(red: 220/255, green: 239/255, blue: 252/255)
             VStack {
                 HStack(spacing: 10) {
                     Image(systemName: tip.image)
@@ -87,7 +88,7 @@ struct TipView: View {
                     Text(tip.title)
                         .minimumScaleFactor(0.7)
                         .font(.custom("Avenir-Medium", size: 24))
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                     
                     Spacer()
                 }
@@ -95,7 +96,7 @@ struct TipView: View {
                 
                 Text(tip.description)
                     .font(.custom("Avenir-Medium", size: 17))
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .lineLimit(5)
                     .padding()
                 
