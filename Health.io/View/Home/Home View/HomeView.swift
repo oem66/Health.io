@@ -26,21 +26,18 @@ struct HomeView: View {
             
             WorkoutView()
                 .tabItem {
-                    Label("", systemImage: "heart.text.square")
+                    Label("", systemImage: "hammer.circle.fill")
                 }
             
             DietView()
                 .tabItem {
-                    Label("", systemImage: "heart.text.square")
+                    Label("", systemImage: "leaf.fill")
                 }
             
             ProfileView()
                 .tabItem {
-                    Label("", systemImage: "heart.text.square")
+                    Label("", systemImage: "person.crop.circle.fill")
                 }
-        }
-        .onAppear {
-            
         }
         .accentColor(.black)
     }
@@ -116,17 +113,18 @@ struct TipView: View {
     
     var body: some View {
         ZStack {
-            Color(red: 220/255, green: 239/255, blue: 252/255)
+            Color.black
             VStack {
                 HStack(spacing: 10) {
                     Image(systemName: tip.image)
                         .resizable()
                         .frame(width: 50, height: 50, alignment: .center)
+                        .foregroundColor(Color(red: 24/255, green: 210/255, blue: 167/255))
                     
                     Text(tip.title)
                         .minimumScaleFactor(0.7)
                         .font(.custom("Avenir-Medium", size: 24))
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                     
                     Spacer()
                 }
@@ -134,7 +132,7 @@ struct TipView: View {
                 
                 Text(tip.description)
                     .font(.custom("Avenir-Medium", size: 17))
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .lineLimit(5)
                     .padding()
                 
