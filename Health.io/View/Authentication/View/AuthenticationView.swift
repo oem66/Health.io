@@ -129,6 +129,7 @@ struct BottomAuthenticationView: View {
         Button {
             viewModel.signinAnonymously = true
             anonymously = viewModel.signinAnonymously
+            viewModel.signInAnonymously()
         } label: {
             VStack {
                 Text(LocalizedStringKey("sign_up_text"))

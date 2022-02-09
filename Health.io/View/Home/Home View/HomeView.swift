@@ -11,8 +11,43 @@ struct HomeView: View {
     var authViewModel = AuthenticationViewModel()
     var viewModel = HomeViewModel()
     
+    init(authViewModel: AuthenticationViewModel) {
+        self.authViewModel = authViewModel
+        UITabBar.appearance().backgroundColor = UIColor.init(red: 245/255, green: 247/255, blue: 251/255, alpha: 0.97)
+    }
+    
     var body: some View {
         // Air Quality, Weather, Fitness tips, Diet Tips
+        TabView {
+            HealthView()
+                .tabItem {
+                    Label("", systemImage: "heart.text.square")
+                }
+            
+            WorkoutView()
+                .tabItem {
+                    Label("", systemImage: "hammer.circle.fill")
+                }
+            
+            DietView()
+                .tabItem {
+                    Label("", systemImage: "leaf.fill")
+                }
+            
+            ProfileView()
+                .tabItem {
+                    Label("", systemImage: "person.crop.circle.fill")
+                }
+        }
+        .accentColor(.black)
+    }
+}
+
+struct HealthView: View {
+    var authViewModel = AuthenticationViewModel()
+    var viewModel = HomeViewModel()
+    
+    var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 10) {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -35,7 +70,7 @@ struct HomeView: View {
                 
                 ForEach(viewModel.healthInsigts, id: \.self) { insight in
                     ZStack {
-                        Color(red: 246/255, green: 248/255, blue: 250/255)
+                        Color.white
                         HStack {
                             Image(systemName: insight.image)
                                 .resizable()
@@ -67,6 +102,7 @@ struct HomeView: View {
                 }
             }
         }
+        .background(Color(red: 245/255, green: 247/255, blue: 251/255))
         .navigationTitle("Welcome Omer")
         .navigationBarBackButtonHidden(true)
     }
@@ -77,12 +113,13 @@ struct TipView: View {
     
     var body: some View {
         ZStack {
-            Color(red: 24/255, green: 210/255, blue: 167/255)
+            Color.black
             VStack {
                 HStack(spacing: 10) {
                     Image(systemName: tip.image)
                         .resizable()
                         .frame(width: 50, height: 50, alignment: .center)
+                        .foregroundColor(Color(red: 24/255, green: 210/255, blue: 167/255))
                     
                     Text(tip.title)
                         .minimumScaleFactor(0.7)
