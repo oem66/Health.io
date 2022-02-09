@@ -13,6 +13,34 @@ struct HomeView: View {
     
     var body: some View {
         // Air Quality, Weather, Fitness tips, Diet Tips
+        TabView {
+            HealthView()
+                .tabItem {
+                    Label("", systemImage: "heart.text.square")
+                }
+            
+            WorkoutView()
+                .tabItem {
+                    Label("", systemImage: "heart.text.square")
+                }
+            
+            DietView()
+                .tabItem {
+                    Label("", systemImage: "heart.text.square")
+                }
+            
+            ProfileView()
+                .tabItem {
+                    Label("", systemImage: "heart.text.square")
+                }
+        }
+    }
+}
+
+struct HealthView: View {
+    private var viewModel = HomeViewModel()
+    
+    var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 10) {
                 ScrollView(.horizontal, showsIndicators: false) {
