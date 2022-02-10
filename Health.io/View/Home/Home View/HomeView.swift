@@ -7,9 +7,18 @@
 
 import SwiftUI
 
+enum Tab: String, CaseIterable {
+    case Health = "heart.text.square"
+    case Workout = "hammer.circle.fill"
+    case Diet = "leaf.fill"
+    case Profile = "person.crop.circle.fill"
+}
+
 struct HomeView: View {
     var authViewModel = AuthenticationViewModel()
     var viewModel = HomeViewModel()
+    
+    @State private var currentTab: Tab = .Health
     
     init(authViewModel: AuthenticationViewModel) {
         self.authViewModel = authViewModel
@@ -17,29 +26,51 @@ struct HomeView: View {
     }
     
     var body: some View {
-        // Air Quality, Weather, Fitness tips, Diet Tips
-        TabView {
-            HealthView()
-                .tabItem {
-                    Label("", systemImage: "heart.text.square")
-                }
+        VStack(spacing: 0) {
+            TabView(selection: $currentTab) {
+                HealthView()
+                    .tag(Tab.Health)
+                
+                WorkoutView()
+                    .tag(Tab.Workout)
+                
+                DietView()
+                    .tag(Tab.Diet)
+                
+                ProfileView()
+                    .tag(Tab.Profile)
+            }
+            .accentColor(.black)
             
-            WorkoutView()
-                .tabItem {
-                    Label("", systemImage: "hammer.circle.fill")
+            HStack(spacing: 0) {
+                ForEach(Tab.allCases, id: \.self) { tab in
+                    Button {
+                        currentTab = tab
+                    } label: {
+                        Image(systemName: tab.rawValue)
+                            .resizable()
+                            .renderingMode(.template)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 22, height: 22)
+                        // add shadow at background
+                            .background(
+                                Color(red: 60/255, green: 64/255, blue: 198/255)
+                                    .opacity(0.1)
+                                    .cornerRadius(5)
+                                // blurring
+                                    .blur(radius: 5)
+                                    .padding(-7)
+                                    .opacity(currentTab == tab ? 1 : 0)
+                            )
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(currentTab == tab ? Color(red: 60/255, green: 64/255, blue: 198/255) : Color.black.opacity(0.3))
+                    }
                 }
-            
-            DietView()
-                .tabItem {
-                    Label("", systemImage: "leaf.fill")
-                }
-            
-            ProfileView()
-                .tabItem {
-                    Label("", systemImage: "person.crop.circle.fill")
-                }
+            }
+            .padding([.horizontal, .top])
+            .padding(.bottom, 10)
         }
-        .accentColor(.black)
+        .background(Color(red: 241/255, green: 242/255, blue: 246/255).ignoresSafeArea())
     }
 }
 
