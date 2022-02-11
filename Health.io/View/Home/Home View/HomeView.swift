@@ -23,6 +23,7 @@ struct HomeView: View {
     init(authViewModel: AuthenticationViewModel) {
         self.authViewModel = authViewModel
         UITabBar.appearance().backgroundColor = UIColor.init(red: 245/255, green: 247/255, blue: 251/255, alpha: 0.97)
+        UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
@@ -134,7 +135,7 @@ struct HealthView: View {
             }
         }
         .background(Color(red: 245/255, green: 247/255, blue: 251/255))
-        .navigationTitle("Welcome Omer")
+//        .navigationTitle("Welcome Omer")
         .navigationBarBackButtonHidden(true)
     }
 }
