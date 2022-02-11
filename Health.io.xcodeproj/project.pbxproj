@@ -242,6 +242,8 @@
 				1790A52327B1D20400BF755F /* Health Insight */,
 				17D5F20727ADBAB200921867 /* Home */,
 				179BD7B527AAFD7100EA56BE /* Covid */,
+				174FF02A2791DFB000AA9643 /* Onboarding */,
+				174FF03227938CD700AA9643 /* Authentication */,
 				17304E1B27A9CAA700F675E4 /* AirQuality */,
 			);
 			path = Model;
@@ -250,6 +252,7 @@
 		172CA2FC2780A87300E5AD92 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				1779B9D62798ADCE00EA8470 /* Authentication */,
 				177FC53A27B1E1DB00598425 /* Home View Model */,
 				179BD7B327AAFD4000EA56BE /* Covid View Model */,
 				179BD7B227AAFD2E00EA56BE /* Health View Model */,
@@ -273,6 +276,7 @@
 		172CA2FE2780A87F00E5AD92 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				174B910C27A0AA6B002C8D02 /* Authentication */,
 				172CA2FF2780A88700E5AD92 /* Networking */,
 				172CA3032780A8B700E5AD92 /* Keychain */,
 				172CA3052780A94B00E5AD92 /* Health Kit */,
@@ -297,6 +301,7 @@
 			children = (
 				174FF01E278F950600AA9643 /* Extensions */,
 				172CA3042780A8D500E5AD92 /* Content */,
+				174FF02D2791E07A00AA9643 /* Constants */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -364,20 +369,12 @@
 			path = AirQuality;
 			sourceTree = "<group>";
 		};
-		174B910B27A0AA09002C8D02 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				174FF03027923EED00AA9643 /* AuthenticationView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		174B910C27A0AA6B002C8D02 /* Service */ = {
+		174B910C27A0AA6B002C8D02 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				174B910D27A0AA8C002C8D02 /* AuthenticationService.swift */,
 			);
-			path = Service;
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		174FF01E278F950600AA9643 /* Extensions */ = {
@@ -393,8 +390,6 @@
 		174FF0212791DA3B00AA9643 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				174FF02D2791E07A00AA9643 /* Constants */,
-				174FF02A2791DFB000AA9643 /* Model */,
 				172CA3112787517700E5AD92 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
@@ -403,53 +398,42 @@
 		174FF0232791DAD100AA9643 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				174FF03327938CDD00AA9643 /* Constants */,
-				174FF03227938CD700AA9643 /* Model */,
-				1779B9D62798ADCE00EA8470 /* View Model */,
-				174B910B27A0AA09002C8D02 /* View */,
-				174B910C27A0AA6B002C8D02 /* Service */,
+				174FF03027923EED00AA9643 /* AuthenticationView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		174FF02A2791DFB000AA9643 /* Model */ = {
+		174FF02A2791DFB000AA9643 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
 				174FF02B2791DFCA00AA9643 /* OnboardingModel.swift */,
 			);
-			path = Model;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		174FF02D2791E07A00AA9643 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				174FF02E2791E0A800AA9643 /* OnboardingConstants.swift */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
-		174FF03227938CD700AA9643 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				174FF03627938E0800AA9643 /* AuthenticationModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		174FF03327938CDD00AA9643 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
 				174FF03427938CF600AA9643 /* AuthenticationConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
 		};
-		1779B9D62798ADCE00EA8470 /* View Model */ = {
+		174FF03227938CD700AA9643 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				174FF03627938E0800AA9643 /* AuthenticationModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		1779B9D62798ADCE00EA8470 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
 				1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */,
 			);
-			path = "View Model";
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		177FC53A27B1E1DB00598425 /* Home View Model */ = {
