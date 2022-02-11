@@ -58,6 +58,7 @@
 		17D540A027B460A400DEA551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409F27B460A400DEA551 /* ProfileView.swift */; };
 		17D5F20927ADBAC100921867 /* HomeTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5F20827ADBAC100921867 /* HomeTip.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
+		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		17D5409F27B460A400DEA551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		17D5F20827ADBAC100921867 /* HomeTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTip.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
+		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +385,7 @@
 				174FF01F278F951C00AA9643 /* URL+Extension.swift */,
 				1779B9DC2798B4D400EA8470 /* View+Extension.swift */,
 				174B910F27A0AE3A002C8D02 /* Publishers+Extension.swift */,
+				17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */,
 				179F4D88279A0D540008A59C /* HomeView.swift in Sources */,
 				179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */,
+				17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */,
 				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
 				174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */,
 			);
