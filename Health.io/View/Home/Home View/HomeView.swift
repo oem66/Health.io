@@ -111,14 +111,15 @@ struct HealthView: View {
                     ZStack {
                         Color.white
                         HStack {
-                            Image(systemName: insight.image)
+                            Image(insight.image)
                                 .resizable()
                                 .frame(width: 30, height: 30, alignment: .center)
                                 .padding(5)
                             
                             Text(insight.title)
                                 .foregroundColor(.gray)
-                                .font(.custom("Avenir-Medium", size: 17))
+//                                .font(.custom("Avenir-Medium", size: 17))
+                                .font(.system(size: 17, weight: .bold, design: .default))
                                 .padding(5)
                             
                             Spacer()

@@ -16,24 +16,28 @@ final class HomeViewModel {
     ]
     
     var healthInsigts = [
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75),
-        HealthInsight(image: "staroflife", title: "Heart Rate", value: 75)
+        HealthInsight(image: "heart", title: "Heart Rate", value: 68),
+        HealthInsight(image: "heart", title: "Resting Heart Rate", value: 49),
+        HealthInsight(image: "heart", title: "Walking Heart Rate Average", value: 105),
+        HealthInsight(image: "heart", title: "Exercise Minutes", value: 80),
+        HealthInsight(image: "heart", title: "Walking Speed", value: 6),
+        
+        HealthInsight(image: "fire", title: "Active Energy", value: 256),
+        HealthInsight(image: "fire", title: "Steps", value: 12670),
+        HealthInsight(image: "fire", title: "Walking Running Distance", value: 6580),
+        HealthInsight(image: "fire", title: "Flights Climbed", value: 10),
+        
+        HealthInsight(image: "metabolism", title: "Height", value: 181),
+        HealthInsight(image: "metabolism", title: "Weight", value: 91),
+        HealthInsight(image: "metabolism", title: "Body Mass Index", value: 75),
+        
+        HealthInsight(image: "lungs", title: "Blood Oxygen", value: 98),
+        HealthInsight(image: "lungs", title: "Respiratory Rate", value: 97),
+        
+        HealthInsight(image: "sleep", title: "Sleep", value: 7),
+        
+        HealthInsight(image: "uv-index", title: "UV Index", value: 2),
+        HealthInsight(image: "glucose-meter", title: "Blood Glucose", value: 5),
+        HealthInsight(image: "brain", title: "Mindful Minutes", value: 15)
     ]
 }
