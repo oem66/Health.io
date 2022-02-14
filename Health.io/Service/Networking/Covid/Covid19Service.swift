@@ -8,8 +8,6 @@
 import Foundation
 import Combine
 
-enum Method: String { case GET, POST, PUT }
-
 protocol Covid19Protocol {
     func fetchCovid19Data() -> AnyPublisher<Covid19Stats, Error>
 }
@@ -18,7 +16,7 @@ final class Covid19Service: Covid19Protocol {
     
     internal func fetchCovid19Data() -> AnyPublisher<Covid19Stats, Error> {
         var request = URLRequest(url: APIEndpoints.shared.covid19DataURL().url!)
-        request.httpMethod = Method.GET.rawValue
+        request.httpMethod = HTTPMethod.GET.rawValue
         request.allHTTPHeaderFields = APIEndpoints.shared.covidHeaders
         
         return URLSession.shared.dataTaskPublisher(for: request)
