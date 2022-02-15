@@ -16,7 +16,7 @@ protocol AirQualityProtocol {
 final class AirQualityService: AirQualityProtocol {
     func getCurrentAirQuality() -> AnyPublisher<AirQuality, Error> {
         var request = URLRequest(url: APIEndpoints.shared.airQualityURL().url!)
-        request.httpMethod = HTTPMethods.GET.rawValue
+        request.httpMethod = HTTPMethod.GET.rawValue
         request.allHTTPHeaderFields = APIEndpoints.shared.aqiHeaders
         
         return URLSession.shared.dataTaskPublisher(for: request)
