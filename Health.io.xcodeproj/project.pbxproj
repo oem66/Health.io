@@ -51,8 +51,6 @@
 		1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */; };
 		1779B9DB2798B23800EA8470 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9DA2798B23800EA8470 /* GoogleSignIn */; };
 		1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9DC2798B4D400EA8470 /* View+Extension.swift */; };
-		177DBC1B27C01D7100C5E5A9 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DBC1A27C01D7100C5E5A9 /* Requestable.swift */; };
-		177DBC1D27C01E5C00C5E5A9 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177DBC1C27C01E5C00C5E5A9 /* NetworkRequest.swift */; };
 		177FC53C27B1E1F700598425 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FC53B27B1E1F700598425 /* HomeViewModel.swift */; };
 		1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790A52427B1D21A00BF755F /* HealthInsight.swift */; };
 		179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */; };
@@ -126,8 +124,6 @@
 		1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		1779B9DC2798B4D400EA8470 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
-		177DBC1A27C01D7100C5E5A9 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
-		177DBC1C27C01E5C00C5E5A9 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		177FC53B27B1E1F700598425 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1790A52427B1D21A00BF755F /* HealthInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsight.swift; sourceTree = "<group>"; };
 		179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
@@ -299,15 +295,13 @@
 		172CA2FF2780A88700E5AD92 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				172CA3132787A04600E5AD92 /* APIEndpoints.swift */,
+				1758B4C927BAF5F3008DBAC9 /* APIService.swift */,
 				1758B4C827BAF4A7008DBAC9 /* Meditation */,
 				1758B4C727BAF497008DBAC9 /* Diet */,
 				1758B4C627BAF48E008DBAC9 /* Workout  */,
-				172CA3132787A04600E5AD92 /* APIEndpoints.swift */,
 				179BD7B427AAFD5600EA56BE /* Covid */,
 				17304E1827A9C2EA00F675E4 /* Air Quality */,
-				1758B4C927BAF5F3008DBAC9 /* APIService.swift */,
-				177DBC1A27C01D7100C5E5A9 /* Requestable.swift */,
-				177DBC1C27C01E5C00C5E5A9 /* NetworkRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -748,7 +742,6 @@
 				17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */,
 				17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */,
 				172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */,
-				177DBC1D27C01E5C00C5E5A9 /* NetworkRequest.swift in Sources */,
 				174B911027A0AE3A002C8D02 /* Publishers+Extension.swift in Sources */,
 				1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */,
 				172CA2CD277F165C00E5AD92 /* Health_ioApp.swift in Sources */,
@@ -765,7 +758,6 @@
 				172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */,
 				174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */,
 				172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */,
-				177DBC1B27C01D7100C5E5A9 /* Requestable.swift in Sources */,
 				174FF03127923EED00AA9643 /* AuthenticationView.swift in Sources */,
 				171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */,
 				171CEF85278E0C480033E8DF /* Covid19Stats.swift in Sources */,
