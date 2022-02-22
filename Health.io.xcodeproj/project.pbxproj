@@ -270,9 +270,9 @@
 		172CA2FD2780A87A00E5AD92 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				179F4D83279A0C560008A59C /* Home */,
 				174FF0212791DA3B00AA9643 /* Onboarding */,
 				174FF0232791DAD100AA9643 /* Authentication */,
+				179F4D83279A0C560008A59C /* Home */,
 				172CA2CE277F165C00E5AD92 /* ContentView.swift */,
 				171CEF7F278CD7600033E8DF /* HealthStatsView.swift */,
 			);
