@@ -43,49 +43,98 @@ enum Section {
     }
 }
 
-final class HealthService {
+protocol HealthServiceProtocol {
+    func readHealthData()
+    func writeHealthData()
+}
+
+class HealthService: HealthServiceProtocol {
+    
     private var healthStore = HKHealthStore()
-        
-        internal func readDataFromHealthKit() {
-            if HKHealthStore.isHealthDataAvailable() {
-                let readTypes = Set([
-                    HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                    HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
-                    HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
-                    HKObjectType.quantityType(forIdentifier: .heartRate)!,
-                    HKObjectType.quantityType(forIdentifier: .stepCount)!,
-                    HKObjectType.quantityType(forIdentifier: .uvExposure)!,
-                    HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
-                    HKObjectType.quantityType(forIdentifier: .uvExposure)!,
-                    HKObjectType.quantityType(forIdentifier: .height)!,
-                    HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
-                    HKObjectType.quantityType(forIdentifier: .vo2Max)!,
-                    
-                    HKObjectType.categoryType(forIdentifier: .lossOfSmell)!,
-                    HKObjectType.categoryType(forIdentifier: .lossOfTaste)!,
-                    HKObjectType.categoryType(forIdentifier: .soreThroat)!,
-                    HKObjectType.categoryType(forIdentifier: .appleStandHour)!,
-                    HKObjectType.categoryType(forIdentifier: .sleepChanges)!,
-                    HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
-                    HKObjectType.categoryType(forIdentifier: .vomiting)!,
-                    
-                    HKObjectType.clinicalType(forIdentifier: .allergyRecord)!,
-                    HKObjectType.clinicalType(forIdentifier: .immunizationRecord)!,
-                    HKObjectType.clinicalType(forIdentifier: .vitalSignRecord)!,
-                    HKObjectType.clinicalType(forIdentifier: .conditionRecord)!,
-                    HKObjectType.clinicalType(forIdentifier: .labResultRecord)!
-                ])
+    
+    func readHealthData() {
+        if HKHealthStore.isHealthDataAvailable() {
+            let readTypes = Set([
+                HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
+                HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
+                HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                HKObjectType.quantityType(forIdentifier: .stepCount)!,
+                HKObjectType.quantityType(forIdentifier: .uvExposure)!,
+                HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+                HKObjectType.quantityType(forIdentifier: .uvExposure)!,
+                HKObjectType.quantityType(forIdentifier: .height)!,
+                HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
+                HKObjectType.quantityType(forIdentifier: .vo2Max)!,
                 
-                healthStore.requestAuthorization(toShare: nil, read: readTypes) { success, error in
-                    if !success { debugPrint("Can't read data from HealthKit") }
-                    else {
-                        // FetchDataFromHealthKit()
-                    }
+                HKObjectType.categoryType(forIdentifier: .lossOfSmell)!,
+                HKObjectType.categoryType(forIdentifier: .lossOfTaste)!,
+                HKObjectType.categoryType(forIdentifier: .soreThroat)!,
+                HKObjectType.categoryType(forIdentifier: .appleStandHour)!,
+                HKObjectType.categoryType(forIdentifier: .sleepChanges)!,
+                HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+                HKObjectType.categoryType(forIdentifier: .vomiting)!,
+                
+//                HKObjectType.clinicalType(forIdentifier: .allergyRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .immunizationRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .vitalSignRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .conditionRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .labResultRecord)!
+            ])
+            
+            healthStore.requestAuthorization(toShare: nil, read: readTypes) { success, error in
+                if !success { debugPrint("Can't read data from HealthKit") }
+                else {
+                    // FetchDataFromHealthKit()
                 }
             }
         }
-        
-        internal func writeDataToHealthKit() {
-            
-        }
+    }
+    
+    func writeHealthData() {
+        debugPrint("Write data to HealthKit")
+    }
+    
+//    internal func readDataFromHealthKit() {
+//        if HKHealthStore.isHealthDataAvailable() {
+//            let readTypes = Set([
+//                HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+//                HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
+//                HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
+//                HKObjectType.quantityType(forIdentifier: .heartRate)!,
+//                HKObjectType.quantityType(forIdentifier: .stepCount)!,
+//                HKObjectType.quantityType(forIdentifier: .uvExposure)!,
+//                HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+//                HKObjectType.quantityType(forIdentifier: .uvExposure)!,
+//                HKObjectType.quantityType(forIdentifier: .height)!,
+//                HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
+//                HKObjectType.quantityType(forIdentifier: .vo2Max)!,
+//
+//                HKObjectType.categoryType(forIdentifier: .lossOfSmell)!,
+//                HKObjectType.categoryType(forIdentifier: .lossOfTaste)!,
+//                HKObjectType.categoryType(forIdentifier: .soreThroat)!,
+//                HKObjectType.categoryType(forIdentifier: .appleStandHour)!,
+//                HKObjectType.categoryType(forIdentifier: .sleepChanges)!,
+//                HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+//                HKObjectType.categoryType(forIdentifier: .vomiting)!,
+//
+//                HKObjectType.clinicalType(forIdentifier: .allergyRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .immunizationRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .vitalSignRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .conditionRecord)!,
+//                HKObjectType.clinicalType(forIdentifier: .labResultRecord)!
+//            ])
+//
+//            healthStore.requestAuthorization(toShare: nil, read: readTypes) { success, error in
+//                if !success { debugPrint("Can't read data from HealthKit") }
+//                else {
+//                    // FetchDataFromHealthKit()
+//                }
+//            }
+//        }
+//    }
+//
+//    internal func writeDataToHealthKit() {
+//
+//    }
 }

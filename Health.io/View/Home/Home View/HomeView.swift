@@ -85,6 +85,7 @@ struct HomeView: View {
 struct HealthView: View {
     var authViewModel = AuthenticationViewModel()
     var viewModel = HomeViewModel()
+    var healthViewModel = HealthViewModel()
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -141,6 +142,9 @@ struct HealthView: View {
                     .padding(.bottom, 4)
                 }
             }
+        }
+        .onAppear {
+            healthViewModel.readHealthData()
         }
         .background(Color(red: 245/255, green: 247/255, blue: 251/255))
         //        .navigationTitle("Welcome Omer")

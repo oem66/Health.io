@@ -8,10 +8,20 @@
 import Foundation
 import HealthKit
 
-protocol HealthViewModelProtocol {
+final class HealthViewModel {
     
-}
-
-final class HealthViewModel: HealthViewModelProtocol {
+    // ADD HEALTH SERVICE instance and read health data from HealthKit
+    private var service: HealthServiceProtocol
     
+    init(service: HealthServiceProtocol = HealthService()) {
+        self.service = service
+    }
+    
+    func readHealthData() {
+        service.readHealthData()
+    }
+    
+    func writeHealthData() {
+        service.writeHealthData()
+    }
 }

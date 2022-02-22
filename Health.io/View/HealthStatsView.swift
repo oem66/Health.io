@@ -30,7 +30,7 @@ struct HealthStatsView: View {
                 }
             }
             .onAppear {
-                viewModel.readDataFromHealthKit()
+                viewModel.readHealthData()
                 covidViewModel.fetchCovid19Data {
                     debugPrint("DATA: \(covidViewModel.covid19Data)")
                 }
