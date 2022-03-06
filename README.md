@@ -20,3 +20,5 @@ Week Tasks:
  5. Make Email authentication screen with Combine framework. Save data to Firestore(Google Cloud)
  6. Make service to handle Firestore data fetch and save to Core Data every time app is started
  7. Redesign Home view and add cards for main health highlights and provide more informations on current level of health and informations how to improve current condition
+ 8. Make new design Black and White for complete ease of use
+ 9. Paid app subscription $2.99
