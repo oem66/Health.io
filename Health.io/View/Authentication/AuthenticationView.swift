@@ -59,7 +59,7 @@ struct AuthenticationContentView: View {
 struct AuthenticationMiddleView: View {
     var viewModel: AuthenticationViewModel
     var body: some View {
-        VStack(alignment: .center, spacing: 15) {
+        VStack(alignment: .center, spacing: 8) {
             ButtonView(viewModel: viewModel, buttonTittle: "apple_auth", logo: "apple_logo", textColor: .white, color: .black, actionResponse: "Apple Sign In tapped!", borderColor: .black, authType: .Apple)
             ButtonView(viewModel: viewModel, buttonTittle: "google_auth", logo: "google_logo", textColor: .gray, color: .white, actionResponse: "Google Sign In tapped!", borderColor: .gray, authType: .Google)
             ButtonView(viewModel: viewModel, buttonTittle: "facebook_auth", logo: "facebook_logo", textColor: .blue, color: .white, actionResponse: "Continue with Facebook", borderColor: .blue, authType: .Facebook)
@@ -91,6 +91,7 @@ struct ButtonView: View {
                 debugPrint("Sign in with Facebook from Switch")
             case .Google:
                 viewModel.SignInWithGoogle {
+                    viewModel.saveAuthStateToKeychain(state: true)
                     forwardToHome = true
                 }
             }
@@ -117,7 +118,7 @@ struct ButtonView: View {
                 .stroke(borderColor, lineWidth: 2)
         )
         .cornerRadius(10)
-        NavigationLink(destination: HomeView(authViewModel: viewModel), isActive: $forwardToHome) { }
+        NavigationLink(destination: HomeView()/*HomeView(authViewModel: viewModel)*/, isActive: $forwardToHome) { }
     }
 }
 
@@ -130,6 +131,7 @@ struct BottomAuthenticationView: View {
             viewModel.signinAnonymously = true
             anonymously = viewModel.signinAnonymously
             viewModel.signInAnonymously()
+            viewModel.saveAuthStateToKeychain(state: true)
         } label: {
             VStack {
                 Text(LocalizedStringKey("sign_up_text"))
@@ -143,6 +145,6 @@ struct BottomAuthenticationView: View {
                     .foregroundColor(Color(red: 24/255, green: 210/255, blue: 167/255))
             }
         }
-        NavigationLink(destination: HomeView(authViewModel: viewModel), isActive: $anonymously) { }
+        NavigationLink(destination: HomeView()/*HomeView(authViewModel: viewModel)*/, isActive: $anonymously) { }
     }
 }

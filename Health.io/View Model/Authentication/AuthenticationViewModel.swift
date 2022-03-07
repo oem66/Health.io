@@ -57,6 +57,11 @@ class AuthenticationViewModel: ObservableObject {
         debugPrint("Apple Sign in from View Model")
     }
     
+    internal func saveAuthStateToKeychain(state: Bool) {
+        debugPrint("Authentication state(\(state) saved to Keychain")
+        KeychainWrapper.standard.set(state, forKey: AuthenticationConstants.shared.user_auth_state)
+    }
+    
     private func currentUserId() -> AnyPublisher<UserId, Error> {
         return authenticationService.currentUser().flatMap { user -> AnyPublisher<UserId, Error> in
             if let userId = user?.uid {
