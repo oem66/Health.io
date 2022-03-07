@@ -15,13 +15,11 @@ enum Tab: String, CaseIterable {
 }
 
 struct HomeView: View {
-    var authViewModel = AuthenticationViewModel()
     var viewModel = HomeViewModel()
     
     @State private var currentTab: Tab = .Health
     
-    init(authViewModel: AuthenticationViewModel) {
-        self.authViewModel = authViewModel
+    init() {
         UITabBar.appearance().backgroundColor = UIColor.init(red: 245/255, green: 247/255, blue: 251/255, alpha: 0.97)
         UITabBar.appearance().isHidden = true
     }
@@ -56,7 +54,7 @@ struct HomeView: View {
                                 .frame(width: 22, height: 22)
                             // add shadow at background
                                 .background(
-                                    Color(.black/*red: 60/255, green: 64/255, blue: 198/255*/)
+                                    Color(.black)
                                         .opacity(0.1)
                                         .cornerRadius(5)
                                     // blurring
@@ -65,7 +63,7 @@ struct HomeView: View {
                                         .opacity(currentTab == tab ? 1 : 0)
                                 )
                                 .frame(maxWidth: .infinity)
-                                .foregroundColor(currentTab == tab ? Color(.black/*red: 60/255, green: 64/255, blue: 198/255*/) : Color.black.opacity(0.3))
+                                .foregroundColor(currentTab == tab ? Color(.black) : Color.black.opacity(0.3))
                         }
                     }
                 }
@@ -119,7 +117,6 @@ struct HealthView: View {
                             
                             Text(insight.title)
                                 .foregroundColor(.gray)
-//                                .font(.custom("Avenir-Medium", size: 17))
                                 .font(.system(size: 17, weight: .bold, design: .default))
                                 .padding(5)
                             

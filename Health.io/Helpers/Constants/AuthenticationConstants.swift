@@ -14,4 +14,5 @@ struct AuthenticationConstants {
     var authPhoto = "auth"
     var title = "Health.io"
     var description = "Log in into your Health.io account and start taking care of your health with assistance provided by the best healthcare workers in your area."
+    var user_auth_state = "user_auth_state"
 }
