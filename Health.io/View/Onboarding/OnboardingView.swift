@@ -18,8 +18,8 @@ struct OnboardingView: View {
     @State private var showAuthView = false
     
     init() {
-        UIPageControl.appearance().currentPageIndicatorTintColor = UIColor(red: 24/255, green: 210/255, blue: 167/255, alpha: 1.0)
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.cyan.withAlphaComponent(0.2)
+        UIPageControl.appearance().currentPageIndicatorTintColor = .black //UIColor(red: 24/255, green: 210/255, blue: 167/255, alpha: 1.0)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
     }
     
     var body: some View {
@@ -40,12 +40,13 @@ struct OnboardingView: View {
                 Button {
                     withAnimation { showAuthView.toggle() }
                 } label: {
-                    Text(LocalizedStringKey("GetStarted"))
+                    Text(LocalizedStringKey("get_started"))
                         .font(.custom("Avenir-Medium", size: 20))
                         .fontWeight(.bold)
                         .padding(.vertical, 18)
                         .frame(maxWidth: .infinity, maxHeight: 50)
-                        .background(Color(red: 24/255, green: 210/255, blue: 167/255))
+//                        .background(Color(red: 24/255, green: 210/255, blue: 167/255))
+                        .background(.black)
                         .cornerRadius(10)
                         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 5, y: 5)
                         .foregroundColor(.white)
