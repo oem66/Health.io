@@ -2,9 +2,7 @@
  Health.io app for Health management
  Main features: 
  - Health insights 
- - Live Ambulance 
- - Live Chat/Video with doctors
- - Online consultations 
+ - Online consultations (trainers and nutritionists)
  - Scan and analysis results
 
 1. User Profile take data from Google, Email username or in case of Guest user User profile will be disabled.
