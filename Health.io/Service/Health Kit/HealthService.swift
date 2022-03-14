@@ -52,6 +52,11 @@ class HealthService: HealthServiceProtocol {
     
     private var healthStore = HKHealthStore()
     
+    var steps = Double()
+    var walkingRunningDistance = Double()
+    var flightsClmb = Int()
+    var weightPar = Double()
+    
     func HealthStoreAvailability() {
         if HKHealthStore.isHealthDataAvailable() {
             let readTypes = Set([
@@ -121,46 +126,66 @@ class HealthService: HealthServiceProtocol {
         }
     }
     
-    func readHealthData() {
-        if HKHealthStore.isHealthDataAvailable() {
-            let readTypes = Set([
-                HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
-                HKObjectType.quantityType(forIdentifier: .bodyTemperature)!,
-                HKObjectType.quantityType(forIdentifier: .heartRate)!,
-                HKObjectType.quantityType(forIdentifier: .stepCount)!,
-                HKObjectType.quantityType(forIdentifier: .uvExposure)!,
-                HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
-                HKObjectType.quantityType(forIdentifier: .uvExposure)!,
-                HKObjectType.quantityType(forIdentifier: .height)!,
-                HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
-                HKObjectType.quantityType(forIdentifier: .vo2Max)!,
-                
-                HKObjectType.categoryType(forIdentifier: .lossOfSmell)!,
-                HKObjectType.categoryType(forIdentifier: .lossOfTaste)!,
-                HKObjectType.categoryType(forIdentifier: .soreThroat)!,
-                HKObjectType.categoryType(forIdentifier: .appleStandHour)!,
-                HKObjectType.categoryType(forIdentifier: .sleepChanges)!,
-                HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
-                HKObjectType.categoryType(forIdentifier: .vomiting)!,
-                
-                //                HKObjectType.clinicalType(forIdentifier: .allergyRecord)!,
-                //                HKObjectType.clinicalType(forIdentifier: .immunizationRecord)!,
-                //                HKObjectType.clinicalType(forIdentifier: .vitalSignRecord)!,
-                //                HKObjectType.clinicalType(forIdentifier: .conditionRecord)!,
-                //                HKObjectType.clinicalType(forIdentifier: .labResultRecord)!
-            ])
-            
-            healthStore.requestAuthorization(toShare: nil, read: readTypes) { success, error in
-                if !success { debugPrint("Can't read data from HealthKit") }
-                else {
-                    // FetchDataFromHealthKit()
+    private func fetchActivityData() {
+        guard let sampleType = HKCategoryType.quantityType(forIdentifier: .stepCount) else { return }
+        guard let walkingRunning = HKCategoryType.quantityType(forIdentifier: .distanceWalkingRunning) else { return }
+        guard let flightsClimbed = HKCategoryType.quantityType(forIdentifier: .flightsClimbed) else { return }
+        
+        let startDate = Calendar.current.startOfDay(for: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        var interval = DateComponents()
+        interval.day = 1
+        
+        let querySteps = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
+        querySteps.initialResultsHandler = { query, result, error in
+            if let myResult = result {
+                myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
+                    if let count = statistics.sumQuantity() {
+                        let val = count.doubleValue(for: HKUnit.count())
+                        self.steps = val
+                        print("Total steps: \(val) steps")
+                    }
                 }
             }
         }
+        
+        let queryWalkingRunning = HKStatisticsCollectionQuery(quantityType: walkingRunning, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
+        queryWalkingRunning.initialResultsHandler = { query, result, error in
+            if let myResult = result {
+                myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
+                    if let count = statistics.sumQuantity() {
+                        let val = count.doubleValue(for: HKUnit.meter())
+                        self.walkingRunningDistance = val
+                        print("Walking running distance \(val) meters")
+                    }
+                }
+            }
+        }
+        
+        let queryFlightsClimbed = HKStatisticsCollectionQuery(quantityType: flightsClimbed, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
+        queryFlightsClimbed.initialResultsHandler = { query, result, error in
+            if let myResult = result {
+                myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
+                    if let count = statistics.sumQuantity() {
+                        let val = count.doubleValue(for: HKUnit.count())
+                        self.flightsClmb = Int(val)
+                        print("Walking running distance \(val) meters")
+                    }
+                }
+            }
+        }
+        
+        let queries: [HKStatisticsCollectionQuery] = [querySteps, queryWalkingRunning, queryFlightsClimbed]
+        for query in queries {
+            healthStore.execute(query)
+        }
+    }
+    
+    func readHealthData() {
+        debugPrint("Read Health Data")
     }
     
     func writeHealthData() {
-        debugPrint("Write data to HealthKit")
+        debugPrint("Write Health Data")
     }
 }
