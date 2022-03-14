@@ -56,6 +56,7 @@ class HealthService: HealthServiceProtocol {
     var walkingRunningDistance = Double()
     var flightsClmb = Int()
     var weightPar = Double()
+    var heightPar = Double()
     
     func HealthStoreAvailability() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -205,6 +206,49 @@ class HealthService: HealthServiceProtocol {
             }
         }
         healthStore.execute(sampleQuery)
+    }
+    
+    func fetchBodyMeasurements() {
+        guard let weightSampleType = HKCategoryType.quantityType(forIdentifier: .bodyMass) else { return }
+        guard let heightSampleType = HKCategoryType.quantityType(forIdentifier: .height) else { return }
+        guard let bTemperatureSampleType = HKCategoryType.quantityType(forIdentifier: .bodyTemperature) else { return }
+        
+        let startDate = Calendar.current.startOfDay(for: Date())
+        let endDate = Date()
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictStartDate)
+        var interval = DateComponents()
+        interval.day = 1
+        
+        let weightQuery = HKStatisticsCollectionQuery(quantityType: weightSampleType, quantitySamplePredicate: predicate, options: [.discreteAverage], anchorDate: startDate, intervalComponents: interval)
+        weightQuery.initialResultsHandler = { query, result, error in
+            if let myResult = result {
+                myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
+                    if let count = statistics.averageQuantity() {
+                        let val = count.doubleValue(for: HKUnit.gram())
+                        self.weightPar = val / 1000
+                        print("Weight is: \(val) kg")
+                    }
+                }
+            }
+        }
+        
+        let heightQuery = HKStatisticsCollectionQuery(quantityType: heightSampleType, quantitySamplePredicate: predicate, options: [.discreteAverage], anchorDate: startDate, intervalComponents: interval)
+        heightQuery.initialResultsHandler = { query, result, error in
+            if let myResult = result {
+                myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
+                    if let count = statistics.averageQuantity() {
+                        let val = count.doubleValue(for: HKUnit.gram())
+                        self.heightPar = val
+                        print("Height is: \(val) cm")
+                    }
+                }
+            }
+        }
+        
+        let measurementQueries: [HKStatisticsCollectionQuery] = [weightQuery, heightQuery]
+        for query in measurementQueries {
+            healthStore.execute(query)
+        }
     }
     
     func readHealthData() {
