@@ -18,10 +18,10 @@ final class HealthViewModel {
     }
     
     func readHealthData() {
-        service.readHealthData()
+        service.HealthStoreAvailability()
     }
     
     func writeHealthData() {
-        service.writeHealthData()
+//        service.writeHealthData()
     }
 }
