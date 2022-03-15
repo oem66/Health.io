@@ -7,6 +7,7 @@
 
 import Foundation
 import HealthKit
+import SwiftUI
 
 enum Section {
     case healthRecords
@@ -44,14 +45,19 @@ enum Section {
 }
 
 protocol HealthServiceProtocol {
-    func readHealthData()
-    func writeHealthData()
+    func HealthStoreAvailability()
+    func FetchDataFromHealthStore()
+    func FetchActivityData()
+    func GetMostRecentSample(for sampleType: HKSampleType, completion: @escaping (HKQuantitySample?, Error?) -> ())
+    func FetchBodyMeasurements()
+    
 }
 
 class HealthService: HealthServiceProtocol {
     
     private var healthStore = HKHealthStore()
     
+    var heartRate = Int()
     var steps = Double()
     var walkingRunningDistance = Double()
     var flightsClmb = Int()
@@ -71,14 +77,14 @@ class HealthService: HealthServiceProtocol {
                 HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
                 HKObjectType.quantityType(forIdentifier: .flightsClimbed)!,
                 HKObjectType.quantityType(forIdentifier: .height)!,
-                //                HKObjectType.quantityType(forIdentifier: .weight)!,
+                HKObjectType.quantityType(forIdentifier: .bodyMass)!,
                 HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!,
                 HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
                 HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
-                //                HKObjectType.quantityType(forIdentifier: .sleepAnalysis)!,
                 HKObjectType.quantityType(forIdentifier: .uvExposure)!,
                 HKObjectType.quantityType(forIdentifier: .bloodGlucose)!,
-                //                HKObjectType.quantityType(forIdentifier: .mindfulSession)!,
+                HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
+                HKObjectType.categoryType(forIdentifier: .mindfulSession)!
             ])
             
             healthStore.requestAuthorization(toShare: nil, read: readTypes) { status, error in
@@ -127,7 +133,8 @@ class HealthService: HealthServiceProtocol {
         }
     }
     
-    private func fetchActivityData() {
+    func FetchActivityData() {
+        guard let heartRate = HKCategoryType.quantityType(forIdentifier: .heartRate) else { return }
         guard let sampleType = HKCategoryType.quantityType(forIdentifier: .stepCount) else { return }
         guard let walkingRunning = HKCategoryType.quantityType(forIdentifier: .distanceWalkingRunning) else { return }
         guard let flightsClimbed = HKCategoryType.quantityType(forIdentifier: .flightsClimbed) else { return }
@@ -136,6 +143,19 @@ class HealthService: HealthServiceProtocol {
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
         var interval = DateComponents()
         interval.day = 1
+        
+        let queryHeartRate = HKStatisticsCollectionQuery(quantityType: heartRate, quantitySamplePredicate: predicate, options: [.mostRecent], anchorDate: startDate, intervalComponents: interval)
+        queryHeartRate.initialResultsHandler = { query, result, error in
+            if let myResult = result {
+                myResult.enumerateStatistics(from: startDate, to: Date()) { statistics, value in
+                    if let count = statistics.mostRecentQuantity() {
+                        let val = count.doubleValue(for: HKUnit.count())
+                        self.heartRate = Int(val)
+                        debugPrint("Heart Rate: \(val) bpm")
+                    }
+                }
+            }
+        }
         
         let querySteps = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
         querySteps.initialResultsHandler = { query, result, error in
@@ -182,7 +202,27 @@ class HealthService: HealthServiceProtocol {
         }
     }
     
-    func getMostRecentSample(for sampleType: HKSampleType, completion: @escaping (HKQuantitySample?, Error?) -> ()) {
+    private func queryData(quantityType: HKQuantityType) {
+        let startDate = Calendar.current.startOfDay(for: Date())
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
+        var interval = DateComponents()
+        interval.day = 1
+        
+        let query = HKStatisticsCollectionQuery(quantityType: quantityType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
+        query.initialResultsHandler = { query, result, error in
+            if let myResult = result {
+                myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
+                    if let count = statistics.sumQuantity() {
+                        let val = count.doubleValue(for: HKUnit.count())
+                        self.flightsClmb = Int(val)
+                        print("Walking running distance \(val) meters")
+                    }
+                }
+            }
+        }
+    }
+    
+    func GetMostRecentSample(for sampleType: HKSampleType, completion: @escaping (HKQuantitySample?, Error?) -> ()) {
         //1. Use HKQuery to load the most recent samples.
         let mostRecentPredicate = HKQuery.predicateForSamples(withStart: Date.distantPast,
                                                               end: Date(),
@@ -208,7 +248,7 @@ class HealthService: HealthServiceProtocol {
         healthStore.execute(sampleQuery)
     }
     
-    func fetchBodyMeasurements() {
+    func FetchBodyMeasurements() {
         guard let weightSampleType = HKCategoryType.quantityType(forIdentifier: .bodyMass) else { return }
         guard let heightSampleType = HKCategoryType.quantityType(forIdentifier: .height) else { return }
         guard let bTemperatureSampleType = HKCategoryType.quantityType(forIdentifier: .bodyTemperature) else { return }
@@ -249,13 +289,5 @@ class HealthService: HealthServiceProtocol {
         for query in measurementQueries {
             healthStore.execute(query)
         }
-    }
-    
-    func readHealthData() {
-        debugPrint("Read Health Data")
-    }
-    
-    func writeHealthData() {
-        debugPrint("Write Health Data")
     }
 }
