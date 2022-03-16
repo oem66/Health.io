@@ -20,3 +20,4 @@ Week Tasks:
  7. Redesign Home view and add cards for main health highlights and provide more informations on current level of health and informations how to improve current condition
  8. Make new design Black and White for complete ease of use
  9. Paid app subscription $2.99
+ 10. Redesign App and manage Auth flow
