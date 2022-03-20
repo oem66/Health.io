@@ -10,6 +10,11 @@ import SwiftUI
 
 struct WorkoutView: View {
     var body: some View {
+        // MARK: View template
+        // Vertical Scroll View
+        // - Horizontal Scroll View
+        // - Horizontal Scroll View
+        
         Text("Workout View")
             .foregroundColor(.black)
     }
