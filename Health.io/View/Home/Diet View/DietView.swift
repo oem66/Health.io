@@ -10,6 +10,11 @@ import SwiftUI
 
 struct DietView: View {
     var body: some View {
+        // MARK: View template
+        // Vertical Scroll View
+        // - Horizontal Scroll View
+        // - Horizontal Scroll View
+        
         Text("Diet View")
             .foregroundColor(.black)
     }
