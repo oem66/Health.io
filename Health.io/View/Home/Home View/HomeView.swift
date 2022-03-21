@@ -21,7 +21,7 @@ struct HomeView: View {
     
     init() {
         UITabBar.appearance().backgroundColor = UIColor.init(red: 245/255, green: 247/255, blue: 251/255, alpha: 0.97)
-        UITabBar.appearance().isHidden = true
+//        UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
@@ -71,10 +71,11 @@ struct HomeView: View {
                 .padding(.bottom, 10)
             }
             .edgesIgnoringSafeArea(.top)
-            .navigationBarHidden(true)
+//            .navigationBarHidden(true)
+            .navigationTitle("Welcome Omer")
             .background(Color(red: 241/255, green: 242/255, blue: 246/255).ignoresSafeArea())
         }
-        .hiddenNavigationBarStyle()
+//        .hiddenNavigationBarStyle()
     }
 }
 
