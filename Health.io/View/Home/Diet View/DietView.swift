@@ -14,14 +14,33 @@ struct DietView: View {
                        GridItem(.flexible(maximum: 250))]
         
         ScrollView(.vertical) {
+            HStack {
+                Text("Diet")
+                    .foregroundColor(.black)
+                    .bold()
+                    .font(.custom("Avenir-Medium", size: 40))
+                    .padding([.leading, .bottom], 7)
+                    .padding(.top, 20)
+                Spacer ()
+            }
+            
             LazyVGrid(columns: columns, spacing: 5, content: {
                 ForEach((0...25), id: \.self) { _ in
-                    DietWorkoutCardView(image: "bodybuilder", level: "Beginner", title: "Get Muscle Loose Fat", duration: "60 min")
-                        .padding()
+                    NavigationLink(destination: Text("Test")) {
+                        DietWorkoutCardView(image: "bodybuilder", level: "Beginner", title: "Get Muscle Loose Fat", duration: "60 min")
+                            .padding()
+                    }
                 }
             })
         }
-        .navigationTitle("Diet")
+    }
+}
+
+struct DietTopSection: View {
+    var body: some View {
+        VStack {
+            
+        }
     }
 }
 
@@ -42,16 +61,13 @@ struct DietWorkoutCardView: View {
             Text(level)
                 .bold()
                 .foregroundColor(.blue)
-//                .padding(.leading)
             
             Text(title)
                 .bold()
                 .foregroundColor(.black)
-//                .padding(.leading)
             
             Text(duration)
                 .foregroundColor(.gray)
-//                .padding(.leading)
         }
     }
 }
