@@ -5,15 +5,21 @@
 //  Created by Omer Rahmanovic on 2/9/22.
 //
 
-import Foundation
 import SwiftUI
 
 struct WorkoutView: View {
     var body: some View {
-        VStack {
-            CustomWorkoutView()
-                .padding(10)
-            Spacer()
+        NavigationView {
+            ScrollView(.vertical) {
+                CustomWorkoutView()
+                    .padding(10)
+                
+                WorkoutTypeView()
+                    .padding()
+                
+                Spacer()
+            }
+            .navigationTitle("Workout")
         }
     }
 }
@@ -61,5 +67,50 @@ struct CustomWorkoutView: View {
         .cornerRadius(10)
         .frame(height: 200, alignment: .center)
         .padding(10)
+    }
+}
+
+struct WorkoutTypeView: View {
+    private var viewModel = WorkoutViewModel()
+    
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(viewModel.workouts, id: \.self) { workout in
+                    NavigationLink(destination: Text("Workout")) {
+                        WorkoutTypeCardView(workout: workout)
+                            .padding(10)
+                    }
+                }
+            }
+        }
+    }
+}
+
+struct WorkoutTypeCardView: View {
+    @State var workout: Workout
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(workout.title)
+                .foregroundColor(.blue)
+                .fontWeight(.heavy)
+                .font(.custom("Avenir-Medium", size: 25))
+            
+            Text(workout.subtitle)
+                .foregroundColor(.black)
+                .fontWeight(.bold)
+                .font(.custom("Avenir-Medium", size: 21))
+            
+            Text("\(workout.numberOfWorkouts) workouts")
+                .foregroundColor(.gray)
+                .fontWeight(.bold)
+                .font(.custom("Avenir-Medium", size: 17))
+            
+            Image(workout.image)
+                .resizable()
+                .cornerRadius(10)
+                .frame(width: 270, height: 165, alignment: .center)
+        }
     }
 }
