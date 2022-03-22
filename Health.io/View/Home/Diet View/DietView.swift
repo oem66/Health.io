@@ -12,26 +12,18 @@ struct DietView: View {
     var body: some View {
         let columns = [GridItem(.flexible(maximum: 250)),
                        GridItem(.flexible(maximum: 250))]
-        
-        ScrollView(.vertical, showsIndicators: false) {
-            HStack {
-                Text("DIET")
-                    .foregroundColor(.black)
-                    .fontWeight(.heavy)
-                    .font(.custom("Avenir-Medium", size: 30))
-                    .padding([.leading, .bottom], 7)
-                    .padding(.top, 20)
-                Spacer ()
-            }
-            
-            LazyVGrid(columns: columns, spacing: 5, content: {
-                ForEach((0...25), id: \.self) { _ in
-                    NavigationLink(destination: Text("Test")) {
-                        DietCardView(image: "fruit", level: "Breakfast", title: "Get Muscle Loose Fat", duration: "15 min")
-                            .padding()
+        NavigationView {
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVGrid(columns: columns, spacing: 5, content: {
+                    ForEach((0...25), id: \.self) { _ in
+                        NavigationLink(destination: Text("Test")) {
+                            DietCardView(image: "fruit", level: "Breakfast", title: "Get Muscle Loose Fat", duration: "15 min")
+                                .padding()
+                        }
                     }
-                }
-            })
+                })
+            }
+            .navigationTitle("Diet")
         }
     }
 }
