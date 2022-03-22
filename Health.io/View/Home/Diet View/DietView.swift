@@ -13,12 +13,12 @@ struct DietView: View {
         let columns = [GridItem(.flexible(maximum: 250)),
                        GridItem(.flexible(maximum: 250))]
         
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
             HStack {
-                Text("Diet")
+                Text("DIET")
                     .foregroundColor(.black)
-                    .bold()
-                    .font(.custom("Avenir-Medium", size: 40))
+                    .fontWeight(.heavy)
+                    .font(.custom("Avenir-Medium", size: 30))
                     .padding([.leading, .bottom], 7)
                     .padding(.top, 20)
                 Spacer ()
@@ -27,7 +27,7 @@ struct DietView: View {
             LazyVGrid(columns: columns, spacing: 5, content: {
                 ForEach((0...25), id: \.self) { _ in
                     NavigationLink(destination: Text("Test")) {
-                        DietWorkoutCardView(image: "bodybuilder", level: "Beginner", title: "Get Muscle Loose Fat", duration: "60 min")
+                        DietCardView(image: "fruit", level: "Breakfast", title: "Get Muscle Loose Fat", duration: "15 min")
                             .padding()
                     }
                 }
@@ -44,7 +44,7 @@ struct DietTopSection: View {
     }
 }
 
-struct DietWorkoutCardView: View {
+struct DietCardView: View {
     @State var image: String
     @State var level: String
     @State var title: String
@@ -54,20 +54,24 @@ struct DietWorkoutCardView: View {
         VStack(alignment: .leading) {
             Image(image)
                 .resizable()
+                .aspectRatio(contentMode: .fill)
                 .frame(width: 170, height: 220, alignment: .center)
                 .cornerRadius(5.0)
                 .padding(.bottom, 5)
             
             Text(level)
-                .bold()
                 .foregroundColor(.blue)
+                .fontWeight(.heavy)
             
             Text(title)
                 .bold()
                 .foregroundColor(.black)
+                .minimumScaleFactor(0.5)
+                .lineLimit(1)
             
             Text(duration)
                 .foregroundColor(.gray)
+                .bold()
         }
     }
 }
