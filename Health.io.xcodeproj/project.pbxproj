@@ -55,6 +55,8 @@
 		1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790A52427B1D21A00BF755F /* HealthInsight.swift */; };
 		179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */; };
 		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
+		17BBA49827EA69B700472546 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49727EA69B700472546 /* Workout.swift */; };
+		17BBA49B27EA6A2300472546 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */; };
 		17D5409C27B4603A00DEA551 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409B27B4603A00DEA551 /* WorkoutView.swift */; };
 		17D5409E27B4607400DEA551 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409D27B4607400DEA551 /* DietView.swift */; };
 		17D540A027B460A400DEA551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409F27B460A400DEA551 /* ProfileView.swift */; };
@@ -128,6 +130,8 @@
 		1790A52427B1D21A00BF755F /* HealthInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsight.swift; sourceTree = "<group>"; };
 		179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
 		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		17BBA49727EA69B700472546 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		17D5409B27B4603A00DEA551 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		17D5409D27B4607400DEA551 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
 		17D5409F27B460A400DEA551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 		172CA2FB2780A86D00E5AD92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17BBA49627EA69A700472546 /* Workout */,
 				1790A52327B1D20400BF755F /* Health Insight */,
 				17D5F20727ADBAB200921867 /* Home */,
 				179BD7B527AAFD7100EA56BE /* Covid */,
@@ -258,6 +263,7 @@
 		172CA2FC2780A87300E5AD92 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				17BBA49927EA6A1100472546 /* Workout */,
 				1779B9D62798ADCE00EA8470 /* Authentication */,
 				177FC53A27B1E1DB00598425 /* Home View Model */,
 				179BD7B327AAFD4000EA56BE /* Covid View Model */,
@@ -547,6 +553,22 @@
 			path = "Home View";
 			sourceTree = "<group>";
 		};
+		17BBA49627EA69A700472546 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				17BBA49727EA69B700472546 /* Workout.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		17BBA49927EA6A1100472546 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
 		17D5409827B45B5800DEA551 /* Workout View */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +758,7 @@
 				17D5409E27B4607400DEA551 /* DietView.swift in Sources */,
 				174FF02F2791E0A800AA9643 /* OnboardingConstants.swift in Sources */,
 				171AC56B27BC3210005E8458 /* HealthService.swift in Sources */,
+				17BBA49827EA69B700472546 /* Workout.swift in Sources */,
 				177FC53C27B1E1F700598425 /* HomeViewModel.swift in Sources */,
 				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
 				172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */,
@@ -763,6 +786,7 @@
 				171CEF85278E0C480033E8DF /* Covid19Stats.swift in Sources */,
 				174B910827A07514002C8D02 /* HealthHighlightsView.swift in Sources */,
 				17D5409C27B4603A00DEA551 /* WorkoutView.swift in Sources */,
+				17BBA49B27EA6A2300472546 /* WorkoutViewModel.swift in Sources */,
 				17D540A027B460A400DEA551 /* ProfileView.swift in Sources */,
 				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
 				1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */,
