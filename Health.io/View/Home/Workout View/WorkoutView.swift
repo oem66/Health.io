@@ -17,17 +17,20 @@ struct WorkoutView: View {
                 WorkoutTypeView()
                     .padding()
                 
+                Divider()
+                    .padding()
+                
                 HStack {
                     Text("BODY SPECIFIC WORKOUTS")
                         .font(.custom("Avenir-Medium", size: 22))
                         .fontWeight(.heavy)
                         .foregroundColor(.blue)
                         .padding(.top, 10)
-                        .padding(.leading, 10)
+                        .padding(.leading, 15)
                     Spacer()
                 }
                 BodySpecificWorkoutView()
-                    .padding()
+                    .padding([.leading, .trailing])
                 Spacer()
             }
             .navigationTitle("Workout")
@@ -87,6 +90,7 @@ struct WorkoutTypeView: View {
     private var viewModel = WorkoutViewModel()
     
     var body: some View {
+        Divider()
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(viewModel.workouts, id: \.self) { workout in
