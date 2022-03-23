@@ -17,6 +17,17 @@ struct WorkoutView: View {
                 WorkoutTypeView()
                     .padding()
                 
+                HStack {
+                    Text("BODY SPECIFIC WORKOUTS")
+                        .font(.custom("Avenir-Medium", size: 22))
+                        .fontWeight(.heavy)
+                        .foregroundColor(.blue)
+                        .padding(.top, 10)
+                        .padding(.leading, 10)
+                    Spacer()
+                }
+                BodySpecificWorkoutView()
+                    .padding()
                 Spacer()
             }
             .navigationTitle("Workout")
@@ -24,6 +35,7 @@ struct WorkoutView: View {
     }
 }
 
+// MARK: - Custom Workout
 struct CustomWorkoutView: View {
     var body: some View {
         ZStack {
@@ -70,6 +82,7 @@ struct CustomWorkoutView: View {
     }
 }
 
+// MARK: - Workout Type
 struct WorkoutTypeView: View {
     private var viewModel = WorkoutViewModel()
     
@@ -111,6 +124,50 @@ struct WorkoutTypeCardView: View {
                 .resizable()
                 .cornerRadius(10)
                 .frame(width: 270, height: 165, alignment: .center)
+        }
+    }
+}
+
+// MARK: - Body Specific
+struct BodySpecificWorkoutView: View {
+    var body: some View {
+        let columns = [GridItem(.flexible(maximum: 250)),
+                       GridItem(.flexible(maximum: 250))]
+        
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVGrid(columns: columns, spacing: 5, content: {
+                ForEach((0...12), id: \.self) { _ in
+                    NavigationLink(destination: Text("Test")) {
+                        BodyPartCardView(image: "bodybuilder", title: "ARM", numberOfWorkouts: 15)
+                            .padding()
+                    }
+                }
+            })
+        }
+    }
+}
+
+struct BodyPartCardView: View {
+    @State var image: String
+    @State var title: String
+    @State var numberOfWorkouts: Int
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Image(image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 170, height: 220, alignment: .center)
+                .cornerRadius(5.0)
+                .padding(.bottom, 5)
+            
+            Text(title)
+                .foregroundColor(.blue)
+                .fontWeight(.heavy)
+            
+            Text("\(numberOfWorkouts) workouts")
+                .foregroundColor(.gray)
+                .bold()
         }
     }
 }
