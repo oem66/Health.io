@@ -52,6 +52,9 @@
 		1779B9DB2798B23800EA8470 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9DA2798B23800EA8470 /* GoogleSignIn */; };
 		1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1779B9DC2798B4D400EA8470 /* View+Extension.swift */; };
 		177FC53C27B1E1F700598425 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177FC53B27B1E1F700598425 /* HomeViewModel.swift */; };
+		17866F0827F233C8008A4795 /* CustomWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17866F0727F233C8008A4795 /* CustomWorkoutView.swift */; };
+		17866F0A27F2340C008A4795 /* WorkoutTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17866F0927F2340C008A4795 /* WorkoutTypeView.swift */; };
+		17866F0C27F2343D008A4795 /* BodySpecificWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17866F0B27F2343D008A4795 /* BodySpecificWorkoutView.swift */; };
 		1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790A52427B1D21A00BF755F /* HealthInsight.swift */; };
 		179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */; };
 		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
@@ -129,6 +132,9 @@
 		1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		1779B9DC2798B4D400EA8470 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		177FC53B27B1E1F700598425 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		17866F0727F233C8008A4795 /* CustomWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWorkoutView.swift; sourceTree = "<group>"; };
+		17866F0927F2340C008A4795 /* WorkoutTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTypeView.swift; sourceTree = "<group>"; };
+		17866F0B27F2343D008A4795 /* BodySpecificWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkoutView.swift; sourceTree = "<group>"; };
 		1790A52427B1D21A00BF755F /* HealthInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsight.swift; sourceTree = "<group>"; };
 		179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
 		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -579,6 +585,9 @@
 			isa = PBXGroup;
 			children = (
 				17D5409B27B4603A00DEA551 /* WorkoutView.swift */,
+				17866F0727F233C8008A4795 /* CustomWorkoutView.swift */,
+				17866F0927F2340C008A4795 /* WorkoutTypeView.swift */,
+				17866F0B27F2343D008A4795 /* BodySpecificWorkoutView.swift */,
 			);
 			path = "Workout View";
 			sourceTree = "<group>";
@@ -776,6 +785,7 @@
 				172CA2CD277F165C00E5AD92 /* Health_ioApp.swift in Sources */,
 				172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */,
 				171CEF87278E2C580033E8DF /* Covid19ViewModel.swift in Sources */,
+				17866F0827F233C8008A4795 /* CustomWorkoutView.swift in Sources */,
 				174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */,
 				171CEF89278E2DD80033E8DF /* Covid19Service.swift in Sources */,
 				174B910E27A0AA8C002C8D02 /* AuthenticationService.swift in Sources */,
@@ -783,8 +793,10 @@
 				172CA3092780AA9300E5AD92 /* KeychainWrapper.swift in Sources */,
 				17D5F20927ADBAC100921867 /* HomeTip.swift in Sources */,
 				171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */,
+				17866F0A27F2340C008A4795 /* WorkoutTypeView.swift in Sources */,
 				1758B4CA27BAF5F3008DBAC9 /* APIService.swift in Sources */,
 				172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */,
+				17866F0C27F2343D008A4795 /* BodySpecificWorkoutView.swift in Sources */,
 				17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */,
 				174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */,
 				172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */,
