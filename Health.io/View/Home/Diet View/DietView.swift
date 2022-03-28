@@ -9,6 +9,13 @@ import Foundation
 import SwiftUI
 
 struct DietView: View {
+    
+    // MARK: Healthy Diet Tips
+    // MARK: Fasting Horizontal Scroll
+    // MARK: Balanced Diet Horizontal Scroll
+    // MARK: Keto/Low Carb Diet Horizontal Scroll
+    // MARK: High Protein Diet Horzontal Scroll
+    
     var body: some View {
         let columns = [GridItem(.flexible(maximum: 250)),
                        GridItem(.flexible(maximum: 250))]
