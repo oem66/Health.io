@@ -10,7 +10,7 @@ import SwiftUI
 struct WorkoutView: View {
     var body: some View {
         NavigationView {
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 CustomWorkoutView()
                     .padding(10)
                 
