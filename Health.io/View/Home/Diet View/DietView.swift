@@ -20,21 +20,20 @@ struct DietView: View {
         let columns = [GridItem(.flexible(maximum: 250)),
                        GridItem(.flexible(maximum: 250))]
         NavigationView {
-//            ScrollView(.vertical, showsIndicators: false) {
-//                LazyVGrid(columns: columns, spacing: 5, content: {
-//                    ForEach((0...25), id: \.self) { _ in
-//                        NavigationLink(destination: Text("Test")) {
-//                            DietCardView(image: "fruit", level: "Breakfast", title: "Get Muscle Loose Fat", duration: "15 min")
-//                                .padding()
-//                        }
-//                    }
-//                })
-//            }
             ScrollView(.vertical, showsIndicators: false) {
                 DietHealthTips()
                     .padding()
                 
-                FastingDietPlansView()
+                DietScrollView(viewModel: DietViewModel(), sectionTitle: "FASTING", sectionTitleColor: .green)
+                    .padding()
+                
+                DietScrollView(viewModel: DietViewModel(), sectionTitle: "BALANCED", sectionTitleColor: .blue)
+                    .padding()
+                
+                DietScrollView(viewModel: DietViewModel(), sectionTitle: "KETO/LOW CARB", sectionTitleColor: .orange)
+                    .padding()
+                
+                DietScrollView(viewModel: DietViewModel(), sectionTitle: "HIGH PROTEIN", sectionTitleColor: .red)
                     .padding()
                 
                 LazyVGrid(columns: columns, spacing: 5, content: {
