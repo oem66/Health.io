@@ -34,6 +34,9 @@ struct DietView: View {
                 DietHealthTips()
                     .padding()
                 
+                FastingDietPlansView()
+                    .padding()
+                
                 LazyVGrid(columns: columns, spacing: 5, content: {
                     ForEach((0...25), id: \.self) { _ in
                         NavigationLink(destination: Text("Test")) {
