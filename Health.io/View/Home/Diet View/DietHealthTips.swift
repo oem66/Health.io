@@ -12,7 +12,7 @@ struct DietHealthTips: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack() {
+            HStack {
                 ForEach(viewModel.tips, id: \.self) { tip in
                     DietHealthTipCard(model: tip)
                         .padding(10)
@@ -32,22 +32,24 @@ struct DietHealthTipCard: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 300, height: 200, alignment: .center)
                 .cornerRadius(10)
+                .brightness(-0.35)
             
             VStack(alignment: .center) {
                 Text(model.title)
-                    .foregroundColor(.white)
+                    .foregroundColor(.green)
                     .fontWeight(.heavy)
-                    .font(.custom("Avenir-Medium", size: 21))
+                    .font(.custom("Avenir-Medium", size: 25))
                     .padding()
                 
                 Text(model.description)
-                    .foregroundColor(.white)
+                    .foregroundColor(.green)
                     .fontWeight(.bold)
-                    .font(.custom("Avenir-Medium", size: 17))
+                    .font(.custom("Avenir-Medium", size: 18))
                     .lineLimit(2)
                     .minimumScaleFactor(0.5)
                     .padding()
             }
+            .frame(width: 300, height: 200, alignment: .center)
         }
         .cornerRadius(10)
     }

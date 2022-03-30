@@ -60,6 +60,10 @@
 		17866F0C27F2343D008A4795 /* BodySpecificWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17866F0B27F2343D008A4795 /* BodySpecificWorkoutView.swift */; };
 		1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790A52427B1D21A00BF755F /* HealthInsight.swift */; };
 		179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */; };
+		179E10EA27F4DE00001D897C /* FastingDietPlansView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E10E927F4DE00001D897C /* FastingDietPlansView.swift */; };
+		179E10EC27F4DE46001D897C /* FastingDietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E10EB27F4DE46001D897C /* FastingDietViewModel.swift */; };
+		179E10EE27F4DE75001D897C /* FastingDietModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E10ED27F4DE75001D897C /* FastingDietModel.swift */; };
+		179E10F027F4DF35001D897C /* DietSpecifics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E10EF27F4DF35001D897C /* DietSpecifics.swift */; };
 		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
 		17A4A24A27EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4A24927EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift */; };
 		17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */; };
@@ -143,6 +147,10 @@
 		17866F0B27F2343D008A4795 /* BodySpecificWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkoutView.swift; sourceTree = "<group>"; };
 		1790A52427B1D21A00BF755F /* HealthInsight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthInsight.swift; sourceTree = "<group>"; };
 		179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityViewModel.swift; sourceTree = "<group>"; };
+		179E10E927F4DE00001D897C /* FastingDietPlansView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingDietPlansView.swift; sourceTree = "<group>"; };
+		179E10EB27F4DE46001D897C /* FastingDietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingDietViewModel.swift; sourceTree = "<group>"; };
+		179E10ED27F4DE75001D897C /* FastingDietModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingDietModel.swift; sourceTree = "<group>"; };
+		179E10EF27F4DF35001D897C /* DietSpecifics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietSpecifics.swift; sourceTree = "<group>"; };
 		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		17A4A24927EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkoutViewModel.swift; sourceTree = "<group>"; };
 		17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkout.swift; sourceTree = "<group>"; };
@@ -408,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				173A6E3227F37A920069396D /* DietHealthTipsViewModel.swift */,
+				179E10EB27F4DE46001D897C /* FastingDietViewModel.swift */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -416,6 +425,8 @@
 			isa = PBXGroup;
 			children = (
 				173A6E3527F37DA20069396D /* DietHealthTipsModel.swift */,
+				179E10ED27F4DE75001D897C /* FastingDietModel.swift */,
+				179E10EF27F4DF35001D897C /* DietSpecifics.swift */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -621,6 +632,7 @@
 			children = (
 				17D5409D27B4607400DEA551 /* DietView.swift */,
 				173A6E2F27F377A60069396D /* DietHealthTips.swift */,
+				179E10E927F4DE00001D897C /* FastingDietPlansView.swift */,
 			);
 			path = "Diet View";
 			sourceTree = "<group>";
@@ -804,6 +816,7 @@
 				172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */,
 				17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */,
 				17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */,
+				179E10F027F4DF35001D897C /* DietSpecifics.swift in Sources */,
 				172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */,
 				174B911027A0AE3A002C8D02 /* Publishers+Extension.swift in Sources */,
 				173A6E3627F37DA20069396D /* DietHealthTipsModel.swift in Sources */,
@@ -815,6 +828,7 @@
 				173A6E3327F37A920069396D /* DietHealthTipsViewModel.swift in Sources */,
 				174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */,
 				171CEF89278E2DD80033E8DF /* Covid19Service.swift in Sources */,
+				179E10EE27F4DE75001D897C /* FastingDietModel.swift in Sources */,
 				174B910E27A0AA8C002C8D02 /* AuthenticationService.swift in Sources */,
 				17304E1D27A9CAD200F675E4 /* AirQuality.swift in Sources */,
 				172CA3092780AA9300E5AD92 /* KeychainWrapper.swift in Sources */,
@@ -822,6 +836,7 @@
 				171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */,
 				17866F0A27F2340C008A4795 /* WorkoutTypeView.swift in Sources */,
 				1758B4CA27BAF5F3008DBAC9 /* APIService.swift in Sources */,
+				179E10EA27F4DE00001D897C /* FastingDietPlansView.swift in Sources */,
 				172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */,
 				17866F0C27F2343D008A4795 /* BodySpecificWorkoutView.swift in Sources */,
 				173A6E3027F377A60069396D /* DietHealthTips.swift in Sources */,
@@ -843,6 +858,7 @@
 				179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */,
 				17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */,
 				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
+				179E10EC27F4DE46001D897C /* FastingDietViewModel.swift in Sources */,
 				174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
