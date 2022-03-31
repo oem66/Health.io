@@ -1,5 +1,5 @@
 //
-//  FastingDietPlans.swift
+//  DietScrollView.swift
 //  Health.io
 //
 //  Created by Omer Rahmanovic on 3/30/22.
@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-struct FastingDietPlansView: View {
-    var viewModel = FastingDietViewModel()
+struct DietScrollView: View {
+    var viewModel: DietViewModel
+    var sectionTitle: String
+    var sectionTitleColor: Color
     
     var body: some View {
         VStack {
+            Divider()
             HStack {
-                Text("FASTING")
-                    .foregroundColor(.black)
+                Text(sectionTitle)
+                    .foregroundColor(sectionTitleColor)
                     .font(.custom("Avenir-Medium", size: 25))
                     .fontWeight(.heavy)
                 Spacer()
@@ -25,7 +28,7 @@ struct FastingDietPlansView: View {
                 HStack {
                     ForEach(viewModel.fastingDiets, id: \.self) { fasting in
                         NavigationLink(destination: Text("Test")) {
-                            DietPlanCard(model: fasting)
+                            DietScrollViewCard(model: fasting, titleColor: sectionTitleColor)
                                 .padding()
                         }
                     }
@@ -35,8 +38,9 @@ struct FastingDietPlansView: View {
     }
 }
 
-struct DietPlanCard: View {
+struct DietScrollViewCard: View {
     var model: FastingDietModel
+    var titleColor: Color
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -46,7 +50,7 @@ struct DietPlanCard: View {
                 .frame(width: 270, height: 165, alignment: .center)
             
             Text(model.title)
-                .foregroundColor(.green)
+                .foregroundColor(titleColor)
                 .fontWeight(.heavy)
             
             Text(model.description)

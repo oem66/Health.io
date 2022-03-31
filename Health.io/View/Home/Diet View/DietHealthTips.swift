@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct DietHealthTips: View {
-    private var viewModel = DietHealthTipsViewModel()
+    private var viewModel = DietViewModel()
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(viewModel.tips, id: \.self) { tip in
+                ForEach(viewModel.dietHealthTips, id: \.self) { tip in
                     DietHealthTipCard(model: tip)
                         .padding(10)
                 }
@@ -36,15 +36,15 @@ struct DietHealthTipCard: View {
             
             VStack(alignment: .center) {
                 Text(model.title)
-                    .foregroundColor(.green)
+                    .foregroundColor(.white)
                     .fontWeight(.heavy)
-                    .font(.custom("Avenir-Medium", size: 25))
+                    .font(.custom("Avenir-Medium", size: 35))
                     .padding()
                 
                 Text(model.description)
-                    .foregroundColor(.green)
+                    .foregroundColor(.white)
                     .fontWeight(.bold)
-                    .font(.custom("Avenir-Medium", size: 18))
+                    .font(.custom("Avenir-Medium", size: 21))
                     .lineLimit(2)
                     .minimumScaleFactor(0.5)
                     .padding()
