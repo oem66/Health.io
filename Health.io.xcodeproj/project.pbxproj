@@ -64,7 +64,6 @@
 		179E10EE27F4DE75001D897C /* FastingDietModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E10ED27F4DE75001D897C /* FastingDietModel.swift */; };
 		179E10F027F4DF35001D897C /* DietSpecifics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179E10EF27F4DF35001D897C /* DietSpecifics.swift */; };
 		179F4D88279A0D540008A59C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F4D87279A0D540008A59C /* HomeView.swift */; };
-		17A4A24A27EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4A24927EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift */; };
 		17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */; };
 		17BBA49827EA69B700472546 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49727EA69B700472546 /* Workout.swift */; };
 		17BBA49B27EA6A2300472546 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */; };
@@ -150,7 +149,6 @@
 		179E10ED27F4DE75001D897C /* FastingDietModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingDietModel.swift; sourceTree = "<group>"; };
 		179E10EF27F4DF35001D897C /* DietSpecifics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietSpecifics.swift; sourceTree = "<group>"; };
 		179F4D87279A0D540008A59C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		17A4A24927EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkoutViewModel.swift; sourceTree = "<group>"; };
 		17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkout.swift; sourceTree = "<group>"; };
 		17BBA49727EA69B700472546 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
@@ -608,7 +606,6 @@
 			isa = PBXGroup;
 			children = (
 				17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */,
-				17A4A24927EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -846,7 +843,6 @@
 				174B910827A07514002C8D02 /* HealthHighlightsView.swift in Sources */,
 				17D5409C27B4603A00DEA551 /* WorkoutView.swift in Sources */,
 				17BBA49B27EA6A2300472546 /* WorkoutViewModel.swift in Sources */,
-				17A4A24A27EBB73F00F6424E /* BodySpecificWorkoutViewModel.swift in Sources */,
 				17D540A027B460A400DEA551 /* ProfileView.swift in Sources */,
 				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
 				1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */,
