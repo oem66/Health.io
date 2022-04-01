@@ -13,13 +13,14 @@
 
 
 Week Tasks:
- 1. Clean project structure
- 2. Implement clean code and SOLID Principles 
- 3. Implement DRY principle
- 4. Write some Unit Tests 
- 5. Make Email authentication screen with Combine framework. Save data to Firestore(Google Cloud)
- 6. Make service to handle Firestore data fetch and save to Core Data every time app is started
- 7. Redesign Home view and add cards for main health highlights and provide more informations on current level of health and informations how to improve current condition
- 8. Make new design Black and White for complete ease of use
- 9. Paid app subscription $2.99
- 10. Redesign App and manage Auth flow
+ 1. Fetch data when app is launching
+ 2. Create launch screen
+ 3. Redesign Home View
+ 4. Add new design elements on Workout and Diet View
+ 5. Redesign Profile View
+ 6. Change content on onboarding view
+ 7. Write some Unit Tests 
+ 8. Make Email authentication screen with Combine framework. Save data to Firestore(Google Cloud)
+ 9. Make service to handle Firestore data fetch and save to Core Data every time app is started
+ 10. Redesign Home view and add cards for main health highlights and provide more informations on current level of health and informations how to improve current condition
+ 11. Paid app subscription $1.99
