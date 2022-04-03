@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BodySpecificWorkoutView: View {
-    private var viewModel = WorkoutViewModel()
+    var viewModel: WorkoutViewModel
     
     var body: some View {
         let columns = [GridItem(.flexible(maximum: 250)),

@@ -7,15 +7,17 @@
 
 import SwiftUI
 
-struct DietHealthTips: View {
-    private var viewModel = DietViewModel()
+struct DietHealthTipsView: View {
+    var viewModel: DietViewModel
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(viewModel.dietHealthTips, id: \.self) { tip in
-                    DietHealthTipCard(model: tip)
-                        .padding(10)
+                    NavigationLink(destination: Text("Test")) {
+                        DietHealthTipCard(model: tip)
+                            .padding(10)
+                    }
                 }
             }
         }

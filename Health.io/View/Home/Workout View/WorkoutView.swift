@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct WorkoutView: View {
+    private var viewModel = WorkoutViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 CustomWorkoutView()
                     .padding(10)
                 
-                WorkoutTypeView()
+                WorkoutTypeView(viewModel: viewModel)
                     .padding()
                 
                 Divider()
@@ -29,7 +31,7 @@ struct WorkoutView: View {
                         .padding(.leading, 15)
                     Spacer()
                 }
-                BodySpecificWorkoutView()
+                BodySpecificWorkoutView(viewModel: viewModel)
                     .padding([.leading, .trailing])
                 Spacer()
             }
