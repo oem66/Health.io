@@ -30,7 +30,7 @@
 		172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA3132787A04600E5AD92 /* APIEndpoints.swift */; };
 		17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17304E1927A9C30800F675E4 /* AirQualityService.swift */; };
 		17304E1D27A9CAD200F675E4 /* AirQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17304E1C27A9CAD200F675E4 /* AirQuality.swift */; };
-		173A6E3027F377A60069396D /* DietHealthTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A6E2F27F377A60069396D /* DietHealthTips.swift */; };
+		173A6E3027F377A60069396D /* DietHealthTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A6E2F27F377A60069396D /* DietHealthTipsView.swift */; };
 		173A6E3627F37DA20069396D /* DietHealthTipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173A6E3527F37DA20069396D /* DietHealthTipsModel.swift */; };
 		1741F30E27F4F287009BCE5D /* DietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741F30D27F4F287009BCE5D /* DietViewModel.swift */; };
 		1741F31027F4F36E009BCE5D /* DietScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1741F30F27F4F36E009BCE5D /* DietScrollView.swift */; };
@@ -122,7 +122,7 @@
 		172CA3132787A04600E5AD92 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		17304E1927A9C30800F675E4 /* AirQualityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityService.swift; sourceTree = "<group>"; };
 		17304E1C27A9CAD200F675E4 /* AirQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQuality.swift; sourceTree = "<group>"; };
-		173A6E2F27F377A60069396D /* DietHealthTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietHealthTips.swift; sourceTree = "<group>"; };
+		173A6E2F27F377A60069396D /* DietHealthTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietHealthTipsView.swift; sourceTree = "<group>"; };
 		173A6E3527F37DA20069396D /* DietHealthTipsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietHealthTipsModel.swift; sourceTree = "<group>"; };
 		1741F30D27F4F287009BCE5D /* DietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietViewModel.swift; sourceTree = "<group>"; };
 		1741F30F27F4F36E009BCE5D /* DietScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietScrollView.swift; sourceTree = "<group>"; };
@@ -625,7 +625,7 @@
 			isa = PBXGroup;
 			children = (
 				17D5409D27B4607400DEA551 /* DietView.swift */,
-				173A6E2F27F377A60069396D /* DietHealthTips.swift */,
+				173A6E2F27F377A60069396D /* DietHealthTipsView.swift */,
 				1741F30F27F4F36E009BCE5D /* DietScrollView.swift */,
 			);
 			path = "Diet View";
@@ -833,7 +833,7 @@
 				1758B4CA27BAF5F3008DBAC9 /* APIService.swift in Sources */,
 				172CA3072780AA5500E5AD92 /* KeychainItemAccessibility.swift in Sources */,
 				17866F0C27F2343D008A4795 /* BodySpecificWorkoutView.swift in Sources */,
-				173A6E3027F377A60069396D /* DietHealthTips.swift in Sources */,
+				173A6E3027F377A60069396D /* DietHealthTipsView.swift in Sources */,
 				17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */,
 				174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */,
 				172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */,
