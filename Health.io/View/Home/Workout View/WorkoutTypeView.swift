@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WorkoutTypeView: View {
-    private var viewModel = WorkoutViewModel()
+    var viewModel: WorkoutViewModel
     
     var body: some View {
         Divider()
