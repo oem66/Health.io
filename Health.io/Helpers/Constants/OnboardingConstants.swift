@@ -17,4 +17,8 @@ struct OnboardingConstants {
     var doctor = "doctor"
     var vaccine = "vaccine"
     var vitals = "vitals"
+    var workout = "workout"
+    var fasting = "fasting"
+    var diet = "diet"
+    var health = "health"
 }

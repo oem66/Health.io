@@ -9,10 +9,10 @@ import SwiftUI
 
 struct OnboardingView: View {
     private var onboardingElements: [OnboardingModel] = [
-        OnboardingModel(image: OnboardingConstants.shared.ambulance, title: "ambulance_title", description: "ambulance_description"),
-        OnboardingModel(image: OnboardingConstants.shared.doctor, title: "doctor_title", description: "doctor_description"),
-        OnboardingModel(image: OnboardingConstants.shared.vitals, title: "vitals_title", description: "vitals_description"),
-        OnboardingModel(image: OnboardingConstants.shared.vaccine, title: "vaccine_title", description: "vaccine_description")
+        OnboardingModel(image: OnboardingConstants.shared.health, title: "ambulance_title", description: "ambulance_description"),
+        OnboardingModel(image: OnboardingConstants.shared.fasting, title: "doctor_title", description: "doctor_description"),
+        OnboardingModel(image: OnboardingConstants.shared.workout, title: "vitals_title", description: "vitals_description"),
+        OnboardingModel(image: OnboardingConstants.shared.diet, title: "vaccine_title", description: "vaccine_description")
     ]
     
     @State private var showAuthView = false

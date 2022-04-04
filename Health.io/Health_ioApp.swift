@@ -20,10 +20,9 @@ struct Health_ioApp: App {
         WindowGroup {
             //            ContentView()
             //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-            //            HealthStatsView()
             
             if let authState = KeychainWrapper.standard.bool(forKey: AuthenticationConstants.shared.user_auth_state) {
-                if authState { HomeView() } else { OnboardingView() }
+                if !authState { HomeView() } else { OnboardingView() }
             } else {
                 OnboardingView()
             }
