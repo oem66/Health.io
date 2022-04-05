@@ -22,7 +22,7 @@ struct Health_ioApp: App {
             //                .environment(\.managedObjectContext, persistenceController.container.viewContext)
             
             if let authState = KeychainWrapper.standard.bool(forKey: AuthenticationConstants.shared.user_auth_state) {
-                if !authState { HomeView() } else { OnboardingView() }
+                if authState { HomeView() } else { OnboardingView() }
             } else {
                 OnboardingView()
             }

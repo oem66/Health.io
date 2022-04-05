@@ -142,9 +142,9 @@ struct BottomAuthenticationView: View {
                 Text("create_an_account")
                     .font(.custom("Avenir-Medium", size: 15))
                     .fontWeight(.medium)
-                    .foregroundColor(Color(red: 24/255, green: 210/255, blue: 167/255))
+                    .foregroundColor(.blue)
             }
         }
-        NavigationLink(destination: HomeView()/*HomeView(authViewModel: viewModel)*/, isActive: $anonymously) { }
+        NavigationLink(destination: HomeView(), isActive: $anonymously) { }
     }
 }
