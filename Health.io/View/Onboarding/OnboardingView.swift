@@ -9,16 +9,16 @@ import SwiftUI
 
 struct OnboardingView: View {
     private var onboardingElements: [OnboardingModel] = [
-        OnboardingModel(image: OnboardingConstants.shared.health, title: "ambulance_title", description: "ambulance_description"),
-        OnboardingModel(image: OnboardingConstants.shared.fasting, title: "doctor_title", description: "doctor_description"),
-        OnboardingModel(image: OnboardingConstants.shared.workout, title: "vitals_title", description: "vitals_description"),
-        OnboardingModel(image: OnboardingConstants.shared.diet, title: "vaccine_title", description: "vaccine_description")
+        OnboardingModel(image: OnboardingConstants.shared.health, title: "health_title", description: "health_description"),
+        OnboardingModel(image: OnboardingConstants.shared.fasting, title: "fasting_title", description: "fasting_description"),
+        OnboardingModel(image: OnboardingConstants.shared.workout, title: "workout_title", description: "workout_description"),
+        OnboardingModel(image: OnboardingConstants.shared.diet, title: "diet_title", description: "diet_description")
     ]
     
     @State private var showAuthView = false
     
     init() {
-        UIPageControl.appearance().currentPageIndicatorTintColor = .black //UIColor(red: 24/255, green: 210/255, blue: 167/255, alpha: 1.0)
+        UIPageControl.appearance().currentPageIndicatorTintColor = .black
         UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
     }
     
@@ -45,7 +45,6 @@ struct OnboardingView: View {
                         .fontWeight(.bold)
                         .padding(.vertical, 18)
                         .frame(maxWidth: .infinity, maxHeight: 50)
-//                        .background(Color(red: 24/255, green: 210/255, blue: 167/255))
                         .background(.black)
                         .cornerRadius(10)
                         .shadow(color: Color.black.opacity(0.1), radius: 5, x: 5, y: 5)

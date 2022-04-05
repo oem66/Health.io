@@ -31,6 +31,18 @@
 "vitals_title" = "Personalisierte Gesundheitsversorgung";
 "vitals_description" = "Ihre Gesundheitsdaten werden von Experten überwacht. Alle Daten werden nur mit Ihrem persönlichen Arzt geteilt und Sie haben die Kontrolle über Ihre Daten!";
 
+"health_title" = "";
+"health_description" = "";
+
+"fasting_title" = "";
+"fasting_description" = "";
+
+"workout_title" = "";
+"workout_description" = "";
+
+"diet_title" = "";
+"diet_description" = "";
+
 // MARK: - Authentication
 "apple_auth" = "Weitermachen mit Apple";
 "google_auth" = "Weitermachen mit Google";

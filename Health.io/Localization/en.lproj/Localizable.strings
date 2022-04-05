@@ -23,6 +23,18 @@
 "vitals_title" = "Personalised Healthcare";
 "vitals_description" = "Your health data is monitored by experts. All data is shared only with your personal doctor and you are in control of your data!";
 
+"health_title" = "Improve Health";
+"health_description" = "General health can be improved significantly by consuming health food and regularly exercising";
+
+"fasting_title" = "Fasting Tracker";
+"fasting_description" = "Fasting has many health benefits for human body like fat loss, cell regeneration and insulin balance";
+
+"workout_title" = "Workout Plans";
+"workout_description" = "Never again go to training without workout plan, choose plan that suits you most and enjoy your workouts";
+
+"diet_title" = "Diet Plans";
+"diet_description" = "Without proper diet your workout don't have much impact on your muscle structure, so pick plan that fits your goals";
+
 // MARK: - Authentication
 "apple_auth" = "Continue with Apple";
 "google_auth" = "Continue with Google";
