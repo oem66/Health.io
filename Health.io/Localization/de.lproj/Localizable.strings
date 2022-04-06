@@ -31,17 +31,17 @@
 "vitals_title" = "Personalisierte Gesundheitsversorgung";
 "vitals_description" = "Ihre Gesundheitsdaten werden von Experten überwacht. Alle Daten werden nur mit Ihrem persönlichen Arzt geteilt und Sie haben die Kontrolle über Ihre Daten!";
 
-"health_title" = "";
-"health_description" = "";
+"health_title" = "Die Gesundheit verbessern";
+"health_description" = "Die allgemeine Gesundheit kann durch den Verzehr gesunder Lebensmittel und regelmäßige Bewegung erheblich verbessert werden";
 
-"fasting_title" = "";
-"fasting_description" = "";
+"fasting_title" = "Fasten-Tracker";
+"fasting_description" = "Fasten hat viele gesundheitliche Vorteile für den menschlichen Körper, wie Fettabbau, Zellregeneration und Insulinbalance";
 
-"workout_title" = "";
-"workout_description" = "";
+"workout_title" = "Trainingspläne";
+"workout_description" = "Gehen Sie nie wieder ohne Trainingsplan zum Training, wählen Sie den Plan, der am besten zu Ihnen passt, und genießen Sie Ihr Training";
 
-"diet_title" = "";
-"diet_description" = "";
+"diet_title" = "Diätpläne";
+"diet_description" = "Ohne die richtige Ernährung hat Ihr Training keinen großen Einfluss auf Ihre Muskelstruktur, also wählen Sie einen Plan, der zu Ihren Zielen passt";
 
 // MARK: - Authentication
 "apple_auth" = "Weitermachen mit Apple";
