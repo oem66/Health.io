@@ -52,32 +52,29 @@ struct HealthTopTipNoSubtitle: View {
     var model: HealthTip
     
     var body: some View {
-        VStack {
+        HStack {
+            Image(model.image)
+                .resizable()
+                .frame(width: 40, height: 40, alignment: .center)
+                .padding()
+            
+            Spacer()
+            
             HStack {
-                Image(model.image)
-                    .resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .padding()
-                
+                Text(model.title)
+                    .foregroundColor(.black)
+                    .font(.custom("Avenir-Medium", size: 15))
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.5)
                 Spacer()
-                
-                HStack {
-                    Text(model.title)
-                        .foregroundColor(.black)
-                        .font(.custom("Avenir-Medium", size: 15))
-                        .lineLimit(2)
-                        .minimumScaleFactor(0.5)
-                    Spacer()
-                }
-                
-                Spacer()
-                
-                Image(systemName: "arrow.right")
-                    .resizable()
-                    .frame(width: 15, height: 15, alignment: .center)
-                    .padding()
             }
-            .padding(10)
+            
+            Spacer()
+            
+            Image(systemName: "arrow.right")
+                .resizable()
+                .frame(width: 15, height: 15, alignment: .center)
+                .padding()
         }
         .background(Color.white)
         .cornerRadius(8)
@@ -88,39 +85,39 @@ struct HealthTopTipSubtitle: View {
     var model: HealthTip
     
     var body: some View {
-        VStack {
+        HStack {
+            Image(model.image)
+                .resizable()
+                .frame(width: 40, height: 40, alignment: .center)
+                .padding()
+            
+            Spacer()
+            
             HStack {
-                Image(model.image)
-                    .resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .padding()
-                
-                Spacer()
-                
-                HStack {
-                    VStack(alignment: .leading) {
-                        Spacer()
-                        Text(model.title)
-                            .foregroundColor(.black)
-                            .font(.custom("Avenir-Medium", size: 15))
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.5)
-                        
-                        Text(model.subtitle ?? "No Subtitle")
-                            .foregroundColor(.black)
-                            .font(.custom("Avenir-Medium", size: 10))
-                        Spacer()
-                    }
+                VStack(alignment: .leading) {
+                    Spacer()
+                    
+                    Text(model.title)
+                        .foregroundColor(.black)
+                        .font(.custom("Avenir-Medium", size: 15))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.5)
+                    
+                    Text(model.subtitle ?? "No Subtitle")
+                        .foregroundColor(.black)
+                        .font(.custom("Avenir-Medium", size: 10))
+                    
                     Spacer()
                 }
-                
                 Spacer()
-                
-                Image(systemName: "arrow.right")
-                    .resizable()
-                    .frame(width: 15, height: 15, alignment: .center)
-                    .padding()
             }
+            
+            Spacer()
+            
+            Image(systemName: "arrow.right")
+                .resizable()
+                .frame(width: 15, height: 15, alignment: .center)
+                .padding()
         }
         .background(Color.white)
         .cornerRadius(8)
@@ -132,44 +129,42 @@ struct HealthTopTipImageSubtitle: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                HStack {
-                    Image(model.image)
-                        .resizable()
-                        .frame(width: 40, height: 40, alignment: .center)
-                        .padding()
-                    
+            HStack {
+                Image(model.image)
+                    .resizable()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .padding()
+                
+                Spacer()
+                
+                VStack(alignment: .leading, spacing: 3) {
                     Spacer()
+                    Text(model.title)
+                        .foregroundColor(.black)
+                        .font(.custom("Avenir-Medium", size: 15))
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.5)
                     
-                    VStack(alignment: .leading, spacing: 3) {
-                        Spacer()
-                        Text(model.title)
-                            .foregroundColor(.black)
-                            .font(.custom("Avenir-Medium", size: 15))
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.5)
+                    HStack(spacing: 3) {
+                        Image(systemName: model.subtitleImage ?? "exclamationmark.octagon")
+                            .resizable()
+                            .frame(width: 15, height: 15, alignment: .center)
                         
-                        HStack(spacing: 3) {
-                            Image(systemName: model.subtitleImage ?? "exclamationmark.octagon")
-                                .resizable()
-                                .frame(width: 15, height: 15, alignment: .center)
-                            
-                            Text(model.subtitle ?? "No Subtitle")
-                                .foregroundColor(.black)
-                                .font(.custom("Avenir-Medium", size: 10))
-                                .lineLimit(3)
-                            Spacer()
-                        }
+                        Text(model.subtitle ?? "No Subtitle")
+                            .foregroundColor(.black)
+                            .font(.custom("Avenir-Medium", size: 10))
+                            .lineLimit(3)
                         Spacer()
                     }
-                    
                     Spacer()
-                    
-                    Image(systemName: "arrow.right")
-                        .resizable()
-                        .frame(width: 15, height: 15, alignment: .center)
-                        .padding()
                 }
+                
+                Spacer()
+                
+                Image(systemName: "arrow.right")
+                    .resizable()
+                    .frame(width: 15, height: 15, alignment: .center)
+                    .padding()
             }
             .background(Color.white)
             .cornerRadius(8)
