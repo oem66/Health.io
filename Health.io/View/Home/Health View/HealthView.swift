@@ -16,6 +16,7 @@ struct HealthView: View {
                 ScrollView {
                     ForEach(viewModel.healthTips, id: \.self) { model in
                         HealthTopTipsView(model: model)
+                            .padding([.bottom, .leading, .trailing], 10)
                     }
                 }
             }
@@ -98,6 +99,7 @@ struct HealthTopTipSubtitle: View {
                 
                 HStack {
                     VStack(alignment: .leading) {
+                        Spacer()
                         Text(model.title)
                             .foregroundColor(.black)
                             .font(.custom("Avenir-Medium", size: 15))
@@ -107,6 +109,7 @@ struct HealthTopTipSubtitle: View {
                         Text(model.subtitle ?? "No Subtitle")
                             .foregroundColor(.black)
                             .font(.custom("Avenir-Medium", size: 10))
+                        Spacer()
                     }
                     Spacer()
                 }
@@ -128,7 +131,7 @@ struct HealthTopTipImageSubtitle: View {
     var model: HealthTip
     
     var body: some View {
-        ZStack{
+        ZStack {
             VStack {
                 HStack {
                     Image(model.image)
@@ -139,12 +142,12 @@ struct HealthTopTipImageSubtitle: View {
                     Spacer()
                     
                     VStack(alignment: .leading, spacing: 3) {
+                        Spacer()
                         Text(model.title)
                             .foregroundColor(.black)
                             .font(.custom("Avenir-Medium", size: 15))
                             .lineLimit(2)
                             .minimumScaleFactor(0.5)
-                            .padding()
                         
                         HStack(spacing: 3) {
                             Image(systemName: model.subtitleImage ?? "exclamationmark.octagon")
@@ -155,9 +158,9 @@ struct HealthTopTipImageSubtitle: View {
                                 .foregroundColor(.black)
                                 .font(.custom("Avenir-Medium", size: 10))
                                 .lineLimit(3)
-                                .padding()
                             Spacer()
                         }
+                        Spacer()
                     }
                     
                     Spacer()
