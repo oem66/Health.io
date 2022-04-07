@@ -45,6 +45,8 @@
 		174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03427938CF600AA9643 /* AuthenticationConstants.swift */; };
 		174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03627938E0800AA9643 /* AuthenticationModel.swift */; };
 		17568F1E27FF432D00D0C87B /* DietDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17568F1D27FF432C00D0C87B /* DietDetailsView.swift */; };
+		17568F2227FF46BC00D0C87B /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17568F2127FF46BC00D0C87B /* HealthView.swift */; };
+		17568F2527FF4CF700D0C87B /* HealthTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17568F2427FF4CF700D0C87B /* HealthTip.swift */; };
 		1758B4CA27BAF5F3008DBAC9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1758B4C927BAF5F3008DBAC9 /* APIService.swift */; };
 		1779B9C92798A42D00EA8470 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9C82798A42D00EA8470 /* FirebaseAnalytics */; };
 		1779B9CB2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9CA2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta */; };
@@ -138,6 +140,8 @@
 		174FF03427938CF600AA9643 /* AuthenticationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationConstants.swift; sourceTree = "<group>"; };
 		174FF03627938E0800AA9643 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
 		17568F1D27FF432C00D0C87B /* DietDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailsView.swift; sourceTree = "<group>"; };
+		17568F2127FF46BC00D0C87B /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		17568F2427FF4CF700D0C87B /* HealthTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTip.swift; sourceTree = "<group>"; };
 		1758B4C927BAF5F3008DBAC9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 		172CA2FB2780A86D00E5AD92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				17568F2327FF4CE800D0C87B /* Health */,
 				173A6E3427F37D900069396D /* Diet */,
 				17BBA49627EA69A700472546 /* Workout */,
 				1790A52327B1D20400BF755F /* Health Insight */,
@@ -488,6 +493,22 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		17568F2027FF46A100D0C87B /* Health View */ = {
+			isa = PBXGroup;
+			children = (
+				17568F2127FF46BC00D0C87B /* HealthView.swift */,
+			);
+			path = "Health View";
+			sourceTree = "<group>";
+		};
+		17568F2327FF4CE800D0C87B /* Health */ = {
+			isa = PBXGroup;
+			children = (
+				17568F2427FF4CF700D0C87B /* HealthTip.swift */,
+			);
+			path = Health;
+			sourceTree = "<group>";
+		};
 		1758B4C627BAF48E008DBAC9 /* Workout  */ = {
 			isa = PBXGroup;
 			children = (
@@ -578,6 +599,7 @@
 			children = (
 				179F4D85279A0C6D0008A59C /* Home View */,
 				17DAC15927AC6FC900412CA3 /* Air Quality */,
+				17568F2027FF46A100D0C87B /* Health View */,
 				17D5409827B45B5800DEA551 /* Workout View */,
 				17D5409927B45B6900DEA551 /* Diet View */,
 				17D5409A27B45B7200DEA551 /* Profile View */,
@@ -811,6 +833,7 @@
 				17BBA49827EA69B700472546 /* Workout.swift in Sources */,
 				177FC53C27B1E1F700598425 /* HomeViewModel.swift in Sources */,
 				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
+				17568F2527FF4CF700D0C87B /* HealthTip.swift in Sources */,
 				172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */,
 				17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */,
 				1741F30E27F4F287009BCE5D /* DietViewModel.swift in Sources */,
@@ -850,6 +873,7 @@
 				17D540A027B460A400DEA551 /* ProfileView.swift in Sources */,
 				172CA3122787517700E5AD92 /* OnboardingView.swift in Sources */,
 				1790A52527B1D21A00BF755F /* HealthInsight.swift in Sources */,
+				17568F2227FF46BC00D0C87B /* HealthView.swift in Sources */,
 				174FF02C2791DFCA00AA9643 /* OnboardingModel.swift in Sources */,
 				179F4D88279A0D540008A59C /* HomeView.swift in Sources */,
 				179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */,

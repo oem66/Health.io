@@ -76,7 +76,7 @@ struct HomeView: View {
 
 
 
-struct HealthView: View {
+struct HealthhView: View {
     var authViewModel = AuthenticationViewModel()
     var viewModel = HomeViewModel()
     var healthViewModel = HealthViewModel()
