@@ -44,6 +44,7 @@
 		174FF03127923EED00AA9643 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03027923EED00AA9643 /* AuthenticationView.swift */; };
 		174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03427938CF600AA9643 /* AuthenticationConstants.swift */; };
 		174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174FF03627938E0800AA9643 /* AuthenticationModel.swift */; };
+		17568F1E27FF432D00D0C87B /* DietDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17568F1D27FF432C00D0C87B /* DietDetailsView.swift */; };
 		1758B4CA27BAF5F3008DBAC9 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1758B4C927BAF5F3008DBAC9 /* APIService.swift */; };
 		1779B9C92798A42D00EA8470 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9C82798A42D00EA8470 /* FirebaseAnalytics */; };
 		1779B9CB2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 1779B9CA2798A42D00EA8470 /* FirebaseAnalyticsSwift-Beta */; };
@@ -136,6 +137,7 @@
 		174FF03027923EED00AA9643 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		174FF03427938CF600AA9643 /* AuthenticationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationConstants.swift; sourceTree = "<group>"; };
 		174FF03627938E0800AA9643 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		17568F1D27FF432C00D0C87B /* DietDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietDetailsView.swift; sourceTree = "<group>"; };
 		1758B4C927BAF5F3008DBAC9 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		1779B9D42798A76E00EA8470 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1779B9D72798AE0C00EA8470 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -627,6 +629,7 @@
 				17D5409D27B4607400DEA551 /* DietView.swift */,
 				173A6E2F27F377A60069396D /* DietHealthTipsView.swift */,
 				1741F30F27F4F36E009BCE5D /* DietScrollView.swift */,
+				17568F1D27FF432C00D0C87B /* DietDetailsView.swift */,
 			);
 			path = "Diet View";
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 				17D5409E27B4607400DEA551 /* DietView.swift in Sources */,
 				174FF02F2791E0A800AA9643 /* OnboardingConstants.swift in Sources */,
 				171AC56B27BC3210005E8458 /* HealthService.swift in Sources */,
+				17568F1E27FF432D00D0C87B /* DietDetailsView.swift in Sources */,
 				17BBA49827EA69B700472546 /* Workout.swift in Sources */,
 				177FC53C27B1E1F700598425 /* HomeViewModel.swift in Sources */,
 				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
