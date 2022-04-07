@@ -52,16 +52,21 @@ struct HealthTopTipNoSubtitle: View {
     
     var body: some View {
         VStack {
-            HStack(spacing: 8) {
+            HStack {
                 Image(model.image)
                     .resizable()
                     .frame(width: 40, height: 40, alignment: .center)
+                    .padding()
                 
-                VStack(alignment: .leading) {
+                Spacer()
+                
+                HStack {
                     Text(model.title)
                         .foregroundColor(.black)
                         .font(.custom("Avenir-Medium", size: 15))
-                        .padding(.bottom)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.5)
+                    Spacer()
                 }
                 
                 Spacer()
@@ -69,11 +74,11 @@ struct HealthTopTipNoSubtitle: View {
                 Image(systemName: "arrow.right")
                     .resizable()
                     .frame(width: 15, height: 15, alignment: .center)
+                    .padding()
             }
             .padding(10)
         }
         .background(Color.white)
-        .padding(10)
         .cornerRadius(8)
     }
 }
@@ -83,21 +88,27 @@ struct HealthTopTipSubtitle: View {
     
     var body: some View {
         VStack {
-            HStack(spacing: 8) {
+            HStack {
                 Image(model.image)
                     .resizable()
                     .frame(width: 40, height: 40, alignment: .center)
+                    .padding()
                 
-                VStack(alignment: .leading) {
-                    Text(model.title)
-                        .foregroundColor(.black)
-                        .font(.custom("Avenir-Medium", size: 15))
-                        .padding(.bottom)
-                    
-                    Text(model.subtitle ?? "No Subtitle")
-                        .foregroundColor(.black)
-                        .font(.custom("Avenir-Medium", size: 10))
-                        .padding(.bottom)
+                Spacer()
+                
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(model.title)
+                            .foregroundColor(.black)
+                            .font(.custom("Avenir-Medium", size: 15))
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.5)
+                        
+                        Text(model.subtitle ?? "No Subtitle")
+                            .foregroundColor(.black)
+                            .font(.custom("Avenir-Medium", size: 10))
+                    }
+                    Spacer()
                 }
                 
                 Spacer()
@@ -105,10 +116,10 @@ struct HealthTopTipSubtitle: View {
                 Image(systemName: "arrow.right")
                     .resizable()
                     .frame(width: 15, height: 15, alignment: .center)
+                    .padding()
             }
         }
         .background(Color.white)
-        .padding(10)
         .cornerRadius(8)
     }
 }
@@ -119,25 +130,33 @@ struct HealthTopTipImageSubtitle: View {
     var body: some View {
         ZStack{
             VStack {
-                HStack(spacing: 8) {
+                HStack {
                     Image(model.image)
                         .resizable()
                         .frame(width: 40, height: 40, alignment: .center)
+                        .padding()
+                    
+                    Spacer()
                     
                     VStack(alignment: .leading, spacing: 3) {
                         Text(model.title)
                             .foregroundColor(.black)
                             .font(.custom("Avenir-Medium", size: 15))
-                            .padding(.bottom)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.5)
+                            .padding()
                         
                         HStack(spacing: 3) {
-                            Image(model.subtitleImage ?? "exclamationmark.octagon")
+                            Image(systemName: model.subtitleImage ?? "exclamationmark.octagon")
                                 .resizable()
                                 .frame(width: 15, height: 15, alignment: .center)
+                            
                             Text(model.subtitle ?? "No Subtitle")
                                 .foregroundColor(.black)
                                 .font(.custom("Avenir-Medium", size: 10))
-                                .padding(.bottom)
+                                .lineLimit(3)
+                                .padding()
+                            Spacer()
                         }
                     }
                     
@@ -146,10 +165,11 @@ struct HealthTopTipImageSubtitle: View {
                     Image(systemName: "arrow.right")
                         .resizable()
                         .frame(width: 15, height: 15, alignment: .center)
+                        .padding()
                 }
             }
             .background(Color.white)
-            .padding(10)
+            .cornerRadius(8)
         }
     }
 }
