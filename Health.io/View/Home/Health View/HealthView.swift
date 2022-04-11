@@ -18,6 +18,10 @@ struct HealthView: View {
                         HealthTopTipsView(model: model)
                             .padding([.bottom, .leading, .trailing], 10)
                     }
+                    
+                    HealthKitDataCardView()
+                    
+                    Spacer()
                 }
             }
             .navigationTitle("Home")
