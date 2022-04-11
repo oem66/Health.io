@@ -74,6 +74,7 @@
 		17D5409E27B4607400DEA551 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409D27B4607400DEA551 /* DietView.swift */; };
 		17D540A027B460A400DEA551 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409F27B460A400DEA551 /* ProfileView.swift */; };
 		17D5F20927ADBAC100921867 /* HomeTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5F20827ADBAC100921867 /* HomeTip.swift */; };
+		17D623052804975100D95C01 /* HealthKitDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D623042804975100D95C01 /* HealthKitDataCardView.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -162,6 +163,7 @@
 		17D5409D27B4607400DEA551 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
 		17D5409F27B460A400DEA551 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		17D5F20827ADBAC100921867 /* HomeTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTip.swift; sourceTree = "<group>"; };
+		17D623042804975100D95C01 /* HealthKitDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDataCardView.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -613,6 +615,7 @@
 				179F4D87279A0D540008A59C /* HomeView.swift */,
 				174B910727A07513002C8D02 /* HealthHighlightsView.swift */,
 				174B910927A076ED002C8D02 /* HealthCardView.swift */,
+				17D623042804975100D95C01 /* HealthKitDataCardView.swift */,
 			);
 			path = "Home View";
 			sourceTree = "<group>";
@@ -843,6 +846,7 @@
 				174B911027A0AE3A002C8D02 /* Publishers+Extension.swift in Sources */,
 				173A6E3627F37DA20069396D /* DietHealthTipsModel.swift in Sources */,
 				1779B9D82798AE0C00EA8470 /* AuthenticationViewModel.swift in Sources */,
+				17D623052804975100D95C01 /* HealthKitDataCardView.swift in Sources */,
 				172CA2CD277F165C00E5AD92 /* Health_ioApp.swift in Sources */,
 				1741F31027F4F36E009BCE5D /* DietScrollView.swift in Sources */,
 				172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */,

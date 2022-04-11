@@ -18,6 +18,10 @@ struct HealthView: View {
                         HealthTopTipsView(model: model)
                             .padding([.bottom, .leading, .trailing], 10)
                     }
+                    
+                    HealthKitDataCardView()
+                    
+                    Spacer()
                 }
             }
             .navigationTitle("Home")
@@ -63,7 +67,8 @@ struct HealthTopTipNoSubtitle: View {
             HStack {
                 Text(model.title)
                     .foregroundColor(.black)
-                    .font(.custom("Avenir-Medium", size: 15))
+                    .font(.custom("Avenir-Medium", size: 17))
+                    .fontWeight(.heavy)
                     .lineLimit(2)
                     .minimumScaleFactor(0.5)
                 Spacer()
@@ -99,13 +104,14 @@ struct HealthTopTipSubtitle: View {
                     
                     Text(model.title)
                         .foregroundColor(.black)
-                        .font(.custom("Avenir-Medium", size: 15))
+                        .font(.custom("Avenir-Medium", size: 17))
+                        .fontWeight(.heavy)
                         .lineLimit(2)
                         .minimumScaleFactor(0.5)
                     
                     Text(model.subtitle ?? "No Subtitle")
                         .foregroundColor(.black)
-                        .font(.custom("Avenir-Medium", size: 10))
+                        .font(.custom("Avenir-Medium", size: 12))
                     
                     Spacer()
                 }
@@ -141,7 +147,8 @@ struct HealthTopTipImageSubtitle: View {
                     Spacer()
                     Text(model.title)
                         .foregroundColor(.black)
-                        .font(.custom("Avenir-Medium", size: 15))
+                        .font(.custom("Avenir-Medium", size: 17))
+                        .fontWeight(.heavy)
                         .lineLimit(2)
                         .minimumScaleFactor(0.5)
                     
@@ -151,8 +158,8 @@ struct HealthTopTipImageSubtitle: View {
                             .frame(width: 15, height: 15, alignment: .center)
                         
                         Text(model.subtitle ?? "No Subtitle")
-                            .foregroundColor(.black)
-                            .font(.custom("Avenir-Medium", size: 10))
+                            .foregroundColor(.gray)
+                            .font(.custom("Avenir-Medium", size: 12))
                             .lineLimit(3)
                         Spacer()
                     }
