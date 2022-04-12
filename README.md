@@ -15,8 +15,6 @@
 Week Tasks:
  1. Fetch data when app is launching
  2. Create launch screen
- 3. Redesign Home View
- 4. Add new design elements on Workout and Diet View
  5. Redesign Profile View
  6. Change content on onboarding view
  7. Write some Unit Tests 
