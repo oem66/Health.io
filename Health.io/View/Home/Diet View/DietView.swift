@@ -40,7 +40,9 @@ struct DietView: View {
                     }
                 })
                 Spacer()
-            }.navigationTitle("Diet")
+            }
+            .navigationTitle("Diet")
+            .background(Color(red: 245/255, green: 247/255, blue: 251/255))
         }
     }
 }

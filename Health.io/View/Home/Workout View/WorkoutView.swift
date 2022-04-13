@@ -36,6 +36,7 @@ struct WorkoutView: View {
                 Spacer()
             }
             .navigationTitle("Workout")
+            .background(Color(red: 245/255, green: 247/255, blue: 251/255))
         }
     }
 }
