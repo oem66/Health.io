@@ -16,11 +16,8 @@ Week Tasks:
  1. Fetch data when app is launching
  2. Create launch screen
  5. Redesign Profile View
- 6. Change content on onboarding view
  7. Write some Unit Tests 
- 8. Make Email authentication screen with Combine framework. Save data to Firestore(Google Cloud)
  9. Make service to handle Firestore data fetch and save to Core Data every time app is started
- 10. Redesign Home view and add cards for main health highlights and provide more informations on current level of health and informations how to improve current condition
  11. Paid app subscription $1.99
  12. Save data to Firebase
  13. Save some informations in Firebase Real Time database
