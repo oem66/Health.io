@@ -68,10 +68,6 @@ class HealthService: HealthServiceProtocol {
         if HKHealthStore.isHealthDataAvailable() {
             let readTypes = Set([
                 HKObjectType.quantityType(forIdentifier: .heartRate)!,
-                HKObjectType.quantityType(forIdentifier: .restingHeartRate)!,
-                HKObjectType.quantityType(forIdentifier: .walkingHeartRateAverage)!,
-                HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
-                HKObjectType.quantityType(forIdentifier: .walkingSpeed)!,
                 HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                 HKObjectType.quantityType(forIdentifier: .stepCount)!,
                 HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
