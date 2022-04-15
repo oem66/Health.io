@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:132828667072:ios:8daafe82048d210d712125</string>
+	<key>DATABASE_URL</key>
+	<string>https://healthio-8c953-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
 </plist>
