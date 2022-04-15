@@ -499,6 +499,9 @@
 			isa = PBXGroup;
 			children = (
 				17568F2127FF46BC00D0C87B /* HealthView.swift */,
+				174B910727A07513002C8D02 /* HealthHighlightsView.swift */,
+				174B910927A076ED002C8D02 /* HealthCardView.swift */,
+				17D623042804975100D95C01 /* HealthKitDataCardView.swift */,
 			);
 			path = "Health View";
 			sourceTree = "<group>";
@@ -613,9 +616,6 @@
 			isa = PBXGroup;
 			children = (
 				179F4D87279A0D540008A59C /* HomeView.swift */,
-				174B910727A07513002C8D02 /* HealthHighlightsView.swift */,
-				174B910927A076ED002C8D02 /* HealthCardView.swift */,
-				17D623042804975100D95C01 /* HealthKitDataCardView.swift */,
 			);
 			path = "Home View";
 			sourceTree = "<group>";
