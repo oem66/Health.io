@@ -15,11 +15,14 @@ struct HealthView: View {
             VStack {
                 ScrollView {
                     ForEach(viewModel.healthTips, id: \.self) { model in
-                        HealthTopTipsView(model: model)
-                            .padding([.bottom, .leading, .trailing], 10)
+                        NavigationLink(destination: Text("Text")) {
+                            HealthTopTipsView(model: model)
+                                .padding([.bottom, .leading, .trailing])
+                        }
                     }
                     
                     HealthKitDataCardView()
+                        .padding([.leading, .trailing])
                     
                     Spacer()
                 }
@@ -69,7 +72,7 @@ struct HealthTopTipNoSubtitle: View {
             
             HStack {
                 Text(model.title)
-                    .foregroundColor(.black)
+                    .foregroundColor(.gray)
                     .font(.custom("Avenir-Medium", size: 17))
                     .fontWeight(.heavy)
                     .lineLimit(2)
@@ -106,14 +109,14 @@ struct HealthTopTipSubtitle: View {
                     Spacer()
                     
                     Text(model.title)
-                        .foregroundColor(.black)
+                        .foregroundColor(.gray)
                         .font(.custom("Avenir-Medium", size: 17))
                         .fontWeight(.heavy)
                         .lineLimit(2)
                         .minimumScaleFactor(0.5)
                     
                     Text(model.subtitle ?? "No Subtitle")
-                        .foregroundColor(.black)
+                        .foregroundColor(.gray)
                         .font(.custom("Avenir-Medium", size: 12))
                     
                     Spacer()
@@ -149,7 +152,7 @@ struct HealthTopTipImageSubtitle: View {
                 VStack(alignment: .leading, spacing: 3) {
                     Spacer()
                     Text(model.title)
-                        .foregroundColor(.black)
+                        .foregroundColor(.gray)
                         .font(.custom("Avenir-Medium", size: 17))
                         .fontWeight(.heavy)
                         .lineLimit(2)

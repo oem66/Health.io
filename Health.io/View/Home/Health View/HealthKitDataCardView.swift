@@ -15,8 +15,8 @@ struct HealthKitDataCardView: View {
         LazyVGrid(columns: columns, spacing: 5, content: {
             ForEach((0...3), id: \.self) { _ in
                 NavigationLink(destination: Text("Test")) {
-                    HealthCardView(image: "fruit", level: "Breakfast", title: "Get Muscle Loose Fat", duration: "15 min")
-                        .padding()
+                    HealthCardView(image: "health", title: "Heart Rate", data: "75", measureUnit: "bpm")
+                        .padding(2)
                 }
             }
         })
