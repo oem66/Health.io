@@ -15,11 +15,14 @@ struct HealthView: View {
             VStack {
                 ScrollView {
                     ForEach(viewModel.healthTips, id: \.self) { model in
-                        HealthTopTipsView(model: model)
-                            .padding([.bottom, .leading, .trailing], 10)
+                        NavigationLink(destination: Text("Text")) {
+                            HealthTopTipsView(model: model)
+                                .padding([.bottom, .leading, .trailing])
+                        }
                     }
                     
                     HealthKitDataCardView()
+                        .padding([.leading, .trailing])
                     
                     Spacer()
                 }
