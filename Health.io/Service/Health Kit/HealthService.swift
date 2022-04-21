@@ -50,7 +50,7 @@ protocol HealthServiceProtocol {
     func FetchActivityData()
     func GetMostRecentSample(for sampleType: HKSampleType, completion: @escaping (HKQuantitySample?, Error?) -> ())
     func FetchBodyMeasurements()
-    
+    func FetchHealthData()
 }
 
 class HealthService: HealthServiceProtocol {
@@ -281,4 +281,16 @@ class HealthService: HealthServiceProtocol {
             healthStore.execute(query)
         }
     }
+    
+    func FetchHealthData() {
+        FetchActivityData()
+        FetchBodyMeasurements()
+    }
+    
+    func fetchSteps() -> Double { return steps }
+    func fetchHeartRate() -> Int { return heartRate }
+    func fetchWalkingRunningDistance() -> Double { return walkingRunningDistance }
+    func fetchWeight() -> Double { return weightPar }
+    func fetchSleep() -> Double { return 0.0 }
+    func fetchWater() -> Int { return 1}
 }

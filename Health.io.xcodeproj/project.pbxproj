@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171205B62811F1DB005B1FA7 /* HealthKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171205B52811F1DB005B1FA7 /* HealthKitData.swift */; };
 		171AC56B27BC3210005E8458 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171AC56A27BC3210005E8458 /* HealthService.swift */; };
 		171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF7F278CD7600033E8DF /* HealthStatsView.swift */; };
 		171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF81278CE8250033E8DF /* HealthViewModel.swift */; };
@@ -97,6 +98,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		171205B52811F1DB005B1FA7 /* HealthKitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitData.swift; sourceTree = "<group>"; };
 		171AC56A27BC3210005E8458 /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
 		171CEF7F278CD7600033E8DF /* HealthStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatsView.swift; sourceTree = "<group>"; };
 		171CEF81278CE8250033E8DF /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				1790A52427B1D21A00BF755F /* HealthInsight.swift */,
+				171205B52811F1DB005B1FA7 /* HealthKitData.swift */,
 			);
 			path = "Health Insight";
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 				17568F1E27FF432D00D0C87B /* DietDetailsView.swift in Sources */,
 				17BBA49827EA69B700472546 /* Workout.swift in Sources */,
 				177FC53C27B1E1F700598425 /* HomeViewModel.swift in Sources */,
+				171205B62811F1DB005B1FA7 /* HealthKitData.swift in Sources */,
 				174FF03527938CF600AA9643 /* AuthenticationConstants.swift in Sources */,
 				17568F2527FF4CF700D0C87B /* HealthTip.swift in Sources */,
 				172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */,
