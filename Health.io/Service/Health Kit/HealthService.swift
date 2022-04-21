@@ -72,15 +72,10 @@ class HealthService: HealthServiceProtocol {
                 HKObjectType.quantityType(forIdentifier: .stepCount)!,
                 HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
                 HKObjectType.quantityType(forIdentifier: .flightsClimbed)!,
-                HKObjectType.quantityType(forIdentifier: .height)!,
                 HKObjectType.quantityType(forIdentifier: .bodyMass)!,
                 HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!,
-                HKObjectType.quantityType(forIdentifier: .oxygenSaturation)!,
                 HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
-                HKObjectType.quantityType(forIdentifier: .uvExposure)!,
-                HKObjectType.quantityType(forIdentifier: .bloodGlucose)!,
                 HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
-                HKObjectType.categoryType(forIdentifier: .mindfulSession)!
             ])
             
             healthStore.requestAuthorization(toShare: nil, read: readTypes) { status, error in
