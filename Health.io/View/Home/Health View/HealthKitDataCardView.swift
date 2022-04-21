@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct HealthKitDataCardView: View {
-    private var columns = [GridItem(.flexible(maximum: 250)),
-                  GridItem(.flexible(maximum: 250))]
+    var data: HealthKitData?
     
     var body: some View {
+        var columns = [GridItem(.flexible(maximum: 250)),
+                       GridItem(.flexible(maximum: 250))]
         LazyVGrid(columns: columns, spacing: 5, content: {
             ForEach((0...3), id: \.self) { _ in
                 NavigationLink(destination: Text("Test")) {

@@ -21,7 +21,7 @@ struct HealthView: View {
                         }
                     }
                     
-                    HealthKitDataCardView()
+                    HealthKitDataCardView(data: nil)
                         .padding([.leading, .trailing])
                     
                     Spacer()
@@ -29,6 +29,7 @@ struct HealthView: View {
             }
             .onAppear {
                 viewModel.readHealthData()
+                viewModel.fetchHealthData()
             }
             .navigationTitle("Home")
             .background(Color(red: 245/255, green: 247/255, blue: 251/255))

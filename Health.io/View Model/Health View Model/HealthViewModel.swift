@@ -28,6 +28,10 @@ final class HealthViewModel {
         service.HealthStoreAvailability()
     }
     
+    func fetchHealthData() {
+        service.FetchHealthData()
+    }
+    
     func writeHealthData() {
 //        service.writeHealthData()
     }
