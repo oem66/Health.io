@@ -71,6 +71,7 @@
 		17A0C0C428206CC3004FADC3 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0C0C328206CC3004FADC3 /* HTTPClient.swift */; };
 		17A0C0C628206CD0004FADC3 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0C0C528206CD0004FADC3 /* HTTPMethod.swift */; };
 		17A0C0C828206CDC004FADC3 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0C0C728206CDC004FADC3 /* RequestError.swift */; };
+		17A0C0CA2821584F004FADC3 /* AirQualityEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A0C0C92821584F004FADC3 /* AirQualityEndpoint.swift */; };
 		17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */; };
 		17BBA49827EA69B700472546 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49727EA69B700472546 /* Workout.swift */; };
 		17BBA49B27EA6A2300472546 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */; };
@@ -165,6 +166,7 @@
 		17A0C0C328206CC3004FADC3 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		17A0C0C528206CD0004FADC3 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		17A0C0C728206CDC004FADC3 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		17A0C0C92821584F004FADC3 /* AirQualityEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityEndpoint.swift; sourceTree = "<group>"; };
 		17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkout.swift; sourceTree = "<group>"; };
 		17BBA49727EA69B700472546 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
@@ -597,6 +599,7 @@
 		17A0C0BF28206C7C004FADC3 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				17A0C0C92821584F004FADC3 /* AirQualityEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				179BD7B127AAFBF900EA56BE /* AirQualityViewModel.swift in Sources */,
 				17A0C0C828206CDC004FADC3 /* RequestError.swift in Sources */,
 				17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */,
+				17A0C0CA2821584F004FADC3 /* AirQualityEndpoint.swift in Sources */,
 				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
 				174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */,
 			);
