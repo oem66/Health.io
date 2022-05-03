@@ -11,12 +11,21 @@ protocol Endpoint {
     var baseURL: String { get }
     var path: String { get }
     var method: RequestMethod { get }
-    var header: [String: String]? { get }
-    var body: [String: String]? { get }
+    var header: [String:String]? { get }
+    var body: [String:String]? { get }
+    var parameters: [String:String]? { get }
 }
 
 extension Endpoint {
     var baseURL: String {
         return "https://api.themoviedb.org/3/"
+    }
+    
+    var airQualityBaseURL: String {
+        return "https://air-quality.p.rapidapi.com"
+    }
+    
+    var covid19BaseURL: String {
+        return "https://covid-193.p.rapidapi.com"
     }
 }
