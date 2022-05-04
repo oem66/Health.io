@@ -18,14 +18,6 @@ protocol Endpoint {
 
 extension Endpoint {
     var baseURL: String {
-        return "https://api.themoviedb.org/3/"
-    }
-    
-    var airQualityBaseURL: String {
         return "https://air-quality.p.rapidapi.com"
-    }
-    
-    var covid19BaseURL: String {
-        return "https://covid-193.p.rapidapi.com"
     }
 }
