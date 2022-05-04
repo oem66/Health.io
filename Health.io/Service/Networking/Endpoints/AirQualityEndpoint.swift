@@ -15,7 +15,7 @@ extension AirQualityEndpoint: Endpoint {
     var path: String {
         switch self {
         case .locationBased:
-            return "/current/airquality"
+            return "/history/airquality"
         }
     }
     
@@ -43,12 +43,12 @@ extension AirQualityEndpoint: Endpoint {
         }
     }
     
-    var parameters: [String : String]? {
+    var parameters: [URLQueryItem]? {
         switch self {
         case .locationBased:
             return [
-                "lon": "\(-73.00597)",
-                "lat": "\(40.71427)"
+                URLQueryItem(name: "lon", value: "\(-73.00597)"),
+                URLQueryItem(name: "lat", value: "\(40.71427)")
             ]
         }
     }
