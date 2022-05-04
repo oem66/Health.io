@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HealthView: View {
     private var viewModel = HealthViewModel()
+    private var airVM = AirQualityViewModel()
     
     var body: some View {
         NavigationView {
@@ -30,6 +31,8 @@ struct HealthView: View {
             .onAppear {
                 viewModel.readHealthData()
                 viewModel.fetchHealthData()
+                
+                airVM.getAirQualityData()
             }
             .navigationTitle("Home")
             .background(Color(red: 245/255, green: 247/255, blue: 251/255))

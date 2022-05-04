@@ -19,9 +19,9 @@ struct AirQualityView: View {
                     .padding()
             }
             .onAppear {
-                viewModel.fetchAQIData {
-                    debugPrint("Data from AirQualityView: \(viewModel.airQualityData)")
-                }
+//                viewModel.fetchAQIData {
+//                    debugPrint("Data from AirQualityView: \(viewModel.airQualityData)")
+//                }
             }
         }
     }
