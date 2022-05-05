@@ -27,7 +27,7 @@ struct DietScrollView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(viewModel.fastingDiets, id: \.self) { fasting in
-                        NavigationLink(destination: Text("Test")) {
+                        NavigationLink(destination: DietDetailsView()) {
                             DietScrollViewCard(model: fasting, titleColor: sectionTitleColor)
                                 .padding()
                         }
