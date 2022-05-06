@@ -11,6 +11,8 @@ struct DietDetailsView: View {
     var body: some View {
         VStack {
             TopDietView()
+                .padding(.bottom, 5)
+            MainContentDietView()
         }
     }
 }
@@ -86,5 +88,17 @@ struct TopDietView: View {
             }
         }
         .frame(width: .infinity, height: 300, alignment: .center)
+    }
+}
+
+struct MainContentDietView: View {
+    var body: some View {
+        // 1. Ingredients
+        // 2. Preparation
+        // 3. Nutritional facts
+        // 4. Directions
+        
+        Text("Main Content area")
+            .padding()
     }
 }
