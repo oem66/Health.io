@@ -12,6 +12,7 @@ struct DietDetailsView: View {
         VStack {
             TopDietView()
                 .padding(.bottom, 5)
+            
             MainContentDietView()
         }
     }
@@ -97,8 +98,65 @@ struct MainContentDietView: View {
         // 2. Preparation
         // 3. Nutritional facts
         // 4. Directions
+        var ingredients = [
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
+            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil")
+        ]
         
-        Text("Main Content area")
-            .padding()
+        VStack {
+            HStack {
+                Text("Ingredients")
+                    .foregroundColor(.black)
+                    .fontWeight(.heavy)
+                    .font(.custom("Avenir-Medium", size: 20))
+                
+                Spacer()
+                
+                Text("1 Serves")
+                    .foregroundColor(.black)
+                    .fontWeight(.medium)
+                    .font(.custom("Avenir-Medium", size: 20))
+                
+                Image(systemName: "cart.badge.plus")
+                    .resizable()
+                    .frame(width: 25, height: 25, alignment: .center)
+                    .foregroundColor(.orange)
+            }
+            .padding([.leading, .trailing], 15)
+            
+            List(ingredients, id: \.self) { ingredient in
+                HStack {
+                    Image(ingredient.image)
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                        .padding(.trailing, 10)
+                    
+                    VStack {
+                        HStack {
+                            Text(ingredient.title)
+                                .foregroundColor(.black)
+                                .fontWeight(.bold)
+                                .font(.custom("Avenir-Medium", size: 16))
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Text(ingredient.description)
+                                .foregroundColor(.gray)
+                                .fontWeight(.bold)
+                                .font(.custom("Avenir-Medium", size: 14))
+                            Spacer()
+                        }
+                    }
+                    Spacer()
+                }
+            }
+        }
     }
 }
