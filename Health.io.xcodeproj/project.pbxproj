@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		171205B62811F1DB005B1FA7 /* HealthKitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171205B52811F1DB005B1FA7 /* HealthKitData.swift */; };
+		1714EE8A28284CCF006D06E2 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714EE8928284CCF006D06E2 /* Ingredient.swift */; };
 		171AC56B27BC3210005E8458 /* HealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171AC56A27BC3210005E8458 /* HealthService.swift */; };
 		171CEF80278CD7600033E8DF /* HealthStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF7F278CD7600033E8DF /* HealthStatsView.swift */; };
 		171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171CEF81278CE8250033E8DF /* HealthViewModel.swift */; };
@@ -104,6 +105,7 @@
 
 /* Begin PBXFileReference section */
 		171205B52811F1DB005B1FA7 /* HealthKitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitData.swift; sourceTree = "<group>"; };
+		1714EE8928284CCF006D06E2 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		171AC56A27BC3210005E8458 /* HealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthService.swift; sourceTree = "<group>"; };
 		171CEF7F278CD7600033E8DF /* HealthStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatsView.swift; sourceTree = "<group>"; };
 		171CEF81278CE8250033E8DF /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				173A6E3527F37DA20069396D /* DietHealthTipsModel.swift */,
 				179E10ED27F4DE75001D897C /* FastingDietModel.swift */,
 				179E10EF27F4DF35001D897C /* DietSpecifics.swift */,
+				1714EE8928284CCF006D06E2 /* Ingredient.swift */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -837,6 +840,7 @@
 				1741F30E27F4F287009BCE5D /* DietViewModel.swift in Sources */,
 				17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */,
 				179E10F027F4DF35001D897C /* DietSpecifics.swift in Sources */,
+				1714EE8A28284CCF006D06E2 /* Ingredient.swift in Sources */,
 				172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */,
 				174B911027A0AE3A002C8D02 /* Publishers+Extension.swift in Sources */,
 				173A6E3627F37DA20069396D /* DietHealthTipsModel.swift in Sources */,
