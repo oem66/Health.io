@@ -32,7 +32,7 @@ struct HealthView: View {
                 viewModel.readHealthData()
                 viewModel.fetchHealthData()
                 
-                airVM.getAirQualityData()
+//                airVM.getAirQualityData() // LIMITED API CALLS
             }
             .navigationTitle("Home")
             .background(Color(red: 245/255, green: 247/255, blue: 251/255))

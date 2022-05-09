@@ -10,10 +10,12 @@ import SwiftUI
 struct DietDetailsView: View {
     var body: some View {
         VStack {
-            TopDietView()
-                .padding(.bottom, 5)
-            
-            MainContentDietView()
+//            ScrollView {
+                TopDietView()
+                    .padding(.bottom, 5)
+                
+                MainContentDietView()
+//            }
         }
     }
 }
@@ -88,13 +90,12 @@ struct TopDietView: View {
                 .padding([.leading, .trailing, .bottom], 15)
             }
         }
-        .frame(width: .infinity, height: 300, alignment: .center)
+        .frame(width: .infinity, height: 200, alignment: .center)
     }
 }
 
 struct MainContentDietView: View {
     var body: some View {
-        // 1. Ingredients
         // 2. Preparation
         // 3. Nutritional facts
         // 4. Directions
@@ -125,7 +126,7 @@ struct MainContentDietView: View {
                 
                 Image(systemName: "cart.badge.plus")
                     .resizable()
-                    .frame(width: 25, height: 25, alignment: .center)
+                    .frame(width: 25, height: 20, alignment: .center)
                     .foregroundColor(.orange)
             }
             .padding([.leading, .trailing], 15)
@@ -157,6 +158,7 @@ struct MainContentDietView: View {
                     Spacer()
                 }
             }
+            .listStyle(.plain)
         }
     }
 }
