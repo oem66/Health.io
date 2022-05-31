@@ -76,6 +76,7 @@
 		17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */; };
 		17BBA49827EA69B700472546 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49727EA69B700472546 /* Workout.swift */; };
 		17BBA49B27EA6A2300472546 /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */; };
+		17BCACDC2846AFE900664474 /* HighOrderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BCACDB2846AFE900664474 /* HighOrderFunctions.swift */; };
 		17C696AA2809DE9600A63B04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17C696A92809DE9600A63B04 /* GoogleService-Info.plist */; };
 		17D5409C27B4603A00DEA551 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409B27B4603A00DEA551 /* WorkoutView.swift */; };
 		17D5409E27B4607400DEA551 /* DietView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D5409D27B4607400DEA551 /* DietView.swift */; };
@@ -172,6 +173,7 @@
 		17A4A24B27EBB76600F6424E /* BodySpecificWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodySpecificWorkout.swift; sourceTree = "<group>"; };
 		17BBA49727EA69B700472546 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		17BBA49A27EA6A2300472546 /* WorkoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
+		17BCACDB2846AFE900664474 /* HighOrderFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighOrderFunctions.swift; sourceTree = "<group>"; };
 		17C696A92809DE9600A63B04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17D5409B27B4603A00DEA551 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		17D5409D27B4607400DEA551 /* DietView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietView.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				174FF01E278F950600AA9643 /* Extensions */,
 				172CA3042780A8D500E5AD92 /* Content */,
 				174FF02D2791E07A00AA9643 /* Constants */,
+				17BCACDB2846AFE900664474 /* HighOrderFunctions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -839,6 +842,7 @@
 				17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */,
 				1741F30E27F4F287009BCE5D /* DietViewModel.swift in Sources */,
 				17304E1A27A9C30800F675E4 /* AirQualityService.swift in Sources */,
+				17BCACDC2846AFE900664474 /* HighOrderFunctions.swift in Sources */,
 				179E10F027F4DF35001D897C /* DietSpecifics.swift in Sources */,
 				1714EE8A28284CCF006D06E2 /* Ingredient.swift in Sources */,
 				172CA2CF277F165C00E5AD92 /* ContentView.swift in Sources */,
