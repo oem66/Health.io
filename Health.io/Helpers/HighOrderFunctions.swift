@@ -30,4 +30,14 @@ struct HighOrderFunctions {
         let singleArray = words.flatMap { $0 }
         debugPrint("Flat Map Array: \(singleArray)")
     }
+    
+    mutating func reduceFunction() {
+        let numbers = [1,2,3,4,5,6,7,8]
+        let sum = numbers.reduce(0, { $0 + $1 })
+    }
+    
+    mutating func filterFunction() {
+        var diets1 = ["Low Carb", "High Protein", "Vegan", "Vegetarian", "Keto", "Fasting", "Intermitent Fasting"]
+        let wordsWithV = diets1.filter { $0.contains("V") && $0.count >= 3 }
+    }
 }
