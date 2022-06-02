@@ -40,4 +40,12 @@ struct HighOrderFunctions {
         var diets1 = ["Low Carb", "High Protein", "Vegan", "Vegetarian", "Keto", "Fasting", "Intermitent Fasting"]
         let wordsWithV = diets1.filter { $0.contains("V") && $0.count >= 3 }
     }
+    
+    mutating func sortedFunction() {
+        var numbers = [2,4,6,2,3,4,9,8,12,54,23,67]
+        let sortedNumbers = numbers.sorted { firstValue, secondValue in
+            return firstValue > secondValue
+        }
+        debugPrint("Sorted numbers: \(sortedNumbers)")
+    }
 }
