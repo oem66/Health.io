@@ -9,14 +9,13 @@ import SwiftUI
 
 struct DietDetailsView: View {
     var body: some View {
-        VStack {
-//            ScrollView {
+            VStack {
                 TopDietView()
                     .padding(.bottom, 5)
                 
                 MainContentDietView()
-//            }
-        }
+                    .padding()
+            }
     }
 }
 
@@ -45,7 +44,6 @@ struct TopDietView: View {
                     Spacer()
                 }
                 .padding(.leading, 15)
-                .padding(.bottom, 5)
                 
                 VStack(alignment: .leading) {
                     Text("Spaghetti and Meatballs")
@@ -136,9 +134,6 @@ struct MacroView: View {
 
 struct MainContentDietView: View {
     var body: some View {
-        // 2. Preparation
-        // 3. Nutritional facts
-        // 4. Directions
         var ingredients = [
             Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
             Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
