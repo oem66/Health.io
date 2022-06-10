@@ -62,35 +62,75 @@ struct TopDietView: View {
                 .padding(.bottom, 5)
                 
                 HStack {
-                    Text("760 Cal")
-                        .font(.custom("Avenir-Medium", size: 18))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                        .padding(.trailing, 3)
-                    
-                    Text("75g Protein")
-                        .font(.custom("Avenir-Medium", size: 18))
-                        .foregroundColor(.blue)
-                        .fontWeight(.bold)
-                        .padding(.trailing, 3)
-                    
-                    Text("350g Carbs")
-                        .font(.custom("Avenir-Medium", size: 18))
-                        .foregroundColor(.orange)
-                        .fontWeight(.bold)
-                        .padding(.trailing, 3)
-                    
-                    Text("65g Fat")
-                        .font(.custom("Avenir-Medium", size: 18))
-                        .foregroundColor(.red)
-                        .fontWeight(.bold)
-                        .padding(.trailing, 3)
+                    MacrosCardView(amount: 760, macroName: .Calories("Calories"), unit: "cal", color: .purple)
+                    MacrosCardView(amount: 75, macroName: .Protein("Protein"), unit: "g", color: .blue)
+                    MacrosCardView(amount: 350, macroName: .Carbs("Carbs"), unit: "g",color: .orange)
+                    MacrosCardView(amount: 65, macroName: .Fat("Fat"), unit: "g",color: .red)
                     Spacer()
                 }
                 .padding([.leading, .trailing, .bottom], 15)
             }
         }
-        .frame(width: .infinity, height: 200, alignment: .center)
+        .frame(width: .infinity, height: 180, alignment: .center)
+    }
+}
+
+enum AllMacros {
+    case Calories(String)
+    case Protein(String)
+    case Carbs(String)
+    case Fat(String)
+}
+
+struct MacrosCardView: View {
+    var amount: Int
+    var macroName: AllMacros
+    var unit: String
+    var color: Color
+    
+    var body: some View {
+        VStack {
+            HStack {
+                switch macroName {
+                case .Calories(let string):
+                    MacroView(macroName: string)
+                case .Protein(let string):
+                    MacroView(macroName: string)
+                case .Carbs(let string):
+                    MacroView(macroName: string)
+                case .Fat(let string):
+                    MacroView(macroName: string)
+                }
+                Spacer()
+            }
+            
+            HStack {
+                Text("\(amount)")
+                    .font(.custom("Avenir-Medium", size: 18))
+                    .fontWeight(.bold)
+                    .foregroundColor(color)
+                
+                Text(unit)
+                    .font(.custom("Avenir-Medium", size: 18))
+                    .fontWeight(.bold)
+                    .foregroundColor(color)
+                    .padding(.trailing, 3)
+                
+                Spacer()
+            }
+        }
+    }
+}
+
+struct MacroView: View {
+    var macroName: String
+    
+    var body: some View {
+        Text(macroName)
+            .font(.custom("Avenir-Medium", size: 18))
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+            .foregroundColor(.white)
     }
 }
 
