@@ -85,6 +85,7 @@
 		17D623052804975100D95C01 /* HealthKitDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D623042804975100D95C01 /* HealthKitDataCardView.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
+		A4F7F9E22853B4E700194973 /* MainContentDietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 		17D623042804975100D95C01 /* HealthKitDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDataCardView.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
+		A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentDietViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				1741F30D27F4F287009BCE5D /* DietViewModel.swift */,
+				A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				17866F0C27F2343D008A4795 /* BodySpecificWorkoutView.swift in Sources */,
 				173A6E3027F377A60069396D /* DietHealthTipsView.swift in Sources */,
 				17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */,
+				A4F7F9E22853B4E700194973 /* MainContentDietViewModel.swift in Sources */,
 				174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */,
 				172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */,
 				174FF03127923EED00AA9643 /* AuthenticationView.swift in Sources */,

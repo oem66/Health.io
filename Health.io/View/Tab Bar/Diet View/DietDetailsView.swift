@@ -133,18 +133,9 @@ struct MacroView: View {
 }
 
 struct MainContentDietView: View {
+    private var viewModel = MainContentDietViewModel()
+    
     var body: some View {
-        var ingredients = [
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil"),
-            Ingredient(title: "Coconut Oil", description: "1 spoon", image: "coconut-oil")
-        ]
-        
         VStack {
             HStack {
                 Text("Ingredients")
@@ -166,7 +157,7 @@ struct MainContentDietView: View {
             }
             .padding([.leading, .trailing], 15)
             
-            List(ingredients, id: \.self) { ingredient in
+            List(viewModel.ingredients, id: \.self) { ingredient in
                 HStack {
                     Image(ingredient.image)
                         .resizable()
