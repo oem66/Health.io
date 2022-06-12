@@ -39,7 +39,7 @@ struct DietScrollView: View {
 }
 
 struct DietScrollViewCard: View {
-    var model: FastingDietModel
+    var model: DietPlanModel
     var titleColor: Color
     
     var body: some View {

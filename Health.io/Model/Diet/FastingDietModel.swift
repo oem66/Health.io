@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FastingDietModel: Hashable {
+struct DietPlanModel: Hashable {
     var image: String
     var title: String
     var description: String
