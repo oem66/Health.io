@@ -19,16 +19,16 @@ struct DietView: View {
                 DietHealthTipsView(viewModel: viewModel)
                     .padding()
                 
-                DietScrollView(viewModel: DietViewModel(), sectionTitle: "FASTING", sectionTitleColor: .green)
+                DietScrollView(viewModel: viewModel, sectionTitle: "FASTING", sectionTitleColor: .green)
                     .padding()
                 
-                DietScrollView(viewModel: DietViewModel(), sectionTitle: "BALANCED", sectionTitleColor: .blue)
+                DietScrollView(viewModel: viewModel, sectionTitle: "BALANCED", sectionTitleColor: .blue)
                     .padding()
                 
-                DietScrollView(viewModel: DietViewModel(), sectionTitle: "KETO/LOW CARB", sectionTitleColor: .orange)
+                DietScrollView(viewModel: viewModel, sectionTitle: "KETO/LOW CARB", sectionTitleColor: .orange)
                     .padding()
                 
-                DietScrollView(viewModel: DietViewModel(), sectionTitle: "HIGH PROTEIN", sectionTitleColor: .red)
+                DietScrollView(viewModel: viewModel, sectionTitle: "HIGH PROTEIN", sectionTitleColor: .red)
                     .padding()
                 
                 LazyVGrid(columns: columns, spacing: 5, content: {
