@@ -37,17 +37,10 @@ struct MacrosCardView: View {
             }
             
             HStack {
-                Text("\(amount)")
+                Text("\(amount)\(unit)")
                     .font(.custom("Avenir-Medium", size: 18))
                     .fontWeight(.bold)
                     .foregroundColor(color)
-                
-                Text(unit)
-                    .font(.custom("Avenir-Medium", size: 18))
-                    .fontWeight(.bold)
-                    .foregroundColor(color)
-                    .padding(.trailing, 3)
-                
                 Spacer()
             }
         }
