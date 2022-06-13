@@ -16,19 +16,19 @@ struct DietView: View {
                        GridItem(.flexible(maximum: 250))]
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
-                DietHealthTipsView(viewModel: viewModel)
+                DietHealthTipsView(dietHealthTips: viewModel.getDietHealthTips())
                     .padding()
                 
-                DietScrollView(viewModel: viewModel, sectionTitle: "FASTING", sectionTitleColor: .green)
+                DietScrollView(diets: viewModel.getDietData(.fasting), sectionTitle: "FASTING", sectionTitleColor: .green)
                     .padding()
                 
-                DietScrollView(viewModel: viewModel, sectionTitle: "BALANCED", sectionTitleColor: .blue)
+                DietScrollView(diets: viewModel.getDietData(.balanced), sectionTitle: "BALANCED", sectionTitleColor: .blue)
                     .padding()
                 
-                DietScrollView(viewModel: viewModel, sectionTitle: "KETO/LOW CARB", sectionTitleColor: .orange)
+                DietScrollView(diets: viewModel.getDietData(.ketoLowCarb), sectionTitle: "KETO/LOW CARB", sectionTitleColor: .orange)
                     .padding()
                 
-                DietScrollView(viewModel: viewModel, sectionTitle: "HIGH PROTEIN", sectionTitleColor: .red)
+                DietScrollView(diets: viewModel.getDietData(.highProtein), sectionTitle: "HIGH PROTEIN", sectionTitleColor: .red)
                     .padding()
                 
                 LazyVGrid(columns: columns, spacing: 5, content: {

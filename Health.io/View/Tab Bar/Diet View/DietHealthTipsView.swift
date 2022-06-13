@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct DietHealthTipsView: View {
-    var viewModel: DietViewModel
+    var dietHealthTips: [DietHealthTipsModel]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(viewModel.dietHealthTips, id: \.self) { tip in
+                ForEach(dietHealthTips, id: \.self) { tip in
                     NavigationLink(destination: Text("Test")) {
                         DietHealthTipCard(model: tip)
                             .padding(10)

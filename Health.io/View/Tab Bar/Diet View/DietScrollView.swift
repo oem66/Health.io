@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DietScrollView: View {
-    var viewModel: DietViewModel
+//    var viewModel: DietViewModel
+    var diets: [DietPlanModel]
     var sectionTitle: String
     var sectionTitleColor: Color
     
@@ -26,7 +27,7 @@ struct DietScrollView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(viewModel.fastingDiets, id: \.self) { fasting in
+                    ForEach(diets, id: \.self) { fasting in
                         NavigationLink(destination: DietDetailsView()) {
                             DietScrollViewCard(model: fasting, titleColor: sectionTitleColor)
                                 .padding()
