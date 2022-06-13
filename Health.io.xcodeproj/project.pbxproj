@@ -85,6 +85,7 @@
 		17D623052804975100D95C01 /* HealthKitDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D623042804975100D95C01 /* HealthKitDataCardView.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
+		A4819B882857D4E800E711CA /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819B872857D4E800E711CA /* DietService.swift */; };
 		A4F7F9E22853B4E700194973 /* MainContentDietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */; };
 		A4F7F9E628547A3100194973 /* IngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E528547A3100194973 /* IngredientCardView.swift */; };
 		A4F7F9E828547A5900194973 /* MacrosCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E728547A5900194973 /* MacrosCardView.swift */; };
@@ -188,6 +189,7 @@
 		17D623042804975100D95C01 /* HealthKitDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDataCardView.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
+		A4819B872857D4E800E711CA /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
 		A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentDietViewModel.swift; sourceTree = "<group>"; };
 		A4F7F9E528547A3100194973 /* IngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCardView.swift; sourceTree = "<group>"; };
 		A4F7F9E728547A5900194973 /* MacrosCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosCardView.swift; sourceTree = "<group>"; };
@@ -629,6 +631,7 @@
 				17304E1927A9C30800F675E4 /* AirQualityService.swift */,
 				171CEF88278E2DD80033E8DF /* Covid19Service.swift */,
 				174B910D27A0AA8C002C8D02 /* AuthenticationService.swift */,
+				A4819B872857D4E800E711CA /* DietService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -930,6 +933,7 @@
 				17A0C0C828206CDC004FADC3 /* RequestError.swift in Sources */,
 				17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */,
 				17A0C0CA2821584F004FADC3 /* AirQualityEndpoint.swift in Sources */,
+				A4819B882857D4E800E711CA /* DietService.swift in Sources */,
 				1779B9DD2798B4D400EA8470 /* View+Extension.swift in Sources */,
 				174B910A27A076ED002C8D02 /* HealthCardView.swift in Sources */,
 			);
