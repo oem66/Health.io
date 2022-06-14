@@ -41,3 +41,11 @@
 "facebook_auth" = "Continue with Facebook";
 "sign_up_text" = "Haven't signed up yet?";
 "create_an_account" = "Continue as Guest";
+
+// MARK: - Health View
+"start_fasting" = "Start your fasting phase";
+"learn_about_health" = "Learn about health improvement";
+"learn_about_health_subtitle" = "5 min";
+"end_fasting" = "End your current fasting phase at 8:30pm";
+"weight_yourself" = "Time to weight yourself";
+"weight_yourself_subtitle" = "Control your weight and keep track of your progress";

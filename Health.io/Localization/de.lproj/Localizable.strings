@@ -49,3 +49,11 @@
 "facebook_auth" = "Weitermachen mit Facebook";
 "sign_up_text" = "Noch nicht angemeldet?";
 "create_an_account" = "Als Gast fortfahren";
+
+// MARK: - Health View
+"start_fasting" = "Starten Sie Ihre Fastenphase";
+"learn_about_health" = "Erfahren Sie mehr über die Verbesserung der Gesundheit";
+"learn_about_health_subtitle" = "5 min";
+"end_fasting" = "Beenden Sie Ihre aktuelle Fastenphase um 20:30 Uhr";
+"weight_yourself" = "Zeit, sich zu wiegen";
+"weight_yourself_subtitle" = "Kontrollieren Sie Ihr Gewicht und verfolgen Sie Ihre Fortschritte";
