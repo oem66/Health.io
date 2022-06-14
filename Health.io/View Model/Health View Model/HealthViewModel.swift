@@ -10,7 +10,7 @@ import HealthKit
 
 final class HealthViewModel {
     
-    // ADD HEALTH SERVICE instance and read health data from HealthKit
+    // MARK: ADD HEALTH SERVICE instance and read health data from HealthKit
     private var service: HealthServiceProtocol
     
     var healthTips = [
