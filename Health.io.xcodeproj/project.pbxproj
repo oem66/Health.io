@@ -86,6 +86,7 @@
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
 		A4819B882857D4E800E711CA /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819B872857D4E800E711CA /* DietService.swift */; };
+		A4BAC3B928593B97009A4CB4 /* HealthViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BAC3B828593B97009A4CB4 /* HealthViewConstants.swift */; };
 		A4F7F9E22853B4E700194973 /* MainContentDietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */; };
 		A4F7F9E628547A3100194973 /* IngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E528547A3100194973 /* IngredientCardView.swift */; };
 		A4F7F9E828547A5900194973 /* MacrosCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E728547A5900194973 /* MacrosCardView.swift */; };
@@ -190,6 +191,7 @@
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 		A4819B872857D4E800E711CA /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
+		A4BAC3B828593B97009A4CB4 /* HealthViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewConstants.swift; sourceTree = "<group>"; };
 		A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentDietViewModel.swift; sourceTree = "<group>"; };
 		A4F7F9E528547A3100194973 /* IngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCardView.swift; sourceTree = "<group>"; };
 		A4F7F9E728547A5900194973 /* MacrosCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosCardView.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			children = (
 				174FF02E2791E0A800AA9643 /* OnboardingConstants.swift */,
 				174FF03427938CF600AA9643 /* AuthenticationConstants.swift */,
+				A4BAC3B828593B97009A4CB4 /* HealthViewConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				172CA2CD277F165C00E5AD92 /* Health_ioApp.swift in Sources */,
 				1741F31027F4F36E009BCE5D /* DietScrollView.swift in Sources */,
 				172CA3142787A04600E5AD92 /* APIEndpoints.swift in Sources */,
+				A4BAC3B928593B97009A4CB4 /* HealthViewConstants.swift in Sources */,
 				171CEF87278E2C580033E8DF /* Covid19ViewModel.swift in Sources */,
 				17A0C0C628206CD0004FADC3 /* HTTPMethod.swift in Sources */,
 				17866F0827F233C8008A4795 /* CustomWorkoutView.swift in Sources */,

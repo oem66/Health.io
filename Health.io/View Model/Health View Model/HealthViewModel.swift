@@ -5,7 +5,7 @@
 //  Created by Omer Rahmanovic on 1/10/22.
 //
 
-import Foundation
+import SwiftUI
 import HealthKit
 
 final class HealthViewModel {
@@ -14,10 +14,10 @@ final class HealthViewModel {
     private var service: HealthServiceProtocol
     
     var healthTips = [
-        HealthTip(image: "home1", title: "Start your fasting phase", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
-        HealthTip(image: "books", title: "Learn about health improvement", subtitle: "5 min", subtitleImage: "book", type: .subtitleImage),
-        HealthTip(image: "fasting", title: "End your current fasting phase at 8:30pm", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
-        HealthTip(image: "scale", title: "Time to weight yourself", subtitle: "Control your weight and keep track of your progress", subtitleImage: nil, type: .subtitle),
+        HealthTip(image: "home1", title: "start_fasting", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
+        HealthTip(image: "books", title: "learn_about_health", subtitle: "learn_about_health_subtitle", subtitleImage: "book", type: .subtitleImage),
+        HealthTip(image: "fasting", title: "end_fasting", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
+        HealthTip(image: "scale", title: "weight_yourself", subtitle: "weight_yourself_subtitle", subtitleImage: nil, type: .subtitle),
     ]
     
     init(service: HealthServiceProtocol = HealthService()) {
