@@ -15,9 +15,9 @@ final class HealthViewModel {
     
     var healthTips = [
         HealthTip(image: "home1", title: "Start your fasting phase", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
-        HealthTip(image: "home2", title: "Learn about health improvement", subtitle: "5 min", subtitleImage: "book", type: .subtitleImage),
-        HealthTip(image: "home3", title: "End your current fasting phase at 8:30pm", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
-        HealthTip(image: "home4", title: "Time to weight yourself", subtitle: "Control your weight and keep track of your progress", subtitleImage: nil, type: .subtitle),
+        HealthTip(image: "books", title: "Learn about health improvement", subtitle: "5 min", subtitleImage: "book", type: .subtitleImage),
+        HealthTip(image: "fasting", title: "End your current fasting phase at 8:30pm", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
+        HealthTip(image: "scale", title: "Time to weight yourself", subtitle: "Control your weight and keep track of your progress", subtitleImage: nil, type: .subtitle),
     ]
     
     init(service: HealthServiceProtocol = HealthService()) {
