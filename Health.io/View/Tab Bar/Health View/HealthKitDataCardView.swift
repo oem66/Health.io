@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct HealthKitDataCardView: View {
+    var viewModel = HealthViewModel()
+    
     var data: HealthKitData?
     
     var body: some View {
         let columns = [GridItem(.flexible(maximum: 250)),
                        GridItem(.flexible(maximum: 250))]
         LazyVGrid(columns: columns, spacing: 5, content: {
-            ForEach((0...3), id: \.self) { _ in
+            ForEach(viewModel.healthKitData, id: \.self) { healthData in
                 NavigationLink(destination: Text("Test")) {
-                    HealthCardView(image: "health", title: "Heart Rate", data: "75", measureUnit: "bpm")
+                    HealthCardView(image: healthData.image, title: healthData.title, data: String("\(healthData.data)"), measureUnit: healthData.unit)
                         .padding(2)
                 }
             }
