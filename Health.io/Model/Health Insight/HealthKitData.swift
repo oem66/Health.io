@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct HealthKitData {
+struct HealthKitData: Hashable {
+    
 //    var steps: Double
 //    var walkingRunningDistance: Double
 //    var flightsClmb: Int
@@ -17,6 +18,6 @@ struct HealthKitData {
     var image: String
     var title: String
     var unit: String
-    var data: Any?
+    var data: Double
     
 }
