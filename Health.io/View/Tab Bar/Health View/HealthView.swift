@@ -75,7 +75,7 @@ struct HealthTopTipNoSubtitle: View {
             Spacer()
             
             HStack {
-                Text(model.title)
+                Text(LocalizedStringKey(model.title))
                     .foregroundColor(.gray)
                     .font(.custom("Avenir-Medium", size: 17))
                     .fontWeight(.heavy)
@@ -112,14 +112,14 @@ struct HealthTopTipSubtitle: View {
                 VStack(alignment: .leading) {
                     Spacer()
                     
-                    Text(model.title)
+                    Text(LocalizedStringKey(model.title))
                         .foregroundColor(.gray)
                         .font(.custom("Avenir-Medium", size: 17))
                         .fontWeight(.heavy)
                         .lineLimit(2)
                         .minimumScaleFactor(0.5)
                     
-                    Text(model.subtitle ?? "No Subtitle")
+                    Text(LocalizedStringKey(model.subtitle ?? "No Subtitle"))
                         .foregroundColor(.gray)
                         .font(.custom("Avenir-Medium", size: 12))
                     
@@ -155,7 +155,7 @@ struct HealthTopTipImageSubtitle: View {
                 
                 VStack(alignment: .leading, spacing: 3) {
                     Spacer()
-                    Text(model.title)
+                    Text(LocalizedStringKey(model.title))
                         .foregroundColor(.gray)
                         .font(.custom("Avenir-Medium", size: 17))
                         .fontWeight(.heavy)
@@ -167,7 +167,7 @@ struct HealthTopTipImageSubtitle: View {
                             .resizable()
                             .frame(width: 15, height: 15, alignment: .center)
                         
-                        Text(model.subtitle ?? "No Subtitle")
+                        Text(LocalizedStringKey(model.subtitle ?? "No Subtitle"))
                             .foregroundColor(.gray)
                             .font(.custom("Avenir-Medium", size: 12))
                             .lineLimit(3)
