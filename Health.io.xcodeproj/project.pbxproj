@@ -85,6 +85,8 @@
 		17D623052804975100D95C01 /* HealthKitDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D623042804975100D95C01 /* HealthKitDataCardView.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
+		A43A0F9D28736933005245CC /* DietAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0F9C28736933005245CC /* DietAPI.swift */; };
+		A43A0F9F28736D9C005245CC /* DietCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */; };
 		A4819B882857D4E800E711CA /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819B872857D4E800E711CA /* DietService.swift */; };
 		A4F7F9E22853B4E700194973 /* MainContentDietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */; };
 		A4F7F9E628547A3100194973 /* IngredientCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E528547A3100194973 /* IngredientCardView.swift */; };
@@ -189,6 +191,8 @@
 		17D623042804975100D95C01 /* HealthKitDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDataCardView.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
+		A43A0F9C28736933005245CC /* DietAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietAPI.swift; sourceTree = "<group>"; };
+		A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietCoreDataService.swift; sourceTree = "<group>"; };
 		A4819B872857D4E800E711CA /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
 		A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentDietViewModel.swift; sourceTree = "<group>"; };
 		A4F7F9E528547A3100194973 /* IngredientCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCardView.swift; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 		172CA2FE2780A87F00E5AD92 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				A43A0F9B2873691F005245CC /* APIs */,
 				172CA2FF2780A88700E5AD92 /* Networking */,
 				172CA3032780A8B700E5AD92 /* Keychain */,
 				172CA3052780A94B00E5AD92 /* Health Kit */,
@@ -385,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				172CA2D5277F166100E5AD92 /* Persistence.swift */,
+				A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -700,6 +706,14 @@
 			path = "Air Quality";
 			sourceTree = "<group>";
 		};
+		A43A0F9B2873691F005245CC /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				A43A0F9C28736933005245CC /* DietAPI.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
 		A4F7F9E32854787A00194973 /* Diet Details View */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,6 +910,8 @@
 				17866F0827F233C8008A4795 /* CustomWorkoutView.swift in Sources */,
 				174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */,
 				171CEF89278E2DD80033E8DF /* Covid19Service.swift in Sources */,
+				A43A0F9F28736D9C005245CC /* DietCoreDataService.swift in Sources */,
+				A43A0F9D28736933005245CC /* DietAPI.swift in Sources */,
 				179E10EE27F4DE75001D897C /* FastingDietModel.swift in Sources */,
 				174B910E27A0AA8C002C8D02 /* AuthenticationService.swift in Sources */,
 				17304E1D27A9CAD200F675E4 /* AirQuality.swift in Sources */,
