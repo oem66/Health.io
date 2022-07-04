@@ -21,7 +21,7 @@
 		172CA2D1277F166100E5AD92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CA2D0277F166100E5AD92 /* Assets.xcassets */; };
 		172CA2D4277F166100E5AD92 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 172CA2D3277F166100E5AD92 /* Preview Assets.xcassets */; };
 		172CA2D6277F166100E5AD92 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2D5277F166100E5AD92 /* Persistence.swift */; };
-		172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2D7277F166100E5AD92 /* Health_io.xcdatamodeld */; };
+		172CA2D9277F166100E5AD92 /* Health_ioPersistance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2D7277F166100E5AD92 /* Health_ioPersistance.xcdatamodeld */; };
 		172CA2E3277F166100E5AD92 /* Health_ioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2E2277F166100E5AD92 /* Health_ioTests.swift */; };
 		172CA2ED277F166100E5AD92 /* Health_ioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2EC277F166100E5AD92 /* Health_ioUITests.swift */; };
 		172CA2EF277F166100E5AD92 /* Health_ioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172CA2EE277F166100E5AD92 /* Health_ioUITestsLaunchTests.swift */; };
@@ -87,6 +87,8 @@
 		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
 		A43A0F9D28736933005245CC /* DietAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0F9C28736933005245CC /* DietAPI.swift */; };
 		A43A0F9F28736D9C005245CC /* DietCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */; };
+		A43A0FA628737A7A005245CC /* DietCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0FA428737A7A005245CC /* DietCD+CoreDataClass.swift */; };
+		A43A0FA728737A7A005245CC /* DietCD+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0FA528737A7A005245CC /* DietCD+CoreDataProperties.swift */; };
 		A4819B882857D4E800E711CA /* DietService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4819B872857D4E800E711CA /* DietService.swift */; };
 		A4BAC3B928593B97009A4CB4 /* HealthViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BAC3B828593B97009A4CB4 /* HealthViewConstants.swift */; };
 		A4F7F9E22853B4E700194973 /* MainContentDietViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */; };
@@ -194,6 +196,8 @@
 		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
 		A43A0F9C28736933005245CC /* DietAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietAPI.swift; sourceTree = "<group>"; };
 		A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietCoreDataService.swift; sourceTree = "<group>"; };
+		A43A0FA428737A7A005245CC /* DietCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DietCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		A43A0FA528737A7A005245CC /* DietCD+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DietCD+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		A4819B872857D4E800E711CA /* DietService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietService.swift; sourceTree = "<group>"; };
 		A4BAC3B828593B97009A4CB4 /* HealthViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewConstants.swift; sourceTree = "<group>"; };
 		A4F7F9E12853B4E700194973 /* MainContentDietViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentDietViewModel.swift; sourceTree = "<group>"; };
@@ -279,7 +283,7 @@
 				172CA2FD2780A87A00E5AD92 /* View */,
 				172CA2FE2780A87F00E5AD92 /* Service */,
 				172CA2CC277F165C00E5AD92 /* Health_ioApp.swift */,
-				172CA2D7277F166100E5AD92 /* Health_io.xcdatamodeld */,
+				172CA2D7277F166100E5AD92 /* Health_ioPersistance.xcdatamodeld */,
 				172CA2D2277F166100E5AD92 /* Preview Content */,
 			);
 			path = Health.io;
@@ -391,6 +395,8 @@
 		172CA3012780A8A000E5AD92 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				A43A0FA428737A7A005245CC /* DietCD+CoreDataClass.swift */,
+				A43A0FA528737A7A005245CC /* DietCD+CoreDataProperties.swift */,
 				172CA2D5277F166100E5AD92 /* Persistence.swift */,
 				A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */,
 			);
@@ -883,6 +889,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A43A0FA728737A7A005245CC /* DietCD+CoreDataProperties.swift in Sources */,
 				17D5409E27B4607400DEA551 /* DietView.swift in Sources */,
 				174FF02F2791E0A800AA9643 /* OnboardingConstants.swift in Sources */,
 				171AC56B27BC3210005E8458 /* HealthService.swift in Sources */,
@@ -935,8 +942,9 @@
 				173A6E3027F377A60069396D /* DietHealthTipsView.swift in Sources */,
 				17A4A24C27EBB76600F6424E /* BodySpecificWorkout.swift in Sources */,
 				A4F7F9E22853B4E700194973 /* MainContentDietViewModel.swift in Sources */,
+				A43A0FA628737A7A005245CC /* DietCD+CoreDataClass.swift in Sources */,
 				174FF03727938E0800AA9643 /* AuthenticationModel.swift in Sources */,
-				172CA2D9277F166100E5AD92 /* Health_io.xcdatamodeld in Sources */,
+				172CA2D9277F166100E5AD92 /* Health_ioPersistance.xcdatamodeld in Sources */,
 				174FF03127923EED00AA9643 /* AuthenticationView.swift in Sources */,
 				171CEF82278CE8250033E8DF /* HealthViewModel.swift in Sources */,
 				171CEF85278E0C480033E8DF /* Covid19Stats.swift in Sources */,
@@ -1365,13 +1373,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		172CA2D7277F166100E5AD92 /* Health_io.xcdatamodeld */ = {
+		172CA2D7277F166100E5AD92 /* Health_ioPersistance.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				172CA2D8277F166100E5AD92 /* Health_io.xcdatamodel */,
 			);
 			currentVersion = 172CA2D8277F166100E5AD92 /* Health_io.xcdatamodel */;
-			path = Health_io.xcdatamodeld;
+			path = Health_ioPersistance.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

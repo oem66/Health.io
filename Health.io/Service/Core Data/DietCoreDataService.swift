@@ -16,7 +16,7 @@ protocol DietCDServiceProtocol {
 
 class DietCoreDataService: DietCDServiceProtocol {
     func saveDietData() {
-        
+        PersistanceService.saveContext()
     }
     
     func deleteDietData() {
