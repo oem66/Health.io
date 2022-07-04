@@ -14,10 +14,8 @@ protocol DietAPIProtocol {
 }
 
 final class DietAPI: DietAPIProtocol {
-    // persistance instance
-    // networking instance
-    // status instance active/passive
-    
+    var coreDataService = DietCoreDataService()
+    var networkService = DietService()
     
     // MARK: - Fetch data from WebAPI or Firebase
     func getData() {
