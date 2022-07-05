@@ -9,13 +9,17 @@ import UIKit
 import CoreData
 
 protocol DietCDServiceProtocol {
-    func saveDietData()
+    func saveDietData(title: String, description: String, type: String)
     func deleteDietData()
     func getFilteredDietdData()
 }
 
 class DietCoreDataService: DietCDServiceProtocol {
-    func saveDietData() {
+    func saveDietData(title: String, description: String, type: String) {
+        let dietCD = DietCD(context: PersistanceService.context)
+        dietCD.title = title
+        dietCD.dietDescription = description
+        dietCD.type = type
         PersistanceService.saveContext()
     }
     
