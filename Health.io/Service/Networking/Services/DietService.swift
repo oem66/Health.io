@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 protocol DietProtocol {
+    func getRecipes() -> AnyPublisher<DietRecipes,Error>
     func getDietHealthTips() -> [DietHealthTipsModel]
     func getFastingDiets() -> [DietPlanModel]
     func getBalancedDiets() -> [DietPlanModel]
@@ -17,6 +18,17 @@ protocol DietProtocol {
 }
 
 final class DietService: DietProtocol {
+    internal func getRecipes() -> AnyPublisher<DietRecipes, Error> {
+        var request = URLRequest(url: APIEndpoints.shared.recipeURL().url!)
+        request.httpMethod = HTTPMethod.GET.rawValue
+        request.allHTTPHeaderFields = APIEndpoints.shared.recipeHeaders
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .map { $0.data }
+            .decode(type: DietRecipes.self, decoder: JSONDecoder())
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
     
     func getDietHealthTips() -> [DietHealthTipsModel] {
         let dietHealthTips = [

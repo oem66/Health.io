@@ -19,7 +19,8 @@ final class DietAPI: DietAPIProtocol {
     
     // MARK: - Fetch data from WebAPI or Firebase
     func getData() {
-        
+        var data = networkService.getRecipes()
+        debugPrint("Data: \(data)")
     }
     
     // MARK: - Save Diet to favorites

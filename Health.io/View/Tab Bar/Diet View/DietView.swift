@@ -41,6 +41,12 @@ struct DietView: View {
                 })
                 Spacer()
             }
+            .onAppear {
+                debugPrint("=| Diet View |=")
+                viewModel.getRecipeData {
+                    debugPrint("Recipe Data Network Request")
+                }
+            }
             .navigationTitle("Diet")
             .background(Color(red: 245/255, green: 247/255, blue: 251/255))
         }

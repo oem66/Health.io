@@ -12,7 +12,7 @@ import GoogleSignIn
 @main
 struct Health_ioApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    let persistenceController = PersistenceController.shared
+    let persistenceController = PersistanceService.context //PersistenceController.shared
     
     init() { }
     

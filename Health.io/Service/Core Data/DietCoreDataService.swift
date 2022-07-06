@@ -8,13 +8,13 @@
 import UIKit
 import CoreData
 
-protocol DietCDServiceProtocol {
+protocol DietCoreDataServiceProtocol {
     func saveDietData(title: String, description: String, type: String)
     func deleteDietData()
     func getFilteredDietdData()
 }
 
-class DietCoreDataService: DietCDServiceProtocol {
+class DietCoreDataService: DietCoreDataServiceProtocol {
     func saveDietData(title: String, description: String, type: String) {
         let dietCD = DietCD(context: PersistanceService.context)
         dietCD.title = title
