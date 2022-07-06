@@ -20,6 +20,9 @@ final class DietViewModel: ObservableObject {
     private let coreDataService: DietCoreDataServiceProtocol
     var dietPlan = [DietPlanModel]()
     
+    private var dietRecipesSubscribers: AnyCancellable?
+    @Published var dietRecipes = DietRecipes()
+    
     init(service: DietProtocol = DietService(), coreDataService: DietCoreDataServiceProtocol = DietCoreDataService()) {
         self.service = service
         self.coreDataService = coreDataService
@@ -43,7 +46,33 @@ final class DietViewModel: ObservableObject {
         return dietPlan
     }
     
+    func getRecipeData(completion: @escaping ()->()) {
+        dietRecipesSubscribers = service.getRecipes().sink(receiveCompletion: { completion in
+            switch completion {
+            case .finished:
+                debugPrint("Request is successfull.")
+            case .failure(let error):
+                debugPrint(error.localizedDescription)
+            }
+        }, receiveValue: { [weak self] dietRecipes in
+            guard let self = self else { return }
+            self.dietRecipes = dietRecipes
+            debugPrint("Diet Recipes: \(dietRecipes)")
+        })
+        completion()
+    }
+    
     func saveDietDataToCoreData(recipe: Feed) {
         debugPrint("Save recipe to favorites on device")
+        coreDataService.saveDietData(title: "Test title", description: "Test description", type: "Test type")
+    }
+    
+    func handleFavouriteButtonTapped() {
+        defer {
+            saveDietDataToCoreData(recipe: Feed())
+        }
+        debugPrint("Save to favourites is tapped!")
+        // Create custom object and populate property in view model
+        // After object is downloaded and created defer will execute save to core data method
     }
 }
