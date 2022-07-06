@@ -17,10 +17,12 @@ enum DietType {
 
 final class DietViewModel: ObservableObject {
     private let service: DietProtocol
+    private let coreDataService: DietCoreDataServiceProtocol
     var dietPlan = [DietPlanModel]()
     
-    init(service: DietProtocol = DietService()) {
+    init(service: DietProtocol = DietService(), coreDataService: DietCoreDataServiceProtocol = DietCoreDataService()) {
         self.service = service
+        self.coreDataService = coreDataService
     }
     
     func getDietHealthTips() -> [DietHealthTipsModel] {
@@ -39,5 +41,9 @@ final class DietViewModel: ObservableObject {
             dietPlan = service.getHighProteinDiets()
         }
         return dietPlan
+    }
+    
+    func saveDietDataToCoreData(recipe: Feed) {
+        debugPrint("Save recipe to favorites on device")
     }
 }

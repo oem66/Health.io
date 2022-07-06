@@ -85,6 +85,7 @@
 		17D623052804975100D95C01 /* HealthKitDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D623042804975100D95C01 /* HealthKitDataCardView.swift */; };
 		17DAC15B27AC6FE500412CA3 /* AirQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */; };
 		17DCD5CD27B6F87400D152B5 /* Navigation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */; };
+		A41D3F7D2876194A00B86F30 /* DietRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41D3F7C2876194A00B86F30 /* DietRecipes.swift */; };
 		A43A0F9D28736933005245CC /* DietAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0F9C28736933005245CC /* DietAPI.swift */; };
 		A43A0F9F28736D9C005245CC /* DietCoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */; };
 		A43A0FA628737A7A005245CC /* DietCD+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43A0FA428737A7A005245CC /* DietCD+CoreDataClass.swift */; };
@@ -194,6 +195,7 @@
 		17D623042804975100D95C01 /* HealthKitDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitDataCardView.swift; sourceTree = "<group>"; };
 		17DAC15A27AC6FE500412CA3 /* AirQualityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirQualityView.swift; sourceTree = "<group>"; };
 		17DCD5CC27B6F87400D152B5 /* Navigation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+Extension.swift"; sourceTree = "<group>"; };
+		A41D3F7C2876194A00B86F30 /* DietRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietRecipes.swift; sourceTree = "<group>"; };
 		A43A0F9C28736933005245CC /* DietAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietAPI.swift; sourceTree = "<group>"; };
 		A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietCoreDataService.swift; sourceTree = "<group>"; };
 		A43A0FA428737A7A005245CC /* DietCD+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DietCD+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -467,6 +469,7 @@
 				179E10ED27F4DE75001D897C /* FastingDietModel.swift */,
 				179E10EF27F4DF35001D897C /* DietSpecifics.swift */,
 				1714EE8928284CCF006D06E2 /* Ingredient.swift */,
+				A41D3F7C2876194A00B86F30 /* DietRecipes.swift */,
 			);
 			path = Diet;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 				A4BAC3B928593B97009A4CB4 /* HealthViewConstants.swift in Sources */,
 				171CEF87278E2C580033E8DF /* Covid19ViewModel.swift in Sources */,
 				17A0C0C628206CD0004FADC3 /* HTTPMethod.swift in Sources */,
+				A41D3F7D2876194A00B86F30 /* DietRecipes.swift in Sources */,
 				17866F0827F233C8008A4795 /* CustomWorkoutView.swift in Sources */,
 				174FF020278F951C00AA9643 /* URL+Extension.swift in Sources */,
 				171CEF89278E2DD80033E8DF /* Covid19Service.swift in Sources */,

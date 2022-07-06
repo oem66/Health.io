@@ -69,4 +69,26 @@ final class APIEndpoints {
         components.setQueryItems(with: provideParameters(country: "usa", day: "2020-06-02"))
         return components
     }
+    
+    // MARK: - Recipes API
+    let recipeHeaders = [
+        "X-RapidAPI-Key" : "05cf9849e3mshb1cb8d9ef31e419p190aa4jsnf27c3adf7663",
+        "X-RapidAPI-Host" : "yummly2.p.rapidapi.com"
+    ]
+    
+    internal func recipeParams(limit: Int, start: Int) -> [String:String] {
+        return [
+            "limit" : "\(limit)",
+            "start" : "\(start)"
+        ]
+    }
+    
+    internal func recipeURL() -> URLComponents {
+        var components = URLComponents()
+        components.scheme = APIEndpoints.https_scheme
+        components.host = "yummly2.p.rapidapi.com"
+        components.path = "/feeds/list"
+        components.setQueryItems(with: recipeParams(limit: 24, start: 0))
+        return components
+    }
 }
