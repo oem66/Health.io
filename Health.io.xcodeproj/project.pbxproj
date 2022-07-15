@@ -363,7 +363,6 @@
 				172CA2FF2780A88700E5AD92 /* Networking */,
 				172CA3032780A8B700E5AD92 /* Keychain */,
 				172CA3052780A94B00E5AD92 /* Health Kit */,
-				172CA3022780A8AE00E5AD92 /* User Defaults */,
 				172CA3012780A8A000E5AD92 /* Core Data */,
 			);
 			path = Service;
@@ -401,13 +400,6 @@
 				A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */,
 			);
 			path = "Core Data";
-			sourceTree = "<group>";
-		};
-		172CA3022780A8AE00E5AD92 /* User Defaults */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "User Defaults";
 			sourceTree = "<group>";
 		};
 		172CA3032780A8B700E5AD92 /* Keychain */ = {
