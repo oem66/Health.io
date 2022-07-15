@@ -336,10 +336,10 @@
 				173A6E3127F37A840069396D /* Diet */,
 				17BBA49927EA6A1100472546 /* Workout */,
 				1779B9D62798ADCE00EA8470 /* Authentication */,
-				177FC53A27B1E1DB00598425 /* Home View Model */,
-				179BD7B327AAFD4000EA56BE /* Covid View Model */,
-				179BD7B227AAFD2E00EA56BE /* Health View Model */,
-				179BD7AF27AAFBD600EA56BE /* AirQuality View Model */,
+				177FC53A27B1E1DB00598425 /* Home */,
+				179BD7B327AAFD4000EA56BE /* Covid */,
+				179BD7B227AAFD2E00EA56BE /* Health */,
+				179BD7AF27AAFBD600EA56BE /* AirQuality */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -363,7 +363,6 @@
 				172CA2FF2780A88700E5AD92 /* Networking */,
 				172CA3032780A8B700E5AD92 /* Keychain */,
 				172CA3052780A94B00E5AD92 /* Health Kit */,
-				172CA3022780A8AE00E5AD92 /* User Defaults */,
 				172CA3012780A8A000E5AD92 /* Core Data */,
 			);
 			path = Service;
@@ -401,13 +400,6 @@
 				A43A0F9E28736D9C005245CC /* DietCoreDataService.swift */,
 			);
 			path = "Core Data";
-			sourceTree = "<group>";
-		};
-		172CA3022780A8AE00E5AD92 /* User Defaults */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "User Defaults";
 			sourceTree = "<group>";
 		};
 		172CA3032780A8B700E5AD92 /* Keychain */ = {
@@ -552,12 +544,12 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
-		177FC53A27B1E1DB00598425 /* Home View Model */ = {
+		177FC53A27B1E1DB00598425 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				177FC53B27B1E1F700598425 /* HomeViewModel.swift */,
 			);
-			path = "Home View Model";
+			path = Home;
 			sourceTree = "<group>";
 		};
 		1790A52327B1D20400BF755F /* Health Insight */ = {
@@ -569,28 +561,28 @@
 			path = "Health Insight";
 			sourceTree = "<group>";
 		};
-		179BD7AF27AAFBD600EA56BE /* AirQuality View Model */ = {
+		179BD7AF27AAFBD600EA56BE /* AirQuality */ = {
 			isa = PBXGroup;
 			children = (
 				179BD7B027AAFBF900EA56BE /* AirQualityViewModel.swift */,
 			);
-			path = "AirQuality View Model";
+			path = AirQuality;
 			sourceTree = "<group>";
 		};
-		179BD7B227AAFD2E00EA56BE /* Health View Model */ = {
+		179BD7B227AAFD2E00EA56BE /* Health */ = {
 			isa = PBXGroup;
 			children = (
 				171CEF81278CE8250033E8DF /* HealthViewModel.swift */,
 			);
-			path = "Health View Model";
+			path = Health;
 			sourceTree = "<group>";
 		};
-		179BD7B327AAFD4000EA56BE /* Covid View Model */ = {
+		179BD7B327AAFD4000EA56BE /* Covid */ = {
 			isa = PBXGroup;
 			children = (
 				171CEF86278E2C580033E8DF /* Covid19ViewModel.swift */,
 			);
-			path = "Covid View Model";
+			path = Covid;
 			sourceTree = "<group>";
 		};
 		179BD7B527AAFD7100EA56BE /* Covid */ = {
