@@ -10,7 +10,6 @@ import SwiftUI
 
 struct HealthStatsView: View {
     private var viewModel = HealthViewModel()
-    private var covidViewModel = Covid19ViewModel()
     
     private var healthSymbols = ["heart.text.square", "heart", "brain", "facemask", "bed.double", "allergens", "pills", "ear", "waveform.path.ecg.rectangle", "staroflife", "waveform.path.ecg"]
     private var colors: [Color] = [.yellow, .red, .blue, .purple, .green]
@@ -31,9 +30,6 @@ struct HealthStatsView: View {
             }
             .onAppear {
                 viewModel.readHealthData()
-                covidViewModel.fetchCovid19Data {
-                    debugPrint("DATA: \(covidViewModel.covid19Data)")
-                }
             }
         }
     }
