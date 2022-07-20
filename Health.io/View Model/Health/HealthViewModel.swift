@@ -20,6 +20,11 @@ final class HealthViewModel {
     // MARK: ADD HEALTH SERVICE instance and read health data from HealthKit
     private var service: HealthServiceProtocol
     
+    private var heartRate = Int()
+    private var calories = Int()
+    private var steps = Int()
+    private var sleep = Double()
+    
     var healthTips = [
         HealthTip(image: "home1", title: "start_fasting", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
         HealthTip(image: "books", title: "learn_about_health", subtitle: "learn_about_health_subtitle", subtitleImage: "book", type: .subtitleImage),

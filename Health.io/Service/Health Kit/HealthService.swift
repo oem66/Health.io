@@ -54,11 +54,13 @@ protocol HealthServiceProtocol {
 }
 
 class HealthService: HealthServiceProtocol {
-    
     private var healthStore = HKHealthStore()
     
     var heartRate = Int()
-    var steps = Double()
+    var steps = Int()
+    var calories = Int()
+    var sleep = Double()
+    
     var walkingRunningDistance = Double()
     var flightsClmb = Int()
     var weightPar = Double()
@@ -70,11 +72,11 @@ class HealthService: HealthServiceProtocol {
                 HKObjectType.quantityType(forIdentifier: .heartRate)!,
                 HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                 HKObjectType.quantityType(forIdentifier: .stepCount)!,
-                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
-                HKObjectType.quantityType(forIdentifier: .flightsClimbed)!,
-                HKObjectType.quantityType(forIdentifier: .bodyMass)!,
-                HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!,
-                HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
+//                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+//                HKObjectType.quantityType(forIdentifier: .flightsClimbed)!,
+//                HKObjectType.quantityType(forIdentifier: .bodyMass)!,
+//                HKObjectType.quantityType(forIdentifier: .bodyMassIndex)!,
+//                HKObjectType.quantityType(forIdentifier: .respiratoryRate)!,
                 HKObjectType.categoryType(forIdentifier: .sleepAnalysis)!,
             ])
             
@@ -124,29 +126,66 @@ class HealthService: HealthServiceProtocol {
         }
     }
     
+    let heartRateUnit:HKUnit = HKUnit(from: "count/min")
+    let heartRateType:HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+    var heartRateQuery:HKSampleQuery?
+
+    /*Method to get todays heart rate - this only reads data from health kit. */
+     func FetchHeartRate() {
+        //predicate
+        let calendar = NSCalendar.current
+        let now = NSDate()
+        let components = calendar.dateComponents([.year, .month, .day], from: now as Date)
+        
+        guard let startDate:NSDate = calendar.date(from: components) as NSDate? else { return }
+        var dayComponent    = DateComponents()
+        dayComponent.day    = 1
+        let endDate:NSDate? = calendar.date(byAdding: dayComponent, to: startDate as Date) as NSDate?
+        let predicate = HKQuery.predicateForSamples(withStart: startDate as Date, end: endDate as Date?, options: [])
+
+        //descriptor
+        let sortDescriptors = [
+                                NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+                              ]
+        
+        heartRateQuery = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: 25, sortDescriptors: sortDescriptors, resultsHandler: { (query, results, error) in
+            guard error == nil else { print("error"); return }
+
+            self.printHeartRateInfo(results: results)
+        }) //eo-query
+        
+        healthStore.execute(heartRateQuery!)
+     }//eom
+    
+    /*used only for testing, prints heart rate info */
+    private func printHeartRateInfo(results:[HKSample]?)
+    {
+        for (_, sample) in results!.enumerated() {
+            guard let currData:HKQuantitySample = sample as? HKQuantitySample else { return }
+            
+            self.heartRate = Int(currData.quantity.doubleValue(for: heartRateUnit))
+            
+            debugPrint("[\(sample)]")
+            debugPrint("Heart Rate: \(Int(currData.quantity.doubleValue(for: heartRateUnit)))")
+            debugPrint("quantityType: \(currData.quantityType)")
+            debugPrint("Start Date: \(currData.startDate)")
+            debugPrint("End Date: \(currData.endDate)")
+            debugPrint("Metadata: \(currData.metadata)")
+            debugPrint("UUID: \(currData.uuid)")
+            debugPrint("Source: \(currData.sourceRevision)")
+            debugPrint("Device: \(currData.device)")
+            debugPrint("---------------------------------\n")
+        }
+    }
+    
     func FetchActivityData() {
-        guard let heartRate = HKCategoryType.quantityType(forIdentifier: .heartRate) else { return }
         guard let sampleType = HKCategoryType.quantityType(forIdentifier: .stepCount) else { return }
         guard let walkingRunning = HKCategoryType.quantityType(forIdentifier: .distanceWalkingRunning) else { return }
-        guard let flightsClimbed = HKCategoryType.quantityType(forIdentifier: .flightsClimbed) else { return }
         
         let startDate = Calendar.current.startOfDay(for: Date())
         let predicate = HKQuery.predicateForSamples(withStart: startDate, end: Date(), options: .strictEndDate)
         var interval = DateComponents()
         interval.day = 1
-        
-        let queryHeartRate = HKStatisticsCollectionQuery(quantityType: heartRate, quantitySamplePredicate: predicate, options: [.mostRecent], anchorDate: startDate, intervalComponents: interval)
-        queryHeartRate.initialResultsHandler = { query, result, error in
-            if let myResult = result {
-                myResult.enumerateStatistics(from: startDate, to: Date()) { statistics, value in
-                    if let count = statistics.mostRecentQuantity() {
-                        let val = count.doubleValue(for: HKUnit.count())
-                        self.heartRate = Int(val)
-                        debugPrint("Heart Rate: \(val) bpm")
-                    }
-                }
-            }
-        }
         
         let querySteps = HKStatisticsCollectionQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
         querySteps.initialResultsHandler = { query, result, error in
@@ -154,7 +193,7 @@ class HealthService: HealthServiceProtocol {
                 myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
                     if let count = statistics.sumQuantity() {
                         let val = count.doubleValue(for: HKUnit.count())
-                        self.steps = val
+                        self.steps = Int(val)
                         print("Total steps: \(val) steps")
                     }
                 }
@@ -174,20 +213,7 @@ class HealthService: HealthServiceProtocol {
             }
         }
         
-        let queryFlightsClimbed = HKStatisticsCollectionQuery(quantityType: flightsClimbed, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate, intervalComponents: interval)
-        queryFlightsClimbed.initialResultsHandler = { query, result, error in
-            if let myResult = result {
-                myResult.enumerateStatistics(from: startDate, to: Date()) { (statistics, value) in
-                    if let count = statistics.sumQuantity() {
-                        let val = count.doubleValue(for: HKUnit.count())
-                        self.flightsClmb = Int(val)
-                        print("Walking running distance \(val) meters")
-                    }
-                }
-            }
-        }
-        
-        let queries: [HKStatisticsCollectionQuery] = [querySteps, queryWalkingRunning, queryFlightsClimbed]
+        let queries: [HKStatisticsCollectionQuery] = [querySteps, queryWalkingRunning]
         for query in queries {
             healthStore.execute(query)
         }
@@ -242,7 +268,6 @@ class HealthService: HealthServiceProtocol {
     func FetchBodyMeasurements() {
         guard let weightSampleType = HKCategoryType.quantityType(forIdentifier: .bodyMass) else { return }
         guard let heightSampleType = HKCategoryType.quantityType(forIdentifier: .height) else { return }
-        guard let bTemperatureSampleType = HKCategoryType.quantityType(forIdentifier: .bodyTemperature) else { return }
         
         let startDate = Calendar.current.startOfDay(for: Date())
         let endDate = Date()
@@ -285,12 +310,15 @@ class HealthService: HealthServiceProtocol {
     func FetchHealthData() {
         FetchActivityData()
         FetchBodyMeasurements()
+        FetchHeartRate()
     }
     
-    func fetchSteps() -> Double { return steps }
-    func fetchHeartRate() -> Int { return heartRate }
-    func fetchWalkingRunningDistance() -> Double { return walkingRunningDistance }
-    func fetchWeight() -> Double { return weightPar }
-    func fetchSleep() -> Double { return 0.0 }
-    func fetchWater() -> Int { return 1}
+    func getSteps() -> Int { return steps }
+    func getCalories() -> Int { return calories }
+    func getHeartRate() -> Int { return heartRate }
+    func getSleep() -> Double { return 0.0 }
+    
+    func getWalkingRunningDistance() -> Double { return walkingRunningDistance }
+    func getWeight() -> Double { return weightPar }
+    func getWater() -> Int { return 1}
 }
