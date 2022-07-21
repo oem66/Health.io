@@ -37,7 +37,7 @@ final class HealthViewModel: ObservableObject {
     ]
     
     func readHealthData() {
-        HealthService.shared.HealthStoreAvailability()
+        HealthService.shared.healthStoreAvailability()
     }
     
     func fetchHealthData() {
@@ -46,19 +46,22 @@ final class HealthViewModel: ObservableObject {
                 guard let self = self else { return }
                 let data = HealthService.shared.getData()
                 self.heartRate = data[0]
-                self.healthKitData[0].data = Double(data[0])
-                self.healthKitData[2].data = Double(data[1])
                 self.steps = data[1]
                 self.calories = data[2]
+                
+                self.healthKitData[0].data = Double(data[0])
+                self.healthKitData[1].data = Double(data[2])
+                self.healthKitData[2].data = Double(data[1])
+                
                 self.healthKitData = [
                     HealthKitData(image: "health", title: "Heart Rate", unit: HealthUnits.bpm.rawValue, data: Double(data[0])),
-                    HealthKitData(image: "calories", title: "Calories Burned", unit: HealthUnits.kcal.rawValue, data: 0),
+                    HealthKitData(image: "calories", title: "Calories Burned", unit: HealthUnits.kcal.rawValue, data: Double(data[2])),
                     HealthKitData(image: "steps", title: "Steps", unit: HealthUnits.steps.rawValue, data: Double(data[1])),
                     HealthKitData(image: "sleep", title: "Sleep", unit: HealthUnits.hours.rawValue, data: 0)
                 ]
             })
         }
-        HealthService.shared.FetchHealthData()
+        HealthService.shared.fetchHealthData()
     }
     
     func writeHealthData() {
