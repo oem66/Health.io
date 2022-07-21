@@ -22,7 +22,7 @@ struct HealthView: View {
                         }
                     }
                     
-                    HealthKitDataCardView(data: nil)
+                    HealthKitDataCardView()
                         .padding([.leading, .trailing])
                     
                     Spacer()
