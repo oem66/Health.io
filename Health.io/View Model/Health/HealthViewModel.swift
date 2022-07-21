@@ -22,16 +22,12 @@ final class HealthViewModel: ObservableObject {
     private var steps = 0
     private var sleep = 0.0
     
-    @Published var healthKitData: [HealthKitData]
-    
-    init() {
-        self.healthKitData = [
-            HealthKitData(image: "health", title: "Heart Rate", unit: HealthUnits.bpm.rawValue, data: 75),
-            HealthKitData(image: "calories", title: "Calories Burned", unit: HealthUnits.kcal.rawValue, data: 1240),
-            HealthKitData(image: "steps", title: "Steps", unit: HealthUnits.steps.rawValue, data: 15358),
-            HealthKitData(image: "sleep", title: "Sleep", unit: HealthUnits.hours.rawValue, data: 5.3)
-        ]
-    }
+    @Published var healthKitData = [
+        HealthKitData(image: "health", title: "Heart Rate", unit: HealthUnits.bpm.rawValue, data: 0),
+        HealthKitData(image: "calories", title: "Calories Burned", unit: HealthUnits.kcal.rawValue, data: 0),
+        HealthKitData(image: "steps", title: "Steps", unit: HealthUnits.steps.rawValue, data: 0),
+        HealthKitData(image: "sleep", title: "Sleep", unit: HealthUnits.hours.rawValue, data: 0)
+    ]
     
     var healthTips = [
         HealthTip(image: "home1", title: "start_fasting", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
@@ -39,17 +35,6 @@ final class HealthViewModel: ObservableObject {
         HealthTip(image: "fasting", title: "end_fasting", subtitle: nil, subtitleImage: nil, type: .noSubtitle),
         HealthTip(image: "scale", title: "weight_yourself", subtitle: "weight_yourself_subtitle", subtitleImage: nil, type: .subtitle),
     ]
-    
-//    @Published var healthKitData = [
-//        HealthKitData(image: "health", title: "Heart Rate", unit: HealthUnits.bpm.rawValue, data: 75),
-//        HealthKitData(image: "calories", title: "Calories Burned", unit: HealthUnits.kcal.rawValue, data: 1240),
-//        HealthKitData(image: "steps", title: "Steps", unit: HealthUnits.steps.rawValue, data: 15358),
-//        HealthKitData(image: "sleep", title: "Sleep", unit: HealthUnits.hours.rawValue, data: 5.3)
-//    ] {
-//        willSet {
-//            objectWillChange.send()
-//        }
-//    }
     
     func readHealthData() {
         HealthService.shared.HealthStoreAvailability()
@@ -67,16 +52,13 @@ final class HealthViewModel: ObservableObject {
                 self.calories = data[2]
                 self.healthKitData = [
                     HealthKitData(image: "health", title: "Heart Rate", unit: HealthUnits.bpm.rawValue, data: Double(data[0])),
-                    HealthKitData(image: "calories", title: "Calories Burned", unit: HealthUnits.kcal.rawValue, data: 1240),
+                    HealthKitData(image: "calories", title: "Calories Burned", unit: HealthUnits.kcal.rawValue, data: 0),
                     HealthKitData(image: "steps", title: "Steps", unit: HealthUnits.steps.rawValue, data: Double(data[1])),
-                    HealthKitData(image: "sleep", title: "Sleep", unit: HealthUnits.hours.rawValue, data: 5.3)
+                    HealthKitData(image: "sleep", title: "Sleep", unit: HealthUnits.hours.rawValue, data: 0)
                 ]
             })
         }
         HealthService.shared.FetchHealthData()
-        
-        healthKitData[0].data = 333
-        healthKitData[2].data = 999
     }
     
     func writeHealthData() {
