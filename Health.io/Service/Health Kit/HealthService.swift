@@ -11,7 +11,6 @@ import SwiftUI
 
 protocol HealthServiceProtocol {
     func healthStoreAvailability()
-    func fetchDataFromHealthStore()
     func fetchActivityData()
     func fetchHealthData()
 }
@@ -39,46 +38,11 @@ class HealthService: HealthServiceProtocol {
             
             healthStore.requestAuthorization(toShare: nil, read: readTypes) { status, error in
                 if status {
-                    self.fetchDataFromHealthStore()
+                    debugPrint("All good")
                 } else {
                     debugPrint("Health Store Error: \(error?.localizedDescription)")
                 }
             }
-        }
-    }
-    
-    func fetchDataFromHealthStore() {
-        let calendar = NSCalendar.current
-        let now = Date()
-        let components = calendar.dateComponents([.year, .month, .day], from: now)
-        
-        guard let startDate = calendar.date(from: components) else { fatalError("*** Unable to create the start date ***") }
-        guard let endDate = calendar.date(byAdding: .day, value: 1, to: startDate) else { fatalError("*** Unable to create the end date ***") }
-        
-        let today = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
-        let sortByDate = NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: true)
-        guard let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.stepCount) else {
-            fatalError("*** This method should never fail ***")
-        }
-        
-        let query = HKSampleQuery(sampleType: sampleType, predicate: today, limit: Int(HKObjectQueryNoLimit), sortDescriptors: [sortByDate]) { (query, results, error) in
-            guard let samples = results as? [HKQuantitySample] else {
-                // handle errors here
-                return
-            }
-            
-            for sample in samples {
-                print("Heart rate -> \(sample)")
-            }
-            
-            // The results come back on an anonymous background queue.
-            // Dispatch to the main queue before modifying the UI.
-            
-            DispatchQueue.main.async {
-                // Update UI here
-            }
-            
-            self.healthStore.execute(query)
         }
     }
     
@@ -201,15 +165,12 @@ class HealthService: HealthServiceProtocol {
             let total = quantitySamples.reduce(0.0) { $0 + $1.quantity.doubleValue(for: HKUnit.kilocalorie()) }
             print("Active Energy: \(total)")
             self.calories = Int(total)
-            DispatchQueue.main.async {
-//                self.energyLabel.text = String(format: "Energy: %.2f", total)
-            }
         }
         HKHealthStore().execute(activeEnergy)
     }
     
     func fetchHealthData() {
-        defer { debugPrint("DATA: \(heartRate), \(steps)") }
+        defer { debugPrint("DATA: \(heartRate), \(steps), \(calories)") }
         fetchActivityData()
         fetchHeartRate()
         fetchSleepAnalysis()
