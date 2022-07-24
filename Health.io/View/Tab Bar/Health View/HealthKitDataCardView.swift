@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HealthKitDataCardView: View {
-    @StateObject var viewModel = HealthViewModel()
+    @ObservedObject var viewModel = HealthViewModel()
     
     var body: some View {
         let columns = [GridItem(.flexible(maximum: 250)),
